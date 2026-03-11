@@ -4,9 +4,6 @@ import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  UsersThree,
-  UserCheck,
-  UserMinus,
   Plus,
   DownloadSimple,
   UploadSimple,
@@ -38,7 +35,6 @@ import { cn } from "@/lib/utils";
 import {
   mockContacts,
   contactsKpis,
-  type Contact,
 } from "@/lib/mock-data/contacts";
 
 /* ------------------------------------------------------------------ */

@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { EnvelopeSimple, Lock, Eye } from "@phosphor-icons/react";
 

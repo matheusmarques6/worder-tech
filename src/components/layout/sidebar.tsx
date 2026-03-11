@@ -20,7 +20,6 @@ import {
   GearSix,
   Question,
   CaretLeft,
-  CaretDown,
   CaretRight,
   CaretUpDown,
   Moon,

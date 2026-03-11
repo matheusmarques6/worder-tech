@@ -81,7 +81,13 @@
    TAILWIND V4 THEME TOKENS
    ============================================ */
 
+@keyframes shimmer-animation {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
 @theme inline {
+  --animate-shimmer: shimmer-animation 1.5s ease-in-out infinite;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-background-card: var(--background-card);

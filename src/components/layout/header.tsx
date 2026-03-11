@@ -74,10 +74,12 @@ function CommandPalette({
   const inputRef = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState("");
 
+  // Focus input and reset query when opening
   useEffect(() => {
     if (open) {
+      // Use microtask to avoid synchronous setState in effect
+      queueMicrotask(() => setQuery(""));
       setTimeout(() => inputRef.current?.focus(), 100);
-      setQuery("");
     }
   }, [open]);
 

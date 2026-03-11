@@ -2,14 +2,12 @@
 
 import { motion } from "framer-motion";
 import { mockConversations } from "@/data/mock";
-import { Badge } from "@/components/ui/badge";
 import {
   WhatsappLogo,
   InstagramLogo,
   ChatCircle,
   ArrowRight,
 } from "@phosphor-icons/react";
-import { cn } from "@/lib/utils";
 
 const channelIcons = {
   whatsapp: WhatsappLogo,
