@@ -6,18 +6,12 @@ import {
   Bar,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
   ResponsiveContainer,
   Cell,
+  LabelList,
 } from "recharts";
-
-const data = [
-  { name: "E-mail", value: 89500, color: "#3B82F6" },
-  { name: "WhatsApp", value: 45200, color: "#25D366" },
-  { name: "SMS", value: 12800, color: "#F59E0B" },
-  { name: "Chat Web", value: 8900, color: "#F26B2A" },
-];
+import { channelRevenueData } from "@/lib/mock-data/dashboard";
 
 export function ChannelRevenueChart() {
   return (
@@ -40,26 +34,29 @@ export function ChannelRevenueChart() {
         </p>
       </div>
 
-      <ResponsiveContainer width="100%" height={220}>
-        <BarChart data={data} layout="vertical" margin={{ left: 10 }}>
-          <CartesianGrid
-            strokeDasharray="3 3"
-            stroke="var(--border)"
-            horizontal={false}
-          />
+      <ResponsiveContainer width="100%" height={240}>
+        <BarChart
+          data={channelRevenueData}
+          layout="vertical"
+          margin={{ left: 10, right: 60 }}
+        >
           <XAxis
             type="number"
             axisLine={false}
             tickLine={false}
-            tick={{ fill: "var(--text-muted)", fontSize: 12 }}
-            tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`}
+            tick={{ fill: "var(--text-muted)", fontSize: 11 }}
+            tickFormatter={(v) => `R$ ${(v / 1000).toFixed(0)}k`}
           />
           <YAxis
             type="category"
             dataKey="name"
             axisLine={false}
             tickLine={false}
-            tick={{ fill: "var(--text-muted)", fontSize: 13, fontWeight: 500 }}
+            tick={{
+              fill: "var(--text-muted)",
+              fontSize: 13,
+              fontWeight: 500,
+            }}
             width={80}
           />
           <Tooltip
@@ -76,9 +73,15 @@ export function ChannelRevenueChart() {
             ]}
           />
           <Bar dataKey="value" radius={[0, 6, 6, 0]} barSize={28}>
-            {data.map((entry, index) => (
+            {channelRevenueData.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={entry.color} />
             ))}
+            <LabelList
+              dataKey="value"
+              position="right"
+              formatter={(v) => `R$ ${(Number(v) / 1000).toFixed(1)}k`}
+              style={{ fill: "var(--text-muted)", fontSize: 11, fontWeight: 500 }}
+            />
           </Bar>
         </BarChart>
       </ResponsiveContainer>

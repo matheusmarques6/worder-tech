@@ -16,21 +16,33 @@ import {
   QrCode,
   ChatCircleDots,
   Percent,
+  Barcode,
+  PaperPlaneRight,
+  ArrowCounterClockwise,
+  CurrencyCircleDollar,
+  Package,
+  PixLogo,
 } from "@phosphor-icons/react";
 import type { ReactNode } from "react";
 
 const iconMap: Record<string, ReactNode> = {
-  revenue: <CurrencyDollar size={24} weight="fill" />,
-  orders: <ShoppingCart size={24} weight="fill" />,
+  revenue: <CurrencyCircleDollar size={24} weight="fill" />,
+  orders: <Package size={24} weight="fill" />,
   ticket: <Receipt size={24} weight="fill" />,
   conversion: <ChartLine size={24} weight="fill" />,
   customers: <Users size={24} weight="fill" />,
   ai: <Robot size={24} weight="fill" />,
   leads: <UserPlus size={24} weight="fill" />,
   cart: <ShoppingCartSimple size={24} weight="fill" />,
-  pix: <QrCode size={24} weight="fill" />,
+  pix: <PixLogo size={24} weight="fill" />,
   chat: <ChatCircleDots size={24} weight="fill" />,
   percent: <Percent size={24} weight="fill" />,
+  barcode: <Barcode size={24} weight="fill" />,
+  messages: <PaperPlaneRight size={24} weight="fill" />,
+  recovery: <ArrowCounterClockwise size={24} weight="bold" />,
+  "currency-dollar": <CurrencyDollar size={24} weight="fill" />,
+  "shopping-cart": <ShoppingCart size={24} weight="fill" />,
+  "qr-code": <QrCode size={24} weight="fill" />,
 };
 
 function Sparkline({ data }: { data: number[] }) {

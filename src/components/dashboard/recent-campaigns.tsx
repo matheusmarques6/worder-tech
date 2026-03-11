@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Lightning, ArrowRight } from "@phosphor-icons/react";
+import { Megaphone, ArrowRight } from "@phosphor-icons/react";
 import {
   Table,
   TableHeader,
@@ -13,14 +13,14 @@ import {
 } from "@/components/ui/table";
 import { StatusBadge } from "@/components/shared/status-badge";
 import { ChannelBadge } from "@/components/shared/channel-badge";
-import { topAutomations } from "@/lib/mock-data/dashboard";
+import { recentCampaigns } from "@/lib/mock-data/dashboard";
 
-export function TopAutomations() {
+export function RecentCampaigns() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.5 }}
+      transition={{ duration: 0.5, delay: 0.6 }}
       className="bg-background-card border border-border overflow-hidden"
       style={{
         borderRadius: "var(--radius-card)",
@@ -29,20 +29,20 @@ export function TopAutomations() {
     >
       <div className="flex items-center justify-between p-5 pb-0">
         <div className="flex items-center gap-2">
-          <Lightning
+          <Megaphone
             size={20}
             weight="fill"
             className="text-worder-primary"
           />
           <h3 className="text-lg font-semibold text-text-primary font-heading">
-            Top Automações
+            Campanhas Recentes
           </h3>
         </div>
         <Link
-          href="/automations"
+          href="/campaigns"
           className="flex items-center gap-1 text-sm text-worder-primary font-medium hover:underline"
         >
-          Ver todos
+          Ver todas
           <ArrowRight size={16} weight="bold" />
         </Link>
       </div>
@@ -52,42 +52,43 @@ export function TopAutomations() {
           <TableHeader>
             <TableRow>
               <TableHead>Nome</TableHead>
-              <TableHead>Status</TableHead>
               <TableHead>Canal</TableHead>
+              <TableHead>Status</TableHead>
+              <TableHead className="text-right">Enviados</TableHead>
+              <TableHead className="text-right">Abertura</TableHead>
+              <TableHead className="text-right">Cliques</TableHead>
               <TableHead className="text-right">Receita</TableHead>
-              <TableHead className="text-right">Variação</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
-            {topAutomations.map((auto) => (
-              <TableRow key={auto.name}>
+            {recentCampaigns.map((campaign) => (
+              <TableRow key={campaign.name}>
                 <TableCell>
-                  <span className="font-medium">{auto.name}</span>
+                  <span className="font-medium">{campaign.name}</span>
                 </TableCell>
                 <TableCell>
-                  <StatusBadge status={auto.status} />
+                  <ChannelBadge channel={campaign.channel} />
                 </TableCell>
                 <TableCell>
-                  <ChannelBadge channel={auto.channel} />
+                  <StatusBadge status={campaign.status} />
+                </TableCell>
+                <TableCell className="text-right">
+                  {campaign.sent > 0
+                    ? campaign.sent.toLocaleString("pt-BR")
+                    : "—"}
+                </TableCell>
+                <TableCell className="text-right">
+                  {campaign.openRate > 0 ? `${campaign.openRate}%` : "—"}
+                </TableCell>
+                <TableCell className="text-right">
+                  {campaign.clickRate > 0 ? `${campaign.clickRate}%` : "—"}
                 </TableCell>
                 <TableCell className="text-right">
                   <span className="font-semibold">
-                    R$ {auto.revenue.toLocaleString("pt-BR")}
+                    {campaign.revenue > 0
+                      ? `R$ ${campaign.revenue.toLocaleString("pt-BR")}`
+                      : "—"}
                   </span>
-                </TableCell>
-                <TableCell className="text-right">
-                  {auto.change !== 0 ? (
-                    <span
-                      className={`text-xs font-semibold ${
-                        auto.change > 0 ? "text-success" : "text-error"
-                      }`}
-                    >
-                      {auto.change > 0 ? "+" : ""}
-                      {auto.change}%
-                    </span>
-                  ) : (
-                    <span className="text-xs text-text-muted">—</span>
-                  )}
                 </TableCell>
               </TableRow>
             ))}

@@ -1,8 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CalendarBlank, CaretDown } from "@phosphor-icons/react";
+import { create } from "zustand";
+
+// Store to share loading state across dashboard
+interface DashboardState {
+  loading: boolean;
+  period: string;
+  setPeriod: (period: string) => void;
+}
+
+export const useDashboardStore = create<DashboardState>((set) => ({
+  loading: false,
+  period: "30d",
+  setPeriod: (period) => {
+    set({ loading: true, period });
+    setTimeout(() => set({ loading: false }), 600);
+  },
+}));
 
 const periods = [
   { label: "Hoje", value: "today" },
@@ -13,10 +30,18 @@ const periods = [
 ];
 
 export function PeriodSelector() {
-  const [selected, setSelected] = useState("30d");
+  const { period, setPeriod } = useDashboardStore();
   const [open, setOpen] = useState(false);
 
-  const current = periods.find((p) => p.value === selected);
+  const current = periods.find((p) => p.value === period);
+
+  const handleSelect = useCallback(
+    (value: string) => {
+      setPeriod(value);
+      setOpen(false);
+    },
+    [setPeriod]
+  );
 
   return (
     <div className="relative">
@@ -25,15 +50,26 @@ export function PeriodSelector() {
         className="flex items-center gap-2 px-4 py-2 bg-background-card border border-border text-sm font-medium text-text-primary hover:border-worder-primary/50 transition-colors duration-200 cursor-pointer"
         style={{ borderRadius: "var(--radius-card)" }}
       >
-        <CalendarBlank size={16} weight="fill" className="text-worder-primary" />
+        <CalendarBlank
+          size={16}
+          weight="fill"
+          className="text-worder-primary"
+        />
         {current?.label}
-        <CaretDown size={14} weight="bold" className={`text-text-muted transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
+        <CaretDown
+          size={14}
+          weight="bold"
+          className={`text-text-muted transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+        />
       </button>
 
       <AnimatePresence>
         {open && (
           <>
-            <div className="fixed inset-0 z-40" onClick={() => setOpen(false)} />
+            <div
+              className="fixed inset-0 z-40"
+              onClick={() => setOpen(false)}
+            />
             <motion.div
               initial={{ opacity: 0, y: -8, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -45,20 +81,17 @@ export function PeriodSelector() {
                 boxShadow: "var(--shadow-card-hover)",
               }}
             >
-              {periods.map((period) => (
+              {periods.map((p) => (
                 <button
-                  key={period.value}
-                  onClick={() => {
-                    setSelected(period.value);
-                    setOpen(false);
-                  }}
+                  key={p.value}
+                  onClick={() => handleSelect(p.value)}
                   className={`w-full text-left px-4 py-2 text-sm transition-colors duration-150 cursor-pointer ${
-                    selected === period.value
+                    period === p.value
                       ? "bg-worder-primary/10 text-worder-primary font-medium"
                       : "text-text-secondary hover:bg-background"
                   }`}
                 >
-                  {period.label}
+                  {p.label}
                 </button>
               ))}
             </motion.div>
