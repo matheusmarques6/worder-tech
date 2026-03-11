@@ -100,7 +100,7 @@ export const SIDEBAR_BOTTOM: NavItem[] = [
   },
   {
     label: "Configurações",
-    href: "/settings",
+    href: "/settings/account",
     icon: "GearSix",
     children: [
       { label: "Conta", href: "/settings/account" },
@@ -161,4 +161,19 @@ export const PAGE_TITLES: Record<string, { title: string; breadcrumb: string[] }
   "/settings/api": { title: "API", breadcrumb: ["Configurações", "API"] },
   "/settings/security": { title: "Segurança", breadcrumb: ["Configurações", "Segurança"] },
   "/onboarding": { title: "Onboarding", breadcrumb: ["Onboarding"] },
+  "/onboarding/connect-store": { title: "Conectar Loja", breadcrumb: ["Onboarding", "Conectar Loja"] },
+  "/onboarding/install-pixel": { title: "Instalar Pixel", breadcrumb: ["Onboarding", "Instalar Pixel"] },
+  "/onboarding/connect-whatsapp": { title: "Conectar WhatsApp", breadcrumb: ["Onboarding", "Conectar WhatsApp"] },
+  "/onboarding/import-contacts": { title: "Importar Contatos", breadcrumb: ["Onboarding", "Importar Contatos"] },
+  "/onboarding/first-form": { title: "Primeiro Formulário", breadcrumb: ["Onboarding", "Primeiro Formulário"] },
+  "/onboarding/first-automation": { title: "Primeira Automação", breadcrumb: ["Onboarding", "Primeira Automação"] },
+  "/help": { title: "Ajuda", breadcrumb: ["Ajuda"] },
+  "/design-system": { title: "Design System", breadcrumb: ["Dashboard", "Design System"] },
+  "/campaigns/create/channel": { title: "Escolher Canal", breadcrumb: ["Campanhas", "Criar", "Escolher Canal"] },
+  "/campaigns/create/audience": { title: "Definir Público", breadcrumb: ["Campanhas", "Criar", "Definir Público"] },
+  "/campaigns/create/content": { title: "Montar Conteúdo", breadcrumb: ["Campanhas", "Criar", "Montar Conteúdo"] },
+  "/campaigns/create/review": { title: "Revisar e Enviar", breadcrumb: ["Campanhas", "Criar", "Revisar e Enviar"] },
+  "/contacts/lists/library": { title: "Biblioteca de Segmentos", breadcrumb: ["Contatos", "Listas", "Biblioteca"] },
+  "/contacts/lists/create": { title: "Criar Segmento", breadcrumb: ["Contatos", "Listas", "Criar Segmento"] },
+  "/content/templates/whatsapp": { title: "Templates WhatsApp", breadcrumb: ["Conteúdo", "Templates", "WhatsApp"] },
 };
