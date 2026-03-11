@@ -7,16 +7,18 @@ import { cn } from "@/lib/utils";
 interface PageHeaderProps {
   title: string;
   breadcrumb: string[];
+  description?: string;
   actions?: React.ReactNode;
+  className?: string;
 }
 
-export function PageHeader({ title, breadcrumb, actions }: PageHeaderProps) {
+export function PageHeader({ title, breadcrumb, description, actions, className }: PageHeaderProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="flex items-center justify-between"
+      className={cn("flex items-center justify-between", className)}
     >
       <div>
         {/* Breadcrumb */}
@@ -47,6 +49,10 @@ export function PageHeader({ title, breadcrumb, actions }: PageHeaderProps) {
         <h1 className="text-2xl font-bold text-text-primary font-heading">
           {title}
         </h1>
+
+        {description && (
+          <p className="text-sm text-text-muted mt-1">{description}</p>
+        )}
       </div>
 
       {actions && <div className="flex items-center gap-3">{actions}</div>}
