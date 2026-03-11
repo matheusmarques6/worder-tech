@@ -9,8 +9,9 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  Legend,
 } from "recharts";
-import { mockMonthlyRevenue } from "@/data/mock";
+import { mockRevenueComparison } from "@/data/mock";
 
 export function RevenueChart() {
   return (
@@ -30,26 +31,29 @@ export function RevenueChart() {
             Receita Mensal
           </h3>
           <p className="text-sm text-text-muted mt-0.5">
-            Últimos 6 meses
+            Total vs. Atribuída à Worder
           </p>
         </div>
-        <div className="flex items-center gap-2">
-          <button className="px-3 py-1.5 text-xs font-medium rounded-full bg-worder-primary/10 text-worder-primary cursor-pointer">
-            Mensal
-          </button>
-          <button className="px-3 py-1.5 text-xs font-medium rounded-full text-text-muted hover:bg-[#F0F0F0] dark:hover:bg-[#2A2A2A] transition-colors cursor-pointer">
-            Semanal
-          </button>
-          <button className="px-3 py-1.5 text-xs font-medium rounded-full text-text-muted hover:bg-[#F0F0F0] dark:hover:bg-[#2A2A2A] transition-colors cursor-pointer">
-            Diário
-          </button>
+        <div className="flex items-center gap-4 text-xs">
+          <div className="flex items-center gap-1.5">
+            <div className="w-3 h-3 rounded-full bg-[#D1D5DB]" />
+            <span className="text-text-muted">Receita Total</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <div className="w-3 h-3 rounded-full bg-worder-primary" />
+            <span className="text-text-muted">Receita Atribuída</span>
+          </div>
         </div>
       </div>
 
       <ResponsiveContainer width="100%" height={280}>
-        <AreaChart data={mockMonthlyRevenue}>
+        <AreaChart data={mockRevenueComparison}>
           <defs>
-            <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
+            <linearGradient id="colorTotal" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#D1D5DB" stopOpacity={0.15} />
+              <stop offset="95%" stopColor="#D1D5DB" stopOpacity={0} />
+            </linearGradient>
+            <linearGradient id="colorAttributed" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="#F26B2A" stopOpacity={0.2} />
               <stop offset="95%" stopColor="#F26B2A" stopOpacity={0} />
             </linearGradient>
@@ -79,17 +83,24 @@ export function RevenueChart() {
               boxShadow: "var(--shadow-card-hover)",
               fontSize: "13px",
             }}
-            formatter={(value) => [
+            formatter={(value, name) => [
               `R$ ${Number(value).toLocaleString("pt-BR")}`,
-              "Receita",
+              name === "total" ? "Receita Total" : "Receita Atribuída",
             ]}
           />
           <Area
             type="monotone"
-            dataKey="value"
+            dataKey="total"
+            stroke="#D1D5DB"
+            strokeWidth={2}
+            fill="url(#colorTotal)"
+          />
+          <Area
+            type="monotone"
+            dataKey="attributed"
             stroke="#F26B2A"
             strokeWidth={2.5}
-            fill="url(#colorRevenue)"
+            fill="url(#colorAttributed)"
           />
         </AreaChart>
       </ResponsiveContainer>

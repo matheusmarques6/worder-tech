@@ -258,41 +258,40 @@ export const mockMonthlyRevenue: ChartDataPoint[] = [
   { name: "Mar", value: 267000 },
 ];
 
+// 4 KPIs Primários (conforme spec doc seção 4.1)
+export const dashboardKPIsPrimary = [
+  { label: "Receita Total", value: "R$ 267.450", change: 12.5, changeLabel: "vs. mês anterior" },
+  { label: "Pedidos", value: "1.847", change: 8.3, changeLabel: "vs. mês anterior" },
+  { label: "Ticket Médio", value: "R$ 144,80", change: 3.7, changeLabel: "vs. mês anterior" },
+  { label: "Novos Leads", value: "3.420", change: 22.1, changeLabel: "vs. mês anterior" },
+];
+
+// 6 KPIs Secundários (conforme spec doc seção 4.1)
+export const dashboardKPIsSecondary = [
+  { label: "Carrinhos Abandonados", value: "R$ 48.200", change: -5.2, changeLabel: "vs. mês anterior" },
+  { label: "Recuperados", value: "R$ 89.450", change: 34.2, changeLabel: "vs. mês anterior" },
+  { label: "PIX Pendentes", value: "32", change: -12.0, changeLabel: "vs. mês anterior" },
+  { label: "Atendimentos Ativos", value: "18", change: 4.5, changeLabel: "vs. mês anterior" },
+  { label: "Mensagens Enviadas", value: "8.920", change: 42.1, changeLabel: "vs. mês anterior" },
+  { label: "Taxa de Recuperação", value: "68%", change: 15.8, changeLabel: "vs. mês anterior" },
+];
+
+// Backwards compat
 export const dashboardKPIs = {
-  totalRevenue: {
-    label: "Receita Total",
-    value: "R$ 267.450",
-    change: 12.5,
-    changeLabel: "vs. mês anterior",
-  },
-  totalOrders: {
-    label: "Pedidos",
-    value: "1.847",
-    change: 8.3,
-    changeLabel: "vs. mês anterior",
-  },
-  averageTicket: {
-    label: "Ticket Médio",
-    value: "R$ 144,80",
-    change: 3.7,
-    changeLabel: "vs. mês anterior",
-  },
-  conversionRate: {
-    label: "Taxa de Conversão",
-    value: "3,8%",
-    change: -0.4,
-    changeLabel: "vs. mês anterior",
-  },
-  activeCustomers: {
-    label: "Clientes Ativos",
-    value: "12.340",
-    change: 15.2,
-    changeLabel: "vs. mês anterior",
-  },
-  messagesAI: {
-    label: "Mensagens IA",
-    value: "8.920",
-    change: 42.1,
-    changeLabel: "vs. mês anterior",
-  },
+  totalRevenue: dashboardKPIsPrimary[0],
+  totalOrders: dashboardKPIsPrimary[1],
+  averageTicket: dashboardKPIsPrimary[2],
+  conversionRate: { label: "Taxa de Conversão", value: "3,8%", change: -0.4, changeLabel: "vs. mês anterior" },
+  activeCustomers: { label: "Clientes Ativos", value: "12.340", change: 15.2, changeLabel: "vs. mês anterior" },
+  messagesAI: { label: "Mensagens IA", value: "8.920", change: 42.1, changeLabel: "vs. mês anterior" },
 };
+
+// Receita total vs atribuída (gráfico comparação)
+export const mockRevenueComparison = [
+  { name: "Out", total: 125000, attributed: 42000 },
+  { name: "Nov", total: 189000, attributed: 58000 },
+  { name: "Dez", total: 245000, attributed: 72000 },
+  { name: "Jan", total: 156000, attributed: 51000 },
+  { name: "Fev", total: 198000, attributed: 67000 },
+  { name: "Mar", total: 267000, attributed: 89450 },
+];

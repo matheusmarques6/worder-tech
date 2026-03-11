@@ -2,20 +2,18 @@
 
 import { PageHeader } from "@/components/shared/page-header";
 import { KPICard } from "@/components/ui/kpi-card";
+import { HeroCard } from "@/components/dashboard/hero-card";
 import { RevenueChart } from "@/components/dashboard/revenue-chart";
+import { ChannelRevenueChart } from "@/components/dashboard/channel-revenue-chart";
+import { TopAutomations } from "@/components/dashboard/top-automations";
 import { RecentOrders } from "@/components/dashboard/recent-orders";
 import { ActiveConversations } from "@/components/dashboard/active-conversations";
-import { dashboardKPIs } from "@/data/mock";
+import { PeriodSelector } from "@/components/dashboard/period-selector";
+import { dashboardKPIsPrimary, dashboardKPIsSecondary } from "@/data/mock";
 import { motion } from "framer-motion";
 
-const kpiConfig = [
-  { ...dashboardKPIs.totalRevenue, icon: "revenue" },
-  { ...dashboardKPIs.totalOrders, icon: "orders" },
-  { ...dashboardKPIs.averageTicket, icon: "ticket" },
-  { ...dashboardKPIs.conversionRate, icon: "conversion" },
-  { ...dashboardKPIs.activeCustomers, icon: "customers" },
-  { ...dashboardKPIs.messagesAI, icon: "ai" },
-];
+const primaryIcons = ["revenue", "orders", "ticket", "customers"] as const;
+const secondaryIcons = ["orders", "revenue", "orders", "ai", "ai", "conversion"] as const;
 
 export default function DashboardPage() {
   return (
@@ -25,29 +23,50 @@ export default function DashboardPage() {
       transition={{ duration: 0.4 }}
       className="p-6 space-y-6"
     >
-      <PageHeader
-        title="Dashboard"
-        breadcrumb={["Dashboard"]}
-      />
+      {/* Header + Period Selector */}
+      <div className="flex items-center justify-between">
+        <PageHeader title="Dashboard" breadcrumb={["Dashboard"]} />
+        <PeriodSelector />
+      </div>
 
-      {/* KPI Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {kpiConfig.map((kpi, i) => (
-          <KPICard key={kpi.label} {...kpi} index={i} />
+      {/* Hero Card — Receita Recuperada (diferencial visual, spec 4.1) */}
+      <HeroCard />
+
+      {/* 4 KPIs Primários: Receita Total, Pedidos, Ticket Médio, Novos Leads */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {dashboardKPIsPrimary.map((kpi, i) => (
+          <KPICard key={kpi.label} {...kpi} icon={primaryIcons[i]} index={i} />
         ))}
       </div>
 
-      {/* Charts + Conversations Row */}
+      {/* 6 KPIs Secundários: Carrinhos, Recuperados, PIX, Atendimentos, Mensagens, Taxa */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        {dashboardKPIsSecondary.map((kpi, i) => (
+          <KPICard key={kpi.label} {...kpi} icon={secondaryIcons[i]} index={i + 4} />
+        ))}
+      </div>
+
+      {/* Gráficos: Receita Total vs Atribuída + Receita por Canal */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2">
           <RevenueChart />
+        </div>
+        <div>
+          <ChannelRevenueChart />
+        </div>
+      </div>
+
+      {/* Top Automações + Conversas Ativas */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="lg:col-span-2">
+          <TopAutomations />
         </div>
         <div>
           <ActiveConversations />
         </div>
       </div>
 
-      {/* Recent Orders */}
+      {/* Campanhas Recentes / Pedidos Recentes */}
       <RecentOrders />
     </motion.div>
   );
