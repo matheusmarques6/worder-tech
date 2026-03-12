@@ -44,14 +44,14 @@ export function ContactContext({ contact, onClose }: ContactContextProps) {
   const [activeTab, setActiveTab] = useState<ContextTab>("profile");
 
   return (
-    <div className="flex flex-col h-full bg-background-card border-l border-border" style={{ width: 320 }}>
+    <div className="flex flex-col h-full bg-card border-l border-border" style={{ width: 320 }}>
       {/* Header */}
       <div className="px-4 pt-4 pb-3 border-b border-border shrink-0">
         <div className="flex items-center justify-between mb-3">
           <span className="text-xs font-semibold uppercase tracking-wider text-text-muted">Contexto</span>
           <button
             onClick={onClose}
-            className="h-7 w-7 flex items-center justify-center rounded-lg hover:bg-bg-hover dark:hover:bg-[#2A2A2A] text-text-muted cursor-pointer"
+            className="h-7 w-7 flex items-center justify-center rounded-lg hover:bg-hover dark:hover:bg-[#2A2A2A] text-text-muted cursor-pointer"
           >
             <X size={14} weight="bold" />
           </button>
@@ -218,7 +218,7 @@ function TimelineTab() {
             transition={{ delay: i * 0.06 }}
             className="flex items-start gap-3 relative pl-7"
           >
-            <div className={cn("absolute left-0 top-0.5 h-[23px] w-[23px] rounded-full bg-bg-hover dark:bg-[#1A1A1A] flex items-center justify-center z-10")}>
+            <div className={cn("absolute left-0 top-0.5 h-[23px] w-[23px] rounded-full bg-muted dark:bg-[#1A1A1A] flex items-center justify-center z-10")}>
               <evt.icon size={12} weight="duotone" className={evt.color} />
             </div>
             <div className="flex-1">

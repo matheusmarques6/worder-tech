@@ -66,7 +66,7 @@ function Avatar({ src, name, size = "md", className }: AvatarProps) {
   return (
     <div
       className={cn(
-        "rounded-full overflow-hidden shrink-0 flex items-center justify-center bg-[#E0E0E0] text-text-muted dark:bg-[#2A2A2A]",
+        "rounded-full overflow-hidden shrink-0 flex items-center justify-center bg-border text-text-muted dark:bg-[#2A2A2A]",
         s.container,
         className
       )}

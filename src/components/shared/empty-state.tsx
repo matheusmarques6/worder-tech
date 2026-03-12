@@ -33,7 +33,7 @@ export function EmptyState({
         className
       )}
     >
-      <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#F5F5F5] dark:bg-[#2A2A2A] text-text-muted mb-4 [&>svg]:w-8 [&>svg]:h-8">
+      <div className="flex items-center justify-center w-16 h-16 rounded-full bg-bg-subtle dark:bg-[#2A2A2A] text-text-muted mb-4 [&>svg]:w-8 [&>svg]:h-8">
         {icon}
       </div>
 

@@ -46,18 +46,18 @@ export function CreateFlowModal({ isOpen, onClose }: CreateFlowModalProps) {
             className="fixed inset-0 z-50 flex items-center justify-center p-4"
           >
             <div
-              className="bg-background-card w-full max-w-[900px] max-h-[80vh] flex flex-col overflow-hidden shadow-2xl"
+              className="bg-card w-full max-w-[900px] max-h-[80vh] flex flex-col overflow-hidden shadow-2xl"
               style={{ borderRadius: "16px" }}
             >
               {/* Header */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-border-subtle">
+              <div className="flex items-center justify-between px-6 py-4 border-b border-separator">
                 <div>
                   <h2 className="text-lg font-semibold text-text-primary font-heading">Criar novo fluxo</h2>
                   <p className="text-[13px] text-text-muted mt-0.5">Escolha um template ou comece do zero</p>
                 </div>
                 <button
                   onClick={onClose}
-                  className="p-2 rounded-lg hover:bg-border-subtle transition-colors"
+                  className="p-2 rounded-lg hover:bg-hover transition-colors"
                 >
                   <X size={18} className="text-text-muted" />
                 </button>
@@ -66,7 +66,7 @@ export function CreateFlowModal({ isOpen, onClose }: CreateFlowModalProps) {
               {/* Body */}
               <div className="flex flex-1 overflow-hidden">
                 {/* Categories sidebar */}
-                <div className="w-[200px] border-r border-border-subtle py-3 flex-shrink-0">
+                <div className="w-[200px] border-r border-separator py-3 flex-shrink-0">
                   {flowTemplateCategories.map((cat) => (
                     <button
                       key={cat.key}
@@ -154,16 +154,16 @@ function TemplateCard({
       >
         {/* Mini flow preview placeholder */}
         <div
-          className="h-[60px] bg-bg-subtle mb-3 flex items-center justify-center gap-2 overflow-hidden"
+          className="h-[60px] bg-muted mb-3 flex items-center justify-center gap-2 overflow-hidden"
           style={{ borderRadius: "8px" }}
         >
           <div className="w-8 h-4 rounded bg-gradient-to-r from-[#F26B2A] to-[#F5A623]" />
           <div className="w-4 h-px bg-[#DDD]" />
-          <div className="w-8 h-4 rounded bg-[#E0E0E0]" />
+          <div className="w-8 h-4 rounded bg-border" />
           <div className="w-4 h-px bg-[#DDD]" />
-          <div className="w-8 h-4 rounded bg-[#E0E0E0]" />
+          <div className="w-8 h-4 rounded bg-border" />
           <div className="w-4 h-px bg-[#DDD]" />
-          <div className="w-8 h-4 rounded bg-[#E0E0E0]" />
+          <div className="w-8 h-4 rounded bg-border" />
         </div>
 
         <p className="text-[13px] font-semibold text-text-primary group-hover:text-worder-primary transition-colors">

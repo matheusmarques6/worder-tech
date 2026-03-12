@@ -52,6 +52,12 @@
   --bg-table-header: #1A1A1A;
   --bg-subtle: #F5F5F5;
   --border-subtle: #F0F0F0;
+  --card: #FFFFFF;
+  --muted: #F5F5F5;
+  --separator: #F0F0F0;
+  --table-header: #1A1A1A;
+  --table-header-text: #FFFFFF;
+  --hover: #F0F0F0;
 
   /* Radius */
   --radius-button: 10px;
@@ -92,6 +98,12 @@
   --bg-table-header: #2D2D2D;
   --bg-subtle: #151515;
   --border-subtle: #222222;
+  --card: #1A1A1A;
+  --muted: #151515;
+  --separator: #222222;
+  --table-header: #2D2D2D;
+  --table-header-text: #F5F5F5;
+  --hover: #2A2A2A;
 }
 
 /* ============================================
@@ -145,6 +157,12 @@
   --color-bg-table-header: var(--bg-table-header);
   --color-bg-subtle: var(--bg-subtle);
   --color-border-subtle: var(--border-subtle);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-separator: var(--separator);
+  --color-table-header: var(--table-header);
+  --color-table-header-text: var(--table-header-text);
+  --color-hover: var(--hover);
 
   /* Radius */
   --radius-button: 10px;

@@ -179,7 +179,7 @@ export function EmailCanvas({ previewMode }: EmailCanvasProps) {
       <motion.div
         animate={{ width: previewMode === "desktop" ? 600 : 375 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="bg-background-card shadow-xl relative"
+        className="bg-card shadow-xl relative"
         style={{ borderRadius: "8px", minHeight: "600px" }}
       >
         {/* Email preview */}
@@ -211,16 +211,16 @@ export function EmailCanvas({ previewMode }: EmailCanvasProps) {
                 >
                   <button
                     onClick={(e) => { e.stopPropagation(); moveBlock(block.id, "up"); }}
-                    className="p-1 bg-background-card border border-border rounded hover:bg-bg-hover transition-colors shadow-sm"
+                    className="p-1 bg-card border border-border rounded hover:bg-hover transition-colors shadow-sm"
                   >
                     <ArrowUp size={12} className="text-text-muted" />
                   </button>
-                  <button className="p-1 bg-background-card border border-border rounded cursor-grab active:cursor-grabbing shadow-sm">
+                  <button className="p-1 bg-card border border-border rounded cursor-grab active:cursor-grabbing shadow-sm">
                     <DotsSixVertical size={12} className="text-text-muted" />
                   </button>
                   <button
                     onClick={(e) => { e.stopPropagation(); moveBlock(block.id, "down"); }}
-                    className="p-1 bg-background-card border border-border rounded hover:bg-bg-hover transition-colors shadow-sm"
+                    className="p-1 bg-card border border-border rounded hover:bg-hover transition-colors shadow-sm"
                   >
                     <ArrowDown size={12} className="text-text-muted" />
                   </button>
@@ -229,7 +229,7 @@ export function EmailCanvas({ previewMode }: EmailCanvasProps) {
                 {/* Delete button */}
                 <button
                   onClick={(e) => { e.stopPropagation(); deleteBlock(block.id); }}
-                  className={`absolute -right-9 top-1/2 -translate-y-1/2 p-1.5 bg-background-card border border-border rounded hover:bg-error/10 hover:border-error/30 transition-all shadow-sm z-20 ${isSelected ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
+                  className={`absolute -right-9 top-1/2 -translate-y-1/2 p-1.5 bg-card border border-border rounded hover:bg-error/10 hover:border-error/30 transition-all shadow-sm z-20 ${isSelected ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
                 >
                   <Trash size={12} className="text-error" />
                 </button>

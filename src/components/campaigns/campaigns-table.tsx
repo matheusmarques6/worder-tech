@@ -80,7 +80,7 @@ export function CampaignsTable({ campaigns }: CampaignsTableProps) {
     <div className="overflow-x-auto">
       <table className="w-full text-sm">
         <thead>
-          <tr className="bg-bg-table-header text-white">
+          <tr className="bg-table-header text-table-header-text">
             <th className="py-3.5 px-4 text-left w-10">
               <input
                 type="checkbox"
@@ -100,7 +100,7 @@ export function CampaignsTable({ campaigns }: CampaignsTableProps) {
             <th className="py-3.5 px-4 text-center text-[11px] uppercase tracking-widest font-semibold w-12"></th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-border-subtle">
+        <tbody className="divide-y divide-separator">
           {campaigns.map((campaign, index) => (
             <motion.tr
               key={campaign.id}
@@ -180,25 +180,25 @@ export function CampaignsTable({ campaigns }: CampaignsTableProps) {
               <td className="py-3 px-4 text-center relative">
                 <button
                   onClick={() => setOpenMenu(openMenu === campaign.id ? null : campaign.id)}
-                  className="p-1.5 rounded-lg hover:bg-bg-hover transition-colors"
+                  className="p-1.5 rounded-lg hover:bg-hover transition-colors"
                 >
                   <DotsThree size={18} weight="bold" className="text-text-muted" />
                 </button>
                 {openMenu === campaign.id && (
                   <div
-                    className="absolute right-4 top-full mt-1 z-20 w-40 bg-background-card border border-border py-1 shadow-lg"
+                    className="absolute right-4 top-full mt-1 z-20 w-40 bg-card border border-border py-1 shadow-lg"
                     style={{ borderRadius: "10px" }}
                   >
-                    <button className="flex items-center gap-2 w-full px-3 py-2 text-[13px] text-text-secondary hover:bg-bg-subtle transition-colors">
+                    <button className="flex items-center gap-2 w-full px-3 py-2 text-[13px] text-text-secondary hover:bg-hover transition-colors">
                       <PencilSimple size={14} /> Editar
                     </button>
-                    <button className="flex items-center gap-2 w-full px-3 py-2 text-[13px] text-text-secondary hover:bg-bg-subtle transition-colors">
+                    <button className="flex items-center gap-2 w-full px-3 py-2 text-[13px] text-text-secondary hover:bg-hover transition-colors">
                       <Copy size={14} /> Duplicar
                     </button>
-                    <button className="flex items-center gap-2 w-full px-3 py-2 text-[13px] text-text-secondary hover:bg-bg-subtle transition-colors">
+                    <button className="flex items-center gap-2 w-full px-3 py-2 text-[13px] text-text-secondary hover:bg-hover transition-colors">
                       <Archive size={14} /> Arquivar
                     </button>
-                    <div className="my-1 border-t border-border-subtle" />
+                    <div className="my-1 border-t border-separator" />
                     <button className="flex items-center gap-2 w-full px-3 py-2 text-[13px] text-error hover:bg-error/5 transition-colors">
                       <Trash size={14} /> Excluir
                     </button>

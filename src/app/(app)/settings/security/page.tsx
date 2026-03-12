@@ -147,20 +147,20 @@ export default function SecurityPage() {
         <div className="overflow-x-auto -mx-6">
           <table className="w-full text-left text-[13px]">
             <thead>
-              <tr style={{ backgroundColor: "var(--bg-table-header)" }}>
-                <th className="px-6 py-3 font-semibold text-white text-[12px] uppercase tracking-wide first:rounded-tl-[10px]">
+              <tr className="bg-table-header">
+                <th className="px-6 py-3 font-semibold text-table-header-text text-[12px] uppercase tracking-wide first:rounded-tl-[10px]">
                   Dispositivo
                 </th>
-                <th className="px-4 py-3 font-semibold text-white text-[12px] uppercase tracking-wide">
+                <th className="px-4 py-3 font-semibold text-table-header-text text-[12px] uppercase tracking-wide">
                   IP
                 </th>
-                <th className="px-4 py-3 font-semibold text-white text-[12px] uppercase tracking-wide">
+                <th className="px-4 py-3 font-semibold text-table-header-text text-[12px] uppercase tracking-wide">
                   Localização
                 </th>
-                <th className="px-4 py-3 font-semibold text-white text-[12px] uppercase tracking-wide">
+                <th className="px-4 py-3 font-semibold text-table-header-text text-[12px] uppercase tracking-wide">
                   Última atividade
                 </th>
-                <th className="px-4 py-3 font-semibold text-white text-[12px] uppercase tracking-wide last:rounded-tr-[10px]">
+                <th className="px-4 py-3 font-semibold text-table-header-text text-[12px] uppercase tracking-wide last:rounded-tr-[10px]">
                   Ação
                 </th>
               </tr>
@@ -169,7 +169,7 @@ export default function SecurityPage() {
               {sessions.map((session) => (
                 <tr
                   key={session.id}
-                  className="border-t border-border-subtle hover:bg-bg-hover transition-colors"
+                  className="border-t border-separator hover:bg-hover transition-colors"
                 >
                   <td className="px-6 py-3">
                     <div className="flex items-center gap-3">
@@ -216,17 +216,17 @@ export default function SecurityPage() {
         <div className="overflow-x-auto -mx-6">
           <table className="w-full text-left text-[13px]">
             <thead>
-              <tr style={{ backgroundColor: "var(--bg-table-header)" }}>
-                <th className="px-6 py-3 font-semibold text-white text-[12px] uppercase tracking-wide first:rounded-tl-[10px]">
+              <tr className="bg-table-header">
+                <th className="px-6 py-3 font-semibold text-table-header-text text-[12px] uppercase tracking-wide first:rounded-tl-[10px]">
                   Ação
                 </th>
-                <th className="px-4 py-3 font-semibold text-white text-[12px] uppercase tracking-wide">
+                <th className="px-4 py-3 font-semibold text-table-header-text text-[12px] uppercase tracking-wide">
                   Usuário
                 </th>
-                <th className="px-4 py-3 font-semibold text-white text-[12px] uppercase tracking-wide">
+                <th className="px-4 py-3 font-semibold text-table-header-text text-[12px] uppercase tracking-wide">
                   Data
                 </th>
-                <th className="px-4 py-3 font-semibold text-white text-[12px] uppercase tracking-wide last:rounded-tr-[10px]">
+                <th className="px-4 py-3 font-semibold text-table-header-text text-[12px] uppercase tracking-wide last:rounded-tr-[10px]">
                   IP
                 </th>
               </tr>
@@ -235,7 +235,7 @@ export default function SecurityPage() {
               {mockActivities.map((activity) => (
                 <tr
                   key={activity.id}
-                  className="border-t border-border-subtle hover:bg-bg-hover transition-colors"
+                  className="border-t border-separator hover:bg-hover transition-colors"
                 >
                   <td className="px-6 py-3">
                     <div className="flex items-center gap-2">
@@ -252,7 +252,7 @@ export default function SecurityPage() {
           </table>
         </div>
 
-        <div className="mt-4 pt-3 border-t border-border-subtle">
+        <div className="mt-4 pt-3 border-t border-separator">
           <p className="text-[12px] text-text-muted">
             Mostrando 1-8 de 20
           </p>

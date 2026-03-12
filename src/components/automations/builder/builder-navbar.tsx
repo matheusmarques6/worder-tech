@@ -21,17 +21,17 @@ export function BuilderNavbar() {
   }
 
   return (
-    <div className="h-14 bg-background-card border-b border-border flex items-center justify-between px-4 flex-shrink-0">
+    <div className="h-14 bg-card border-b border-border flex items-center justify-between px-4 flex-shrink-0">
       {/* Left */}
       <div className="flex items-center gap-3">
         <Link
           href="/automations"
-          className="flex items-center gap-1.5 px-2 py-1.5 text-sm text-text-muted hover:text-text-primary transition-colors rounded-lg hover:bg-border-subtle"
+          className="flex items-center gap-1.5 px-2 py-1.5 text-sm text-text-muted hover:text-text-primary transition-colors rounded-lg hover:bg-hover"
         >
           <ArrowLeft size={16} weight="bold" />
           <span className="hidden sm:inline">Voltar</span>
         </Link>
-        <div className="w-px h-6 bg-[#E0E0E0]" />
+        <div className="w-px h-6 bg-border" />
         <input
           type="text"
           value={name}
@@ -58,7 +58,7 @@ export function BuilderNavbar() {
             }}
           >
             <div
-              className="absolute top-0.5 w-5 h-5 rounded-full bg-background-card shadow-sm transition-transform duration-200"
+              className="absolute top-0.5 w-5 h-5 rounded-full bg-card shadow-sm transition-transform duration-200"
               style={{
                 transform: isActive ? "translateX(22px)" : "translateX(2px)",
               }}
@@ -66,10 +66,10 @@ export function BuilderNavbar() {
           </button>
         </div>
 
-        <div className="w-px h-6 bg-[#E0E0E0]" />
+        <div className="w-px h-6 bg-border" />
 
         <button
-          className="flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-medium text-text-secondary border border-border hover:bg-border-subtle transition-colors"
+          className="flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-medium text-text-secondary border border-border hover:bg-hover transition-colors"
           style={{ borderRadius: "8px" }}
         >
           <FloppyDisk size={15} weight="fill" />

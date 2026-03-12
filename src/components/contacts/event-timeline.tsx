@@ -82,7 +82,7 @@ export function EventTimeline({ events, className }: EventTimelineProps) {
         <select
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className="h-9 text-sm border border-border bg-bg-input rounded-lg px-3 text-text-primary focus:border-worder-primary focus:ring-0 outline-none cursor-pointer"
+          className="h-9 text-sm border border-border bg-card rounded-lg px-3 text-text-primary focus:border-worder-primary focus:ring-0 outline-none cursor-pointer"
         >
           {filterOptions.map((opt) => (
             <option key={opt.value} value={opt.value}>
@@ -170,7 +170,7 @@ export function EventTimeline({ events, className }: EventTimelineProps) {
                       transition={{ duration: 0.2, ease: "easeOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="mt-2 p-3 bg-bg-hover dark:bg-[#1A1A1A] rounded-lg">
+                      <div className="mt-2 p-3 bg-muted dark:bg-[#1A1A1A] rounded-lg">
                         {Object.entries(event.details).map(([key, value]) => (
                           <div
                             key={key}

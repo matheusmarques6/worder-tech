@@ -44,12 +44,12 @@ export function BenchmarkTable() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="bg-background-card border border-border overflow-hidden"
+      className="bg-card border border-border overflow-hidden"
       style={{ borderRadius: "var(--radius-card)", boxShadow: "var(--shadow-card)" }}
     >
       <table className="w-full text-sm">
         <thead>
-          <tr className="bg-bg-table-header text-white">
+          <tr className="bg-table-header text-table-header-text">
             <th className="py-3.5 px-5 text-left text-[11px] uppercase tracking-widest font-semibold">Métrica</th>
             <th className="py-3.5 px-5 text-right text-[11px] uppercase tracking-widest font-semibold">Seu valor</th>
             <th className="py-3.5 px-5 text-right text-[11px] uppercase tracking-widest font-semibold">Benchmark setor</th>
@@ -57,7 +57,7 @@ export function BenchmarkTable() {
             <th className="py-3.5 px-5 text-left text-[11px] uppercase tracking-widest font-semibold min-w-[200px]">Comparação</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-border-subtle">
+        <tbody className="divide-y divide-separator">
           {benchmarkData.map((row, i) => {
             const status = getStatus(row);
             const yourWidth = (row.yourValue / maxVal) * 100;
@@ -94,7 +94,7 @@ export function BenchmarkTable() {
                   <div className="space-y-1.5">
                     <div className="flex items-center gap-2">
                       <span className="text-[9px] text-text-muted w-10">Você</span>
-                      <div className="flex-1 h-2 bg-border-subtle rounded-full overflow-hidden">
+                      <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: `${yourWidth}%` }}
@@ -106,7 +106,7 @@ export function BenchmarkTable() {
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="text-[9px] text-text-muted w-10">Setor</span>
-                      <div className="flex-1 h-2 bg-border-subtle rounded-full overflow-hidden">
+                      <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: `${sectorWidth}%` }}

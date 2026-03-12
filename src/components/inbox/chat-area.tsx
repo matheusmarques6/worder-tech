@@ -46,7 +46,7 @@ export function ChatArea({ messages, contact, aiSuggestion }: ChatAreaProps) {
   return (
     <div className="flex flex-col h-full min-w-[400px] flex-1">
       {/* Chat Header */}
-      <div className="flex items-center justify-between px-5 h-16 border-b border-border bg-background-card shrink-0">
+      <div className="flex items-center justify-between px-5 h-16 border-b border-border bg-card shrink-0">
         <div className="flex items-center gap-3">
           <Avatar name={contact.name} size="md" />
           <div>
@@ -71,7 +71,7 @@ export function ChatArea({ messages, contact, aiSuggestion }: ChatAreaProps) {
             <button
               key={title}
               title={title}
-              className="h-9 w-9 flex items-center justify-center rounded-lg hover:bg-bg-hover dark:hover:bg-[#2A2A2A] text-text-muted hover:text-text-primary transition-colors cursor-pointer"
+              className="h-9 w-9 flex items-center justify-center rounded-lg hover:bg-hover dark:hover:bg-[#2A2A2A] text-text-muted hover:text-text-primary transition-colors cursor-pointer"
             >
               <Icon size={18} weight="duotone" />
             </button>
@@ -80,7 +80,7 @@ export function ChatArea({ messages, contact, aiSuggestion }: ChatAreaProps) {
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto px-5 py-4 space-y-3 bg-bg-hover dark:bg-[#0D0D0D]">
+      <div className="flex-1 overflow-y-auto px-5 py-4 space-y-3 bg-muted dark:bg-[#0D0D0D]">
         {messages.map((msg, index) => {
           if (msg.direction === "system") {
             return (
@@ -120,7 +120,7 @@ export function ChatArea({ messages, contact, aiSuggestion }: ChatAreaProps) {
                     "px-3.5 py-2.5 text-sm leading-relaxed whitespace-pre-wrap",
                     isSent
                       ? "bg-[#DCF8C6] dark:bg-[#005C4B] text-[#111] dark:text-white rounded-xl rounded-br-sm"
-                      : "bg-background-card dark:bg-[#1A1A1A] text-text-primary rounded-xl rounded-bl-sm shadow-sm"
+                      : "bg-card dark:bg-[#1A1A1A] text-text-primary rounded-xl rounded-bl-sm shadow-sm"
                   )}
                 >
                   {msg.content}
@@ -150,7 +150,7 @@ export function ChatArea({ messages, contact, aiSuggestion }: ChatAreaProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="overflow-hidden border-t border-border bg-background-card"
+            className="overflow-hidden border-t border-border bg-card"
           >
             <div className="p-4">
               <div className="border-2 border-dashed border-worder-primary/40 rounded-xl p-4 bg-worder-primary/[0.03]">
@@ -182,7 +182,7 @@ export function ChatArea({ messages, contact, aiSuggestion }: ChatAreaProps) {
       </AnimatePresence>
 
       {/* Input */}
-      <div className="border-t border-border bg-background-card shrink-0">
+      <div className="border-t border-border bg-card shrink-0">
         {/* Input mode tabs */}
         <div className="flex items-center gap-0 px-4 pt-2">
           <button
@@ -190,7 +190,7 @@ export function ChatArea({ messages, contact, aiSuggestion }: ChatAreaProps) {
             className={cn(
               "px-3 py-1 text-xs font-medium rounded-t-lg border border-b-0 transition-colors cursor-pointer",
               inputMode === "reply"
-                ? "bg-background-card border-border text-text-primary"
+                ? "bg-card border-border text-text-primary"
                 : "bg-transparent border-transparent text-text-muted hover:text-text-secondary"
             )}
           >
@@ -219,8 +219,8 @@ export function ChatArea({ messages, contact, aiSuggestion }: ChatAreaProps) {
             className={cn(
               "flex items-end gap-2 rounded-xl border px-3 py-2",
               inputMode === "note"
-                ? "border-[#F5E6B8] bg-background-card"
-                : "border-border bg-bg-hover dark:bg-[#1A1A1A]"
+                ? "border-[#F5E6B8] bg-card"
+                : "border-border bg-muted dark:bg-[#1A1A1A]"
             )}
           >
             <textarea

@@ -20,7 +20,7 @@ export function DeliverabilityGauge() {
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4 }}
-      className="bg-background-card border border-border p-6 flex flex-col items-center"
+      className="bg-card border border-border p-6 flex flex-col items-center"
       style={{ borderRadius: "var(--radius-card)", boxShadow: "var(--shadow-card)" }}
     >
       <h3 className="text-base font-semibold text-text-primary font-heading mb-6">

@@ -59,7 +59,7 @@ export function OverviewChart() {
         <h3 className="text-base font-semibold text-text-primary font-heading">Receita ao longo do tempo</h3>
         <div className="flex items-center gap-4 text-xs">
           <div className="flex items-center gap-1.5">
-            <div className="w-3 h-3 rounded-full bg-[#E0E0E0]" />
+            <div className="w-3 h-3 rounded-full bg-border" />
             <span className="text-text-muted">Receita Total</span>
           </div>
           <div className="flex items-center gap-1.5">

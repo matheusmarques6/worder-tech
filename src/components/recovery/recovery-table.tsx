@@ -121,7 +121,7 @@ export function RecoveryTable({
     <div className="overflow-x-auto">
       <table className="w-full text-sm">
         <thead>
-          <tr className="bg-bg-table-header text-white">
+          <tr className="bg-table-header text-table-header-text">
             <th className="py-3.5 px-4 text-left w-10">
               <input
                 type="checkbox"
@@ -151,7 +151,7 @@ export function RecoveryTable({
             <th className="py-3.5 px-4 text-center text-[11px] uppercase tracking-widest font-semibold">Ações</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-border-subtle">
+        <tbody className="divide-y divide-separator">
           {items.map((item, index) => (
             <motion.tr
               key={item.id}
@@ -253,7 +253,7 @@ export function RecoveryTable({
                   </button>
                   <button
                     onClick={() => onViewDetails(item)}
-                    className="p-1.5 rounded-lg hover:bg-border-subtle transition-colors"
+                    className="p-1.5 rounded-lg hover:bg-hover transition-colors"
                     title="Ver detalhes"
                   >
                     <Eye size={18} weight="fill" className="text-text-muted" />

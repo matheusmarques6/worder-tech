@@ -61,16 +61,16 @@ export function ConversationList({ conversations, activeId, onSelect }: Conversa
   });
 
   return (
-    <div className="flex flex-col h-full bg-background-card border-r border-border" style={{ width: 320 }}>
+    <div className="flex flex-col h-full bg-card border-r border-border" style={{ width: 320 }}>
       {/* Header */}
       <div className="px-4 pt-4 pb-3 border-b border-border shrink-0">
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-lg font-bold text-text-primary font-heading">Atendimento</h2>
           <div className="flex items-center gap-1">
-            <button className="h-8 w-8 flex items-center justify-center rounded-lg hover:bg-bg-hover dark:hover:bg-[#2A2A2A] text-text-muted hover:text-text-primary transition-colors cursor-pointer">
+            <button className="h-8 w-8 flex items-center justify-center rounded-lg hover:bg-hover dark:hover:bg-[#2A2A2A] text-text-muted hover:text-text-primary transition-colors cursor-pointer">
               <Plus size={18} weight="bold" />
             </button>
-            <button className="h-8 w-8 flex items-center justify-center rounded-lg hover:bg-bg-hover dark:hover:bg-[#2A2A2A] text-text-muted hover:text-text-primary transition-colors cursor-pointer">
+            <button className="h-8 w-8 flex items-center justify-center rounded-lg hover:bg-hover dark:hover:bg-[#2A2A2A] text-text-muted hover:text-text-primary transition-colors cursor-pointer">
               <GearSix size={18} weight="duotone" />
             </button>
           </div>
@@ -87,7 +87,7 @@ export function ConversationList({ conversations, activeId, onSelect }: Conversa
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Pesquisar nome ou telefone..."
-            className="w-full h-9 pl-9 pr-3 text-sm bg-bg-hover dark:bg-[#2A2A2A] rounded-lg text-text-primary placeholder:text-text-muted outline-none focus:ring-1 focus:ring-worder-primary/30"
+            className="w-full h-9 pl-9 pr-3 text-sm bg-muted dark:bg-[#2A2A2A] rounded-lg text-text-primary placeholder:text-text-muted outline-none focus:ring-1 focus:ring-worder-primary/30"
           />
         </div>
       </div>

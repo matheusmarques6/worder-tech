@@ -18,7 +18,7 @@ type SubTab = "overview" | "metrics" | "best";
 function CustomBarTooltip({ active, payload, label }: { active?: boolean; payload?: Array<{ value: number }>; label?: string }) {
   if (!active || !payload?.[0]) return null;
   return (
-    <div className="bg-background-card border border-border shadow-lg p-3" style={{ borderRadius: "10px" }}>
+    <div className="bg-card border border-border shadow-lg p-3" style={{ borderRadius: "10px" }}>
       <p className="text-xs text-text-muted mb-1">{label}</p>
       <p className="text-sm font-bold text-text-primary">
         R$ {payload[0].value.toLocaleString("pt-BR")}
@@ -42,7 +42,7 @@ export function CampaignPerformance() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.3 }}
-      className="bg-background-card border border-border p-5"
+      className="bg-card border border-border p-5"
       style={{ borderRadius: "var(--radius-card)", boxShadow: "var(--shadow-card)" }}
     >
       <div className="flex items-center justify-between mb-4">
@@ -52,7 +52,7 @@ export function CampaignPerformance() {
         <select
           value={channelFilter}
           onChange={(e) => setChannelFilter(e.target.value)}
-          className="px-3 py-1.5 text-[12px] border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors appearance-none cursor-pointer"
+          className="px-3 py-1.5 text-[12px] border border-border bg-card outline-none focus:border-worder-primary transition-colors appearance-none cursor-pointer"
           style={{ borderRadius: "8px" }}
         >
           <option value="all">Todos os canais</option>
@@ -63,7 +63,7 @@ export function CampaignPerformance() {
       </div>
 
       {/* Sub-tabs */}
-      <div className="flex items-center gap-1 mb-5 border-b border-border-subtle">
+      <div className="flex items-center gap-1 mb-5 border-b border-separator">
         {subTabs.map((tab) => (
           <button
             key={tab.id}
@@ -128,7 +128,7 @@ export function CampaignPerformance() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.05 }}
-              className="p-4 bg-bg-subtle border border-border-subtle"
+              className="p-4 bg-background border border-separator"
               style={{ borderRadius: "10px" }}
             >
               <p className="text-[11px] text-text-muted uppercase tracking-wide">{m.label}</p>
@@ -155,7 +155,7 @@ export function CampaignPerformance() {
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.05 }}
-              className="flex items-center justify-between px-4 py-3 bg-bg-subtle border border-border-subtle hover:bg-[rgba(242,107,42,0.03)] transition-colors"
+              className="flex items-center justify-between px-4 py-3 bg-background border border-separator hover:bg-[rgba(242,107,42,0.03)] transition-colors"
               style={{ borderRadius: "10px" }}
             >
               <div>

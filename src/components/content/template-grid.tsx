@@ -45,7 +45,7 @@ export function TemplateGrid({ templates, search, typeFilter }: TemplateGridProp
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: i * 0.04 }}
-          className="group bg-background-card border border-border overflow-hidden hover:shadow-[var(--shadow-card-hover)] transition-all duration-200"
+          className="group bg-card border border-border overflow-hidden hover:shadow-[var(--shadow-card-hover)] transition-all duration-200"
           style={{ borderRadius: "var(--radius-card)" }}
         >
           {/* Preview thumbnail */}
@@ -56,14 +56,14 @@ export function TemplateGrid({ templates, search, typeFilter }: TemplateGridProp
             }}
           >
             {/* Mini email layout preview */}
-            <div className="absolute inset-4 bg-background-card rounded-lg shadow-sm overflow-hidden">
+            <div className="absolute inset-4 bg-card rounded-lg shadow-sm overflow-hidden">
               {tpl.layout === "hero" && (
                 <>
                   <div className="h-16" style={{ background: tpl.colors[0] }} />
                   <div className="p-3 space-y-2">
                     <div className="h-2 rounded" style={{ background: tpl.colors[0], width: "70%", opacity: 0.3 }} />
-                    <div className="h-1.5 bg-[#E0E0E0] rounded w-full" />
-                    <div className="h-1.5 bg-[#E0E0E0] rounded w-4/5" />
+                    <div className="h-1.5 bg-border rounded w-full" />
+                    <div className="h-1.5 bg-border rounded w-4/5" />
                     <div className="h-6 rounded mt-2" style={{ background: tpl.colors[0], width: "50%" }} />
                   </div>
                 </>
@@ -71,9 +71,9 @@ export function TemplateGrid({ templates, search, typeFilter }: TemplateGridProp
               {tpl.layout === "1-col" && (
                 <div className="p-3 space-y-2">
                   <div className="h-3 rounded" style={{ background: tpl.colors[0], width: "60%", opacity: 0.4 }} />
-                  <div className="h-1.5 bg-[#E0E0E0] rounded w-full" />
-                  <div className="h-1.5 bg-[#E0E0E0] rounded w-5/6" />
-                  <div className="h-1.5 bg-[#E0E0E0] rounded w-3/4" />
+                  <div className="h-1.5 bg-border rounded w-full" />
+                  <div className="h-1.5 bg-border rounded w-5/6" />
+                  <div className="h-1.5 bg-border rounded w-3/4" />
                   <div className="h-10 rounded-lg mt-2" style={{ background: `${tpl.colors[1]}44` }} />
                   <div className="h-6 rounded mx-auto mt-2" style={{ background: tpl.colors[0], width: "60%" }} />
                 </div>
@@ -84,11 +84,11 @@ export function TemplateGrid({ templates, search, typeFilter }: TemplateGridProp
                   <div className="grid grid-cols-2 gap-2 mt-2">
                     <div className="space-y-1.5">
                       <div className="h-12 rounded" style={{ background: `${tpl.colors[1]}44` }} />
-                      <div className="h-1.5 bg-[#E0E0E0] rounded" />
+                      <div className="h-1.5 bg-border rounded" />
                     </div>
                     <div className="space-y-1.5">
                       <div className="h-12 rounded" style={{ background: `${tpl.colors[0]}22` }} />
-                      <div className="h-1.5 bg-[#E0E0E0] rounded" />
+                      <div className="h-1.5 bg-border rounded" />
                     </div>
                   </div>
                   <div className="h-6 rounded mx-auto mt-1" style={{ background: tpl.colors[0], width: "60%" }} />
@@ -98,13 +98,13 @@ export function TemplateGrid({ templates, search, typeFilter }: TemplateGridProp
 
             {/* Hover overlay */}
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-200 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100">
-              <button className="flex items-center justify-center w-9 h-9 rounded-full bg-background-card shadow-md hover:scale-105 transition-transform">
+              <button className="flex items-center justify-center w-9 h-9 rounded-full bg-card shadow-md hover:scale-105 transition-transform">
                 <Eye size={16} className="text-text-primary" />
               </button>
-              <button className="flex items-center justify-center w-9 h-9 rounded-full bg-background-card shadow-md hover:scale-105 transition-transform">
+              <button className="flex items-center justify-center w-9 h-9 rounded-full bg-card shadow-md hover:scale-105 transition-transform">
                 <PencilSimple size={16} className="text-text-primary" />
               </button>
-              <button className="flex items-center justify-center w-9 h-9 rounded-full bg-background-card shadow-md hover:scale-105 transition-transform">
+              <button className="flex items-center justify-center w-9 h-9 rounded-full bg-card shadow-md hover:scale-105 transition-transform">
                 <Copy size={16} className="text-text-primary" />
               </button>
             </div>

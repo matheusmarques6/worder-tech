@@ -36,11 +36,11 @@ export function WhatsAppModal({ item, onClose, onSend }: WhatsAppModalProps) {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.25 }}
-          className="relative bg-background-card w-full max-w-lg mx-4 overflow-hidden"
+          className="relative bg-card w-full max-w-lg mx-4 overflow-hidden"
           style={{ borderRadius: "var(--radius-card)", boxShadow: "0 25px 50px -12px rgba(0,0,0,0.25)" }}
         >
           {/* Header */}
-          <div className="flex items-center justify-between p-5 border-b border-border-subtle">
+          <div className="flex items-center justify-between p-5 border-b border-separator">
             <div className="flex items-center gap-3">
               <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-[#22C55E]/10">
                 <WhatsappLogo size={20} weight="fill" className="text-[#22C55E]" />
@@ -50,7 +50,7 @@ export function WhatsAppModal({ item, onClose, onSend }: WhatsAppModalProps) {
                 <p className="text-[12px] text-text-muted">para {item.customerName}</p>
               </div>
             </div>
-            <button onClick={onClose} className="p-1.5 rounded-lg hover:bg-border-subtle transition-colors">
+            <button onClick={onClose} className="p-1.5 rounded-lg hover:bg-hover transition-colors">
               <X size={18} className="text-text-muted" />
             </button>
           </div>
@@ -58,7 +58,7 @@ export function WhatsAppModal({ item, onClose, onSend }: WhatsAppModalProps) {
           {/* Body */}
           <div className="p-5 space-y-4">
             {/* Order info */}
-            <div className="flex items-center justify-between px-4 py-3 bg-bg-subtle rounded-xl">
+            <div className="flex items-center justify-between px-4 py-3 bg-background rounded-xl">
               <div>
                 <p className="text-[12px] text-text-muted">Pedido</p>
                 <p className="font-mono font-semibold text-worder-primary text-sm">{item.orderId}</p>
@@ -86,7 +86,7 @@ export function WhatsAppModal({ item, onClose, onSend }: WhatsAppModalProps) {
             <div className="space-y-2">
               <p className="text-[12px] font-medium text-text-muted uppercase tracking-wider">Produtos mencionados</p>
               {item.products.map((product, i) => (
-                <div key={i} className="flex items-center justify-between px-3 py-2 bg-bg-subtle rounded-lg">
+                <div key={i} className="flex items-center justify-between px-3 py-2 bg-background rounded-lg">
                   <span className="text-[13px] text-text-primary">
                     {product.quantity > 1 ? `${product.quantity}x ` : ""}{product.name}
                   </span>
@@ -99,10 +99,10 @@ export function WhatsAppModal({ item, onClose, onSend }: WhatsAppModalProps) {
           </div>
 
           {/* Footer */}
-          <div className="flex items-center gap-3 p-5 border-t border-border-subtle bg-bg-subtle">
+          <div className="flex items-center gap-3 p-5 border-t border-separator bg-background">
             <button
               onClick={onClose}
-              className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 border border-border bg-background-card text-text-secondary text-sm font-medium hover:bg-border-subtle transition-colors"
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 border border-border bg-card text-text-secondary text-sm font-medium hover:bg-hover transition-colors"
               style={{ borderRadius: "10px" }}
             >
               <PencilSimple size={16} weight="bold" />
