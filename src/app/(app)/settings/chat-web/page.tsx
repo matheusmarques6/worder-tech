@@ -33,14 +33,14 @@ export default function Page() {
         {/* Preview */}
         <div>
           <label className="text-[12px] font-semibold text-text-secondary uppercase tracking-wide">Pré-visualização</label>
-          <div className="mt-1.5 flex justify-end p-6 bg-[#FAFAFA] border border-[#F0F0F0]" style={{ borderRadius: "10px" }}>
+          <div className="mt-1.5 flex justify-end p-6 bg-bg-subtle border border-border-subtle" style={{ borderRadius: "10px" }}>
             <div className="flex flex-col items-end gap-3">
               {/* Chat window mockup */}
               <motion.div
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.1 }}
-                className="w-[260px] bg-white border border-[#E0E0E0] shadow-lg overflow-hidden"
+                className="w-[260px] bg-background-card border border-border shadow-lg overflow-hidden"
                 style={{ borderRadius: "16px" }}
               >
                 {/* Header */}
@@ -59,7 +59,7 @@ export default function Page() {
                 {/* Messages */}
                 <div className="p-3 space-y-2">
                   <div
-                    className="text-[11px] text-text-primary px-3 py-2 bg-[#F5F5F5] max-w-[85%]"
+                    className="text-[11px] text-text-primary px-3 py-2 bg-bg-hover max-w-[85%]"
                     style={{ borderRadius: "12px 12px 12px 4px" }}
                   >
                     Olá! Como posso ajudar?
@@ -68,7 +68,7 @@ export default function Page() {
                 {/* Input */}
                 <div className="px-3 pb-3">
                   <div
-                    className="w-full h-8 bg-[#FAFAFA] border border-[#E8E8E8] flex items-center px-3"
+                    className="w-full h-8 bg-bg-subtle border border-border flex items-center px-3"
                     style={{ borderRadius: "10px" }}
                   >
                     <span className="text-[10px] text-text-muted">Digite sua mensagem...</span>
@@ -102,14 +102,14 @@ export default function Page() {
               type="color"
               value={corPrimaria}
               onChange={(e) => setCorPrimaria(e.target.value)}
-              className="w-10 h-10 border border-[#E0E0E0] cursor-pointer p-0.5 bg-white"
+              className="w-10 h-10 border border-border cursor-pointer p-0.5 bg-background-card"
               style={{ borderRadius: "10px" }}
             />
             <input
               type="text"
               value={corPrimaria}
               onChange={(e) => setCorPrimaria(e.target.value)}
-              className="flex-1 px-4 py-2.5 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors font-mono"
+              className="flex-1 px-4 py-2.5 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors font-mono"
               style={{ borderRadius: "10px" }}
             />
           </div>
@@ -149,7 +149,7 @@ export default function Page() {
               <textarea
                 placeholder="Defina o tom de voz, regras de atendimento, limites e comportamento do agente..."
                 rows={4}
-                className="w-full mt-1.5 px-4 py-2.5 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors resize-none"
+                className="w-full mt-1.5 px-4 py-2.5 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors resize-none"
                 style={{ borderRadius: "10px" }}
               />
             </div>
@@ -166,7 +166,7 @@ export default function Page() {
               readOnly
               value={SNIPPET_CODE}
               rows={2}
-              className="w-full px-4 py-3 text-[13px] border border-[#E0E0E0] bg-[#1A1A1A] text-[#E0E0E0] outline-none resize-none"
+              className="w-full px-4 py-3 text-[13px] border border-border bg-bg-table-header text-gray-300 outline-none resize-none"
               style={{ borderRadius: "10px", fontFamily: "JetBrains Mono, monospace" }}
             />
           </div>

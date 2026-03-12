@@ -34,10 +34,10 @@ export function DetailPanel() {
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: 360, opacity: 0 }}
           transition={{ type: "spring", stiffness: 400, damping: 35 }}
-          className="w-[360px] bg-white border-l border-[#E0E0E0] flex flex-col flex-shrink-0 h-full overflow-hidden"
+          className="w-[360px] bg-background-card border-l border-border flex flex-col flex-shrink-0 h-full overflow-hidden"
         >
           {/* Header */}
-          <div className="flex items-center justify-between px-4 py-3 border-b border-[#F0F0F0]">
+          <div className="flex items-center justify-between px-4 py-3 border-b border-border-subtle">
             <div className="flex items-center gap-2">
               <NodeIcon type={node.type} />
               <input
@@ -51,7 +51,7 @@ export function DetailPanel() {
             </div>
             <button
               onClick={() => selectNode(null)}
-              className="p-1.5 rounded-lg hover:bg-[#F0F0F0] transition-colors"
+              className="p-1.5 rounded-lg hover:bg-border-subtle transition-colors"
             >
               <X size={16} className="text-text-muted" />
             </button>
@@ -90,7 +90,7 @@ export function DetailPanel() {
 
           {/* Footer — Delete */}
           {node.type !== "trigger" && (
-            <div className="px-4 py-3 border-t border-[#F0F0F0]">
+            <div className="px-4 py-3 border-t border-border-subtle">
               <button
                 onClick={() => deleteNode(node.id)}
                 className="flex items-center justify-center gap-2 w-full py-2.5 text-[13px] font-medium text-error border border-error/20 hover:bg-error/5 transition-colors"
@@ -153,7 +153,7 @@ function EmailNodeConfig({ node }: { node: { id: string; config: Record<string, 
             })
           }
           placeholder="Assunto do e-mail..."
-          className="w-full px-3 py-2.5 text-sm bg-white border border-[#E0E0E0] focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
+          className="w-full px-3 py-2.5 text-sm bg-bg-input border border-border focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
           style={{ borderRadius: "10px" }}
         />
       </div>
@@ -161,10 +161,10 @@ function EmailNodeConfig({ node }: { node: { id: string; config: Record<string, 
       <div>
         <FieldLabel>Template</FieldLabel>
         <div
-          className="border border-[#E0E0E0] p-3 hover:border-worder-primary/30 transition-colors cursor-pointer"
+          className="border border-border p-3 hover:border-worder-primary/30 transition-colors cursor-pointer"
           style={{ borderRadius: "10px" }}
         >
-          <div className="h-[100px] bg-[#F5F5F5] rounded-lg flex items-center justify-center mb-2">
+          <div className="h-[100px] bg-bg-hover rounded-lg flex items-center justify-center mb-2">
             <PaintBrush size={24} weight="fill" className="text-text-muted/40" />
           </div>
           <p className="text-[12px] text-text-muted text-center">
@@ -178,14 +178,14 @@ function EmailNodeConfig({ node }: { node: { id: string; config: Record<string, 
         <div>
           <FieldLabel>Métricas</FieldLabel>
           <div className="grid grid-cols-2 gap-2">
-            <div className="px-3 py-2.5 bg-[#FAFAFA] rounded-lg">
+            <div className="px-3 py-2.5 bg-bg-subtle rounded-lg">
               <div className="flex items-center gap-1.5">
                 <Eye size={12} className="text-info" />
                 <span className="text-[10px] text-text-muted">Aberturas</span>
               </div>
               <p className="text-sm font-bold text-text-primary mt-0.5">23,4%</p>
             </div>
-            <div className="px-3 py-2.5 bg-[#FAFAFA] rounded-lg">
+            <div className="px-3 py-2.5 bg-bg-subtle rounded-lg">
               <div className="flex items-center gap-1.5">
                 <CursorClick size={12} className="text-worder-primary" />
                 <span className="text-[10px] text-text-muted">Cliques</span>
@@ -214,7 +214,7 @@ function WhatsAppNodeConfig({ node }: { node: { id: string; config: Record<strin
                 config: { ...node.config, template: e.target.value },
               })
             }
-            className="appearance-none w-full px-3 py-2.5 text-sm bg-white border border-[#E0E0E0] focus:border-worder-primary outline-none"
+            className="appearance-none w-full px-3 py-2.5 text-sm bg-bg-input border border-border focus:border-worder-primary outline-none"
             style={{ borderRadius: "10px" }}
           >
             <option value="">Selecionar template...</option>
@@ -247,7 +247,7 @@ function WhatsAppNodeConfig({ node }: { node: { id: string; config: Record<strin
           {["{{first_name}}", "{{cart_url}}", "{{coupon_code}}"].map((v) => (
             <span
               key={v}
-              className="px-2 py-1 text-[10px] font-mono bg-[#F5F5F5] text-text-muted rounded-md"
+              className="px-2 py-1 text-[10px] font-mono bg-bg-hover text-text-muted rounded-md"
             >
               {v}
             </span>
@@ -274,7 +274,7 @@ function SMSNodeConfig({ node }: { node: { id: string; config: Record<string, st
         maxLength={160}
         rows={3}
         placeholder="Mensagem SMS..."
-        className="w-full px-3 py-2.5 text-sm bg-white border border-[#E0E0E0] focus:border-worder-primary outline-none resize-none"
+        className="w-full px-3 py-2.5 text-sm bg-bg-input border border-border focus:border-worder-primary outline-none resize-none"
         style={{ borderRadius: "10px" }}
       />
     </div>
@@ -299,7 +299,7 @@ function DelayNodeConfig({ node }: { node: { id: string; config: Record<string, 
           }
           placeholder="5"
           min={1}
-          className="w-24 px-3 py-2.5 text-sm bg-white border border-[#E0E0E0] focus:border-worder-primary outline-none"
+          className="w-24 px-3 py-2.5 text-sm bg-bg-input border border-border focus:border-worder-primary outline-none"
           style={{ borderRadius: "10px" }}
         />
         <div className="relative flex-1">
@@ -311,7 +311,7 @@ function DelayNodeConfig({ node }: { node: { id: string; config: Record<string, 
                 label: `Aguardar ${node.config.duration || "0"} ${e.target.value}`,
               })
             }
-            className="appearance-none w-full px-3 py-2.5 text-sm bg-white border border-[#E0E0E0] focus:border-worder-primary outline-none"
+            className="appearance-none w-full px-3 py-2.5 text-sm bg-bg-input border border-border focus:border-worder-primary outline-none"
             style={{ borderRadius: "10px" }}
           >
             <option value="minutos">minutos</option>
@@ -343,7 +343,7 @@ function ConditionNodeConfig({ node }: { node: { id: string; config: Record<stri
                 config: { ...node.config, property: e.target.value },
               })
             }
-            className="appearance-none w-full px-3 py-2.5 text-sm bg-white border border-[#E0E0E0] focus:border-worder-primary outline-none"
+            className="appearance-none w-full px-3 py-2.5 text-sm bg-bg-input border border-border focus:border-worder-primary outline-none"
             style={{ borderRadius: "10px" }}
           >
             <option value="">Selecionar...</option>
@@ -370,7 +370,7 @@ function ConditionNodeConfig({ node }: { node: { id: string; config: Record<stri
                 config: { ...node.config, operator: e.target.value },
               })
             }
-            className="appearance-none w-full px-3 py-2.5 text-sm bg-white border border-[#E0E0E0] focus:border-worder-primary outline-none"
+            className="appearance-none w-full px-3 py-2.5 text-sm bg-bg-input border border-border focus:border-worder-primary outline-none"
             style={{ borderRadius: "10px" }}
           >
             <option value="">Selecionar...</option>
@@ -398,7 +398,7 @@ function ConditionNodeConfig({ node }: { node: { id: string; config: Record<stri
             })
           }
           placeholder="Valor..."
-          className="w-full px-3 py-2.5 text-sm bg-white border border-[#E0E0E0] focus:border-worder-primary outline-none"
+          className="w-full px-3 py-2.5 text-sm bg-bg-input border border-border focus:border-worder-primary outline-none"
           style={{ borderRadius: "10px" }}
         />
       </div>
@@ -434,7 +434,7 @@ function TriggerNodeConfig({ node }: { node: { id: string; config: Record<string
               label: e.target.value,
             })
           }
-          className="appearance-none w-full px-3 py-2.5 text-sm bg-white border border-[#E0E0E0] focus:border-worder-primary outline-none"
+          className="appearance-none w-full px-3 py-2.5 text-sm bg-bg-input border border-border focus:border-worder-primary outline-none"
           style={{ borderRadius: "10px" }}
         >
           <option value="">Selecionar trigger...</option>

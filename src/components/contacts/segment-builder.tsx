@@ -133,7 +133,7 @@ export function SegmentBuilder({ initialName = "", initialRules = [], onBack }: 
         <div className="flex items-center gap-3">
           <button
             onClick={onBack}
-            className="p-2 rounded-lg hover:bg-[#F0F0F0] transition-colors"
+            className="p-2 rounded-lg hover:bg-border-subtle transition-colors"
           >
             <ArrowLeft size={18} className="text-text-muted" />
           </button>
@@ -153,7 +153,7 @@ export function SegmentBuilder({ initialName = "", initialRules = [], onBack }: 
         <div className="flex items-center gap-2">
           <button
             onClick={onBack}
-            className="px-4 py-2 text-sm font-medium text-text-secondary hover:bg-[#F0F0F0] transition-colors"
+            className="px-4 py-2 text-sm font-medium text-text-secondary hover:bg-border-subtle transition-colors"
             style={{ borderRadius: "10px" }}
           >
             Cancelar
@@ -188,7 +188,7 @@ export function SegmentBuilder({ initialName = "", initialRules = [], onBack }: 
                 {/* Group operator between groups */}
                 {gi > 0 && (
                   <div className="flex items-center justify-center my-4">
-                    <div className="h-px flex-1 bg-[#E0E0E0]" />
+                    <div className="h-px flex-1 bg-border" />
                     <button
                       onClick={() => toggleGroupOperator(group.id)}
                       className="mx-3 px-3 py-1 text-[11px] font-bold uppercase tracking-wider rounded-full transition-colors"
@@ -199,12 +199,12 @@ export function SegmentBuilder({ initialName = "", initialRules = [], onBack }: 
                     >
                       {group.operator === "AND" ? "E" : "OU"}
                     </button>
-                    <div className="h-px flex-1 bg-[#E0E0E0]" />
+                    <div className="h-px flex-1 bg-border" />
                   </div>
                 )}
 
                 <div
-                  className="bg-background-card border-2 border-dashed border-[#E0E0E0] p-5 space-y-3 hover:border-worder-primary/30 transition-colors"
+                  className="bg-background-card border-2 border-dashed border-border p-5 space-y-3 hover:border-worder-primary/30 transition-colors"
                   style={{ borderRadius: "var(--radius-card)" }}
                 >
                   <div className="flex items-center justify-between mb-2">
@@ -244,7 +244,7 @@ export function SegmentBuilder({ initialName = "", initialRules = [], onBack }: 
                             >
                               {group.operator === "AND" ? "E" : "OU"}
                             </button>
-                            <div className="h-px flex-1 bg-[#F0F0F0]" />
+                            <div className="h-px flex-1 bg-border-subtle" />
                           </div>
                         )}
 
@@ -254,7 +254,7 @@ export function SegmentBuilder({ initialName = "", initialRules = [], onBack }: 
                             <select
                               value={rule.property}
                               onChange={(e) => updateRule(group.id, rule.id, "property", e.target.value)}
-                              className="appearance-none w-full pl-3 pr-8 py-2.5 text-sm bg-white border border-[#E0E0E0] text-text-primary cursor-pointer focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
+                              className="appearance-none w-full pl-3 pr-8 py-2.5 text-sm bg-bg-input border border-border text-text-primary cursor-pointer focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
                               style={{ borderRadius: "10px" }}
                             >
                               <option value="">Propriedade...</option>
@@ -270,7 +270,7 @@ export function SegmentBuilder({ initialName = "", initialRules = [], onBack }: 
                             <select
                               value={rule.operator}
                               onChange={(e) => updateRule(group.id, rule.id, "operator", e.target.value)}
-                              className="appearance-none w-full pl-3 pr-8 py-2.5 text-sm bg-white border border-[#E0E0E0] text-text-primary cursor-pointer focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
+                              className="appearance-none w-full pl-3 pr-8 py-2.5 text-sm bg-bg-input border border-border text-text-primary cursor-pointer focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
                               style={{ borderRadius: "10px" }}
                             >
                               <option value="">Operador...</option>
@@ -287,7 +287,7 @@ export function SegmentBuilder({ initialName = "", initialRules = [], onBack }: 
                             value={rule.value}
                             onChange={(e) => updateRule(group.id, rule.id, "value", e.target.value)}
                             placeholder="Valor..."
-                            className="flex-1 px-3 py-2.5 text-sm bg-white border border-[#E0E0E0] text-text-primary focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
+                            className="flex-1 px-3 py-2.5 text-sm bg-bg-input border border-border text-text-primary focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
                             style={{ borderRadius: "10px" }}
                           />
 
@@ -317,7 +317,7 @@ export function SegmentBuilder({ initialName = "", initialRules = [], onBack }: 
 
           <button
             onClick={addGroup}
-            className="flex items-center gap-2 w-full px-4 py-3 border-2 border-dashed border-[#E0E0E0] text-sm font-medium text-text-muted hover:border-worder-primary/30 hover:text-worder-primary transition-all"
+            className="flex items-center gap-2 w-full px-4 py-3 border-2 border-dashed border-border text-sm font-medium text-text-muted hover:border-worder-primary/30 hover:text-worder-primary transition-all"
             style={{ borderRadius: "var(--radius-card)" }}
           >
             <Plus size={16} weight="bold" />
@@ -357,7 +357,7 @@ export function SegmentBuilder({ initialName = "", initialRules = [], onBack }: 
               )}
             </div>
 
-            <div className="mt-4 pt-4 border-t border-[#F0F0F0] space-y-2">
+            <div className="mt-4 pt-4 border-t border-border-subtle space-y-2">
               <div className="flex items-center justify-between text-[12px]">
                 <span className="text-text-muted">Grupos de regras</span>
                 <span className="font-semibold text-text-primary">{groups.length}</span>

@@ -54,7 +54,7 @@ export function MediaGrid({ items, search, typeFilter }: MediaGridProps) {
         >
           <span className="font-medium text-worder-primary">{selectedIds.length} selecionado(s)</span>
           <div className="flex-1" />
-          <button className="flex items-center gap-1.5 px-3 py-1.5 text-[13px] text-text-secondary hover:bg-white/80 rounded-lg transition-colors">
+          <button className="flex items-center gap-1.5 px-3 py-1.5 text-[13px] text-text-secondary hover:bg-background-card/80 rounded-lg transition-colors">
             <DownloadSimple size={14} /> Baixar
           </button>
           <button className="flex items-center gap-1.5 px-3 py-1.5 text-[13px] text-error hover:bg-error/5 rounded-lg transition-colors">
@@ -99,8 +99,8 @@ export function MediaGrid({ items, search, typeFilter }: MediaGridProps) {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.25, delay: i * 0.03 }}
-              className={`group relative bg-white border overflow-hidden cursor-pointer transition-all duration-200 ${
-                isSelected ? "border-worder-primary ring-2 ring-worder-primary/20" : "border-[#E0E0E0] hover:shadow-md"
+              className={`group relative bg-background-card border overflow-hidden cursor-pointer transition-all duration-200 ${
+                isSelected ? "border-worder-primary ring-2 ring-worder-primary/20" : "border-border hover:shadow-md"
               }`}
               style={{ borderRadius: "var(--radius-card)" }}
               onClick={() => toggleSelect(item.id)}
@@ -129,13 +129,13 @@ export function MediaGrid({ items, search, typeFilter }: MediaGridProps) {
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-200 flex items-center justify-center gap-1.5 opacity-0 group-hover:opacity-100">
                   <button
                     onClick={(e) => { e.stopPropagation(); }}
-                    className="flex items-center justify-center w-8 h-8 rounded-full bg-white shadow-md hover:scale-105 transition-transform"
+                    className="flex items-center justify-center w-8 h-8 rounded-full bg-background-card shadow-md hover:scale-105 transition-transform"
                   >
                     <Eye size={14} className="text-text-primary" />
                   </button>
                   <button
                     onClick={(e) => { e.stopPropagation(); }}
-                    className="flex items-center justify-center w-8 h-8 rounded-full bg-white shadow-md hover:scale-105 transition-transform"
+                    className="flex items-center justify-center w-8 h-8 rounded-full bg-background-card shadow-md hover:scale-105 transition-transform"
                   >
                     <Copy size={14} className="text-text-primary" />
                   </button>

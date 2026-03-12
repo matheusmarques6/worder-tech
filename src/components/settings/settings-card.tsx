@@ -26,7 +26,7 @@ export function SettingsCard({ title, description, children, onSave, showSave = 
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="bg-white border border-[#E0E0E0] p-6"
+      className="bg-background-card border border-border p-6"
       style={{ borderRadius: "var(--radius-card)", boxShadow: "var(--shadow-card)" }}
     >
       <div className="mb-5">
@@ -37,7 +37,7 @@ export function SettingsCard({ title, description, children, onSave, showSave = 
       <div className="space-y-4">{children}</div>
 
       {showSave && (
-        <div className="flex items-center gap-3 mt-6 pt-4 border-t border-[#F0F0F0]">
+        <div className="flex items-center gap-3 mt-6 pt-4 border-t border-border-subtle">
           <button
             onClick={handleSave}
             className="px-5 py-2 text-[13px] font-semibold text-white transition-all hover:brightness-110"
@@ -88,7 +88,7 @@ export function SettingsField({ label, value, placeholder, type = "text", disabl
         placeholder={placeholder}
         disabled={disabled}
         onChange={(e) => onChange?.(e.target.value)}
-        className="w-full mt-1.5 px-4 py-2.5 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors disabled:bg-[#FAFAFA] disabled:text-text-muted"
+        className="w-full mt-1.5 px-4 py-2.5 text-sm text-text-primary border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors disabled:bg-bg-subtle disabled:text-text-muted"
         style={{ borderRadius: "10px" }}
       />
     </div>
@@ -110,7 +110,7 @@ export function SettingsSelect({ label, value, options, onChange }: SelectFieldP
       <select
         defaultValue={value}
         onChange={(e) => onChange?.(e.target.value)}
-        className="w-full mt-1.5 px-4 py-2.5 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors appearance-none cursor-pointer"
+        className="w-full mt-1.5 px-4 py-2.5 text-sm text-text-primary border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors appearance-none cursor-pointer"
         style={{ borderRadius: "10px" }}
       >
         {options.map((o) => (
@@ -139,10 +139,10 @@ export function SettingsToggle({ label, description, enabled, onChange }: Toggle
       <button
         onClick={() => onChange(!enabled)}
         className="relative w-10 h-5 rounded-full transition-colors flex-shrink-0"
-        style={{ background: enabled ? "linear-gradient(90deg, #F26B2A, #F5A623)" : "#DDD" }}
+        style={{ background: enabled ? "linear-gradient(90deg, #F26B2A, #F5A623)" : "var(--border)" }}
       >
         <div
-          className="absolute top-0.5 w-4 h-4 bg-white rounded-full shadow transition-transform"
+          className="absolute top-0.5 w-4 h-4 bg-background-card rounded-full shadow transition-transform"
           style={{ left: enabled ? "22px" : "2px" }}
         />
       </button>

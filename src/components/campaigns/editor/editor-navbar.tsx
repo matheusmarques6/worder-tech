@@ -21,17 +21,17 @@ export function EditorNavbar({ previewMode, onPreviewModeChange }: EditorNavbarP
   const [name, setName] = useState("Promoção Dia da Mulher");
 
   return (
-    <div className="h-14 bg-white border-b border-[#E0E0E0] flex items-center justify-between px-4 flex-shrink-0">
+    <div className="h-14 bg-background-card border-b border-border flex items-center justify-between px-4 flex-shrink-0">
       {/* Left */}
       <div className="flex items-center gap-3">
         <Link
           href="/campaigns"
-          className="flex items-center gap-1.5 px-2 py-1.5 text-sm text-text-muted hover:text-text-primary transition-colors rounded-lg hover:bg-[#F0F0F0]"
+          className="flex items-center gap-1.5 px-2 py-1.5 text-sm text-text-muted hover:text-text-primary transition-colors rounded-lg hover:bg-bg-hover"
         >
           <ArrowLeft size={16} weight="bold" />
           <span className="hidden sm:inline">Voltar</span>
         </Link>
-        <div className="w-px h-6 bg-[#E0E0E0]" />
+        <div className="w-px h-6 bg-border" />
         <input
           type="text"
           value={name}
@@ -42,7 +42,7 @@ export function EditorNavbar({ previewMode, onPreviewModeChange }: EditorNavbarP
       </div>
 
       {/* Center — Preview toggle */}
-      <div className="flex items-center bg-[#F0F0F0] p-0.5" style={{ borderRadius: "10px" }}>
+      <div className="flex items-center bg-border-subtle p-0.5" style={{ borderRadius: "10px" }}>
         <button
           onClick={() => onPreviewModeChange("desktop")}
           className="relative flex items-center gap-1.5 px-3 py-1.5 text-[12px] font-medium transition-all rounded-lg"
@@ -71,11 +71,11 @@ export function EditorNavbar({ previewMode, onPreviewModeChange }: EditorNavbarP
 
       {/* Right */}
       <div className="flex items-center gap-2">
-        <button className="flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-medium text-text-secondary border border-[#E0E0E0] hover:bg-[#F0F0F0] transition-colors" style={{ borderRadius: "8px" }}>
+        <button className="flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-medium text-text-secondary border border-border hover:bg-bg-hover transition-colors" style={{ borderRadius: "8px" }}>
           <Eye size={15} weight="fill" />
           <span className="hidden lg:inline">Visualizar</span>
         </button>
-        <button className="flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-medium text-text-secondary border border-[#E0E0E0] hover:bg-[#F0F0F0] transition-colors" style={{ borderRadius: "8px" }}>
+        <button className="flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-medium text-text-secondary border border-border hover:bg-bg-hover transition-colors" style={{ borderRadius: "8px" }}>
           <FloppyDisk size={15} weight="fill" />
           <span className="hidden lg:inline">Salvar</span>
         </button>

@@ -66,14 +66,14 @@ export default function Page() {
       />
 
       {/* Tabs */}
-      <div className="flex items-center gap-1 border-b border-[#E0E0E0]">
+      <div className="flex items-center gap-1 border-b border-border">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
             className="relative flex items-center gap-1.5 px-4 py-2.5 text-[13px] font-medium transition-colors"
             style={{
-              color: activeTab === tab.id ? "#F26B2A" : "#888",
+              color: activeTab === tab.id ? "#F26B2A" : "var(--text-muted)",
             }}
           >
             {tab.icon}
@@ -99,7 +99,7 @@ export default function Page() {
               placeholder="Buscar templates..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors"
+              className="w-full pl-9 pr-4 py-2 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors"
               style={{ borderRadius: "10px" }}
             />
           </div>
@@ -108,7 +108,7 @@ export default function Page() {
             <select
               value={typeFilter}
               onChange={(e) => setTypeFilter(e.target.value as TemplateType | "all")}
-              className="pl-8 pr-8 py-2 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors appearance-none cursor-pointer"
+              className="pl-8 pr-8 py-2 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors appearance-none cursor-pointer"
               style={{ borderRadius: "10px" }}
             >
               {typeFilters.map((f) => (
@@ -162,7 +162,7 @@ export default function Page() {
             transition={{ duration: 0.2 }}
           >
             <div
-              className="bg-white border border-[#E0E0E0] overflow-hidden"
+              className="bg-background-card border border-border overflow-hidden"
               style={{ borderRadius: "var(--radius-card)" }}
             >
               <WATemplatesTable templates={waTemplates} />

@@ -71,7 +71,7 @@ export function ChatArea({ messages, contact, aiSuggestion }: ChatAreaProps) {
             <button
               key={title}
               title={title}
-              className="h-9 w-9 flex items-center justify-center rounded-lg hover:bg-[#F5F5F5] dark:hover:bg-[#2A2A2A] text-text-muted hover:text-text-primary transition-colors cursor-pointer"
+              className="h-9 w-9 flex items-center justify-center rounded-lg hover:bg-bg-hover dark:hover:bg-[#2A2A2A] text-text-muted hover:text-text-primary transition-colors cursor-pointer"
             >
               <Icon size={18} weight="duotone" />
             </button>
@@ -80,7 +80,7 @@ export function ChatArea({ messages, contact, aiSuggestion }: ChatAreaProps) {
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto px-5 py-4 space-y-3 bg-[#F5F5F5] dark:bg-[#0D0D0D]">
+      <div className="flex-1 overflow-y-auto px-5 py-4 space-y-3 bg-bg-hover dark:bg-[#0D0D0D]">
         {messages.map((msg, index) => {
           if (msg.direction === "system") {
             return (
@@ -120,7 +120,7 @@ export function ChatArea({ messages, contact, aiSuggestion }: ChatAreaProps) {
                     "px-3.5 py-2.5 text-sm leading-relaxed whitespace-pre-wrap",
                     isSent
                       ? "bg-[#DCF8C6] dark:bg-[#005C4B] text-[#111] dark:text-white rounded-xl rounded-br-sm"
-                      : "bg-white dark:bg-[#1A1A1A] text-text-primary rounded-xl rounded-bl-sm shadow-sm"
+                      : "bg-background-card dark:bg-[#1A1A1A] text-text-primary rounded-xl rounded-bl-sm shadow-sm"
                   )}
                 >
                   {msg.content}
@@ -219,8 +219,8 @@ export function ChatArea({ messages, contact, aiSuggestion }: ChatAreaProps) {
             className={cn(
               "flex items-end gap-2 rounded-xl border px-3 py-2",
               inputMode === "note"
-                ? "border-[#F5E6B8] bg-white"
-                : "border-border bg-[#F5F5F5] dark:bg-[#1A1A1A]"
+                ? "border-[#F5E6B8] bg-background-card"
+                : "border-border bg-bg-hover dark:bg-[#1A1A1A]"
             )}
           >
             <textarea

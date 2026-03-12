@@ -79,14 +79,14 @@ export default function ListsPage() {
       />
 
       {/* Tabs */}
-      <div className="border-b border-[#F0F0F0]">
+      <div className="border-b border-border-subtle">
         <div className="flex items-center gap-1 -mb-px">
           {tabs.map((tab) => (
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
               className="relative px-5 py-3 text-sm font-medium transition-colors"
-              style={{ color: activeTab === tab.key ? "#F26B2A" : "#888" }}
+              style={{ color: activeTab === tab.key ? "#F26B2A" : "var(--text-muted)" }}
             >
               {tab.label}
               {activeTab === tab.key && (
@@ -115,7 +115,7 @@ export default function ListsPage() {
                   placeholder="Buscar lista ou segmento..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-9 pr-4 py-2 text-sm bg-white border border-[#E0E0E0] w-[260px] focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
+                  className="pl-9 pr-4 py-2 text-sm bg-bg-input border border-border w-[260px] focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
                   style={{ borderRadius: "10px" }}
                 />
               </div>
@@ -123,7 +123,7 @@ export default function ListsPage() {
                 <select
                   value={typeFilter}
                   onChange={(e) => setTypeFilter(e.target.value)}
-                  className="appearance-none pl-3 pr-8 py-2 text-sm bg-white border border-[#E0E0E0] text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
+                  className="appearance-none pl-3 pr-8 py-2 text-sm bg-bg-input border border-border text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
                   style={{ borderRadius: "10px" }}
                 >
                   <option>Todos</option>
@@ -134,7 +134,7 @@ export default function ListsPage() {
               </div>
               <div className="relative">
                 <select
-                  className="appearance-none pl-3 pr-8 py-2 text-sm bg-white border border-[#E0E0E0] text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
+                  className="appearance-none pl-3 pr-8 py-2 text-sm bg-bg-input border border-border text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
                   style={{ borderRadius: "10px" }}
                 >
                   <option>Tags</option>
@@ -164,7 +164,7 @@ export default function ListsPage() {
               </button>
               {showCreateMenu && (
                 <div
-                  className="absolute right-0 top-full mt-2 z-20 w-48 bg-white border border-[#E0E0E0] py-1 shadow-lg"
+                  className="absolute right-0 top-full mt-2 z-20 w-48 bg-background-card border border-border py-1 shadow-lg"
                   style={{ borderRadius: "10px" }}
                 >
                   <button
@@ -172,14 +172,14 @@ export default function ListsPage() {
                       setShowCreateMenu(false);
                       // TODO: open create list modal
                     }}
-                    className="flex items-center gap-2 w-full px-3 py-2.5 text-[13px] text-text-secondary hover:bg-[#FAFAFA] transition-colors"
+                    className="flex items-center gap-2 w-full px-3 py-2.5 text-[13px] text-text-secondary hover:bg-bg-hover transition-colors"
                   >
                     <ListBullets size={16} weight="fill" className="text-info" />
                     Nova Lista
                   </button>
                   <button
                     onClick={handleNewSegment}
-                    className="flex items-center gap-2 w-full px-3 py-2.5 text-[13px] text-text-secondary hover:bg-[#FAFAFA] transition-colors"
+                    className="flex items-center gap-2 w-full px-3 py-2.5 text-[13px] text-text-secondary hover:bg-bg-hover transition-colors"
                   >
                     <FunnelSimple size={16} weight="fill" className="text-worder-primary" />
                     Novo Segmento

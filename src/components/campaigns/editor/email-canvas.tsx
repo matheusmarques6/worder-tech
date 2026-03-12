@@ -93,7 +93,7 @@ function BlockRenderer({ block }: { block: EmailBlock }) {
       return (
         <div className="py-2 px-4">
           <div
-            className="w-full h-[200px] bg-[#F0F0F0] flex items-center justify-center rounded-lg border-2 border-dashed border-[#DDD]"
+            className="w-full h-[200px] bg-border-subtle flex items-center justify-center rounded-lg border-2 border-dashed border-[#DDD]"
           >
             <div className="flex flex-col items-center gap-2 text-text-muted">
               <ImageIcon size={32} weight="fill" />
@@ -120,7 +120,7 @@ function BlockRenderer({ block }: { block: EmailBlock }) {
     case "divider":
       return (
         <div className="py-3 px-4">
-          <hr className="border-[#E0E0E0]" />
+          <hr className="border-border" />
         </div>
       );
     case "spacer":
@@ -128,8 +128,8 @@ function BlockRenderer({ block }: { block: EmailBlock }) {
     case "product":
       return (
         <div className="py-3 px-4">
-          <div className="flex gap-4 p-4 border border-[#E0E0E0] rounded-xl">
-            <div className="w-20 h-20 bg-[#F0F0F0] rounded-lg flex items-center justify-center">
+          <div className="flex gap-4 p-4 border border-border rounded-xl">
+            <div className="w-20 h-20 bg-border-subtle rounded-lg flex items-center justify-center">
               <ImageIcon size={24} className="text-text-muted" />
             </div>
             <div className="flex-1">
@@ -179,7 +179,7 @@ export function EmailCanvas({ previewMode }: EmailCanvasProps) {
       <motion.div
         animate={{ width: previewMode === "desktop" ? 600 : 375 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="bg-white shadow-xl relative"
+        className="bg-background-card shadow-xl relative"
         style={{ borderRadius: "8px", minHeight: "600px" }}
       >
         {/* Email preview */}
@@ -211,16 +211,16 @@ export function EmailCanvas({ previewMode }: EmailCanvasProps) {
                 >
                   <button
                     onClick={(e) => { e.stopPropagation(); moveBlock(block.id, "up"); }}
-                    className="p-1 bg-white border border-[#E0E0E0] rounded hover:bg-[#F0F0F0] transition-colors shadow-sm"
+                    className="p-1 bg-background-card border border-border rounded hover:bg-bg-hover transition-colors shadow-sm"
                   >
                     <ArrowUp size={12} className="text-text-muted" />
                   </button>
-                  <button className="p-1 bg-white border border-[#E0E0E0] rounded cursor-grab active:cursor-grabbing shadow-sm">
+                  <button className="p-1 bg-background-card border border-border rounded cursor-grab active:cursor-grabbing shadow-sm">
                     <DotsSixVertical size={12} className="text-text-muted" />
                   </button>
                   <button
                     onClick={(e) => { e.stopPropagation(); moveBlock(block.id, "down"); }}
-                    className="p-1 bg-white border border-[#E0E0E0] rounded hover:bg-[#F0F0F0] transition-colors shadow-sm"
+                    className="p-1 bg-background-card border border-border rounded hover:bg-bg-hover transition-colors shadow-sm"
                   >
                     <ArrowDown size={12} className="text-text-muted" />
                   </button>
@@ -229,7 +229,7 @@ export function EmailCanvas({ previewMode }: EmailCanvasProps) {
                 {/* Delete button */}
                 <button
                   onClick={(e) => { e.stopPropagation(); deleteBlock(block.id); }}
-                  className={`absolute -right-9 top-1/2 -translate-y-1/2 p-1.5 bg-white border border-[#E0E0E0] rounded hover:bg-error/10 hover:border-error/30 transition-all shadow-sm z-20 ${isSelected ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
+                  className={`absolute -right-9 top-1/2 -translate-y-1/2 p-1.5 bg-background-card border border-border rounded hover:bg-error/10 hover:border-error/30 transition-all shadow-sm z-20 ${isSelected ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
                 >
                   <Trash size={12} className="text-error" />
                 </button>

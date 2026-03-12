@@ -24,7 +24,7 @@ import { metricOptions, metricTimelineData, metricBreakdownData } from "@/lib/mo
 function MetricTooltip({ active, payload, label }: { active?: boolean; payload?: Array<{ value: number }>; label?: string }) {
   if (!active || !payload?.[0]) return null;
   return (
-    <div className="bg-white border border-[#E0E0E0] shadow-lg p-3" style={{ borderRadius: "10px" }}>
+    <div className="bg-background-card border border-border shadow-lg p-3" style={{ borderRadius: "10px" }}>
       <p className="text-xs text-text-muted mb-1">{label}</p>
       <p className="text-sm font-bold text-text-primary" style={{ fontVariantNumeric: "tabular-nums" }}>
         {payload[0].value.toLocaleString("pt-BR")}
@@ -58,7 +58,7 @@ export default function Page() {
         breadcrumb={["Analytics", "Métricas"]}
         actions={
           <button
-            className="flex items-center gap-1.5 px-4 py-2 text-[13px] font-medium text-text-secondary border border-[#E0E0E0] hover:bg-[#F0F0F0] transition-colors"
+            className="flex items-center gap-1.5 px-4 py-2 text-[13px] font-medium text-text-secondary border border-border hover:bg-border-subtle transition-colors"
             style={{ borderRadius: "10px" }}
           >
             <Export size={16} weight="bold" />
@@ -72,7 +72,7 @@ export default function Page() {
         <div className="relative">
           <button
             onClick={() => setShowDropdown(!showDropdown)}
-            className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium border border-[#E0E0E0] bg-white hover:border-worder-primary transition-colors min-w-[220px] text-left"
+            className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium border border-border bg-background-card hover:border-worder-primary transition-colors min-w-[220px] text-left"
             style={{ borderRadius: "10px" }}
           >
             <span className="text-text-primary">{selectedOption?.name || "Selecione"}</span>
@@ -81,10 +81,10 @@ export default function Page() {
 
           {showDropdown && (
             <div
-              className="absolute top-full mt-1 left-0 z-30 w-72 bg-white border border-[#E0E0E0] shadow-xl overflow-hidden"
+              className="absolute top-full mt-1 left-0 z-30 w-72 bg-background-card border border-border shadow-xl overflow-hidden"
               style={{ borderRadius: "12px" }}
             >
-              <div className="p-2 border-b border-[#F0F0F0]">
+              <div className="p-2 border-b border-border-subtle">
                 <div className="relative">
                   <MagnifyingGlass size={14} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-text-muted" />
                   <input
@@ -92,7 +92,7 @@ export default function Page() {
                     placeholder="Buscar métrica..."
                     value={metricSearch}
                     onChange={(e) => setMetricSearch(e.target.value)}
-                    className="w-full pl-8 pr-3 py-2 text-sm border border-[#E0E0E0] outline-none focus:border-worder-primary"
+                    className="w-full pl-8 pr-3 py-2 text-sm border border-border outline-none focus:border-worder-primary"
                     style={{ borderRadius: "8px" }}
                     autoFocus
                   />
@@ -112,7 +112,7 @@ export default function Page() {
                             setShowDropdown(false);
                             setMetricSearch("");
                           }}
-                          className="w-full text-left px-3 py-2 text-[13px] hover:bg-[#FAFAFA] transition-colors flex items-center justify-between"
+                          className="w-full text-left px-3 py-2 text-[13px] hover:bg-bg-hover transition-colors flex items-center justify-between"
                           style={{
                             color: selectedMetric === m.id ? "#F26B2A" : undefined,
                             fontWeight: selectedMetric === m.id ? 600 : 400,
@@ -134,7 +134,7 @@ export default function Page() {
         <div className="flex items-center gap-2">
           <CalendarBlank size={14} className="text-text-muted" />
           <select
-            className="px-3 py-2 text-[12px] border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors appearance-none cursor-pointer"
+            className="px-3 py-2 text-[12px] border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors appearance-none cursor-pointer"
             style={{ borderRadius: "8px" }}
           >
             <option>Últimos 30 dias</option>
@@ -146,7 +146,7 @@ export default function Page() {
         <div className="relative">
           <FunnelSimple size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted" />
           <select
-            className="pl-8 pr-6 py-2 text-[12px] border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors appearance-none cursor-pointer"
+            className="pl-8 pr-6 py-2 text-[12px] border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors appearance-none cursor-pointer"
             style={{ borderRadius: "8px" }}
           >
             <option>Todos os canais</option>
@@ -163,7 +163,7 @@ export default function Page() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="bg-white border border-[#E0E0E0] p-5"
+        className="bg-bg-input border border-border p-5"
         style={{ borderRadius: "var(--radius-card)", boxShadow: "var(--shadow-card)" }}
       >
         <div className="flex items-center justify-between mb-5">
@@ -198,24 +198,24 @@ export default function Page() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.2 }}
-        className="bg-white border border-[#E0E0E0] overflow-hidden"
+        className="bg-background-card border border-border overflow-hidden"
         style={{ borderRadius: "var(--radius-card)", boxShadow: "var(--shadow-card)" }}
       >
-        <div className="px-5 py-4 border-b border-[#F0F0F0]">
+        <div className="px-5 py-4 border-b border-border-subtle">
           <h3 className="text-base font-semibold text-text-primary font-heading">
             Breakdown por campanha/fluxo
           </h3>
         </div>
         <table className="w-full text-sm">
           <thead>
-            <tr className="bg-[#FAFAFA]">
+            <tr className="bg-bg-subtle">
               <th className="py-3 px-5 text-left text-[11px] uppercase tracking-widest font-semibold text-text-muted">Nome</th>
               <th className="py-3 px-5 text-left text-[11px] uppercase tracking-widest font-semibold text-text-muted">Tipo</th>
               <th className="py-3 px-5 text-right text-[11px] uppercase tracking-widest font-semibold text-text-muted">Contagem</th>
               <th className="py-3 px-5 text-right text-[11px] uppercase tracking-widest font-semibold text-text-muted">Receita</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#F0F0F0]">
+          <tbody className="divide-y divide-border-subtle">
             {metricBreakdownData.map((row, i) => (
               <motion.tr
                 key={row.name}

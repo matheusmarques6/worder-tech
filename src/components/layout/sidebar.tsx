@@ -544,7 +544,7 @@ export function Sidebar() {
       <motion.aside
         className={cn(
           "fixed left-0 top-0 h-screen z-40 flex-col hidden md:flex",
-          "bg-[#1A1A1A]"
+          "bg-[#1A1A1A] dark:bg-[#0A0A0A] border-r border-[rgba(255,255,255,0.06)] dark:border-[#1A1A1A]"
         )}
         animate={{ width: sidebarCollapsed ? 68 : 260 }}
         transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
@@ -564,7 +564,7 @@ export function Sidebar() {
               onClick={closeMobileSidebar}
             />
             <motion.aside
-              className="fixed left-0 top-0 h-screen z-50 flex flex-col bg-[#1A1A1A] w-[260px] md:hidden"
+              className="fixed left-0 top-0 h-screen z-50 flex flex-col bg-[#1A1A1A] dark:bg-[#0A0A0A] w-[260px] md:hidden"
               initial={{ x: -260 }}
               animate={{ x: 0 }}
               exit={{ x: -260 }}

@@ -61,12 +61,12 @@ export default function Page() {
 
       {/* Reports table */}
       <div
-        className="bg-white border border-[#E0E0E0] overflow-hidden"
+        className="bg-background-card border border-border overflow-hidden"
         style={{ borderRadius: "var(--radius-card)", boxShadow: "var(--shadow-card)" }}
       >
         <table className="w-full text-sm">
           <thead>
-            <tr className="bg-[#1A1A1A] text-white">
+            <tr className="bg-bg-table-header text-white">
               <th className="py-3.5 px-5 text-left text-[11px] uppercase tracking-widest font-semibold">Nome</th>
               <th className="py-3.5 px-5 text-left text-[11px] uppercase tracking-widest font-semibold">Tipo</th>
               <th className="py-3.5 px-5 text-left text-[11px] uppercase tracking-widest font-semibold">Frequência</th>
@@ -75,7 +75,7 @@ export default function Page() {
               <th className="py-3.5 px-5 text-center w-28"></th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#F0F0F0]">
+          <tbody className="divide-y divide-border-subtle">
             {savedReports.map((report, i) => (
               <motion.tr
                 key={report.id}
@@ -121,22 +121,22 @@ export default function Page() {
                     <div className="relative">
                       <button
                         onClick={() => setOpenMenu(openMenu === report.id ? null : report.id)}
-                        className="p-1.5 rounded-lg hover:bg-[#F0F0F0] transition-colors"
+                        className="p-1.5 rounded-lg hover:bg-border-subtle transition-colors"
                       >
                         <DotsThree size={16} weight="bold" className="text-text-muted" />
                       </button>
                       {openMenu === report.id && (
                         <div
-                          className="absolute right-0 top-full mt-1 z-20 w-36 bg-white border border-[#E0E0E0] py-1 shadow-lg"
+                          className="absolute right-0 top-full mt-1 z-20 w-36 bg-background-card border border-border py-1 shadow-lg"
                           style={{ borderRadius: "10px" }}
                         >
-                          <button className="flex items-center gap-2 w-full px-3 py-2 text-[12px] text-text-secondary hover:bg-[#FAFAFA] transition-colors">
+                          <button className="flex items-center gap-2 w-full px-3 py-2 text-[12px] text-text-secondary hover:bg-bg-hover transition-colors">
                             <PencilSimple size={13} /> Editar
                           </button>
-                          <button className="flex items-center gap-2 w-full px-3 py-2 text-[12px] text-text-secondary hover:bg-[#FAFAFA] transition-colors">
+                          <button className="flex items-center gap-2 w-full px-3 py-2 text-[12px] text-text-secondary hover:bg-bg-hover transition-colors">
                             <Copy size={13} /> Duplicar
                           </button>
-                          <div className="my-1 border-t border-[#F0F0F0]" />
+                          <div className="my-1 border-t border-border-subtle" />
                           <button className="flex items-center gap-2 w-full px-3 py-2 text-[12px] text-error hover:bg-error/5 transition-colors">
                             <Trash size={13} /> Excluir
                           </button>
@@ -166,15 +166,15 @@ export default function Page() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white w-full max-w-[520px] overflow-hidden shadow-xl"
+              className="bg-background-card w-full max-w-[520px] overflow-hidden shadow-xl"
               style={{ borderRadius: "16px" }}
             >
               {/* Header */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-[#E0E0E0]">
+              <div className="flex items-center justify-between px-6 py-4 border-b border-border">
                 <h2 className="text-lg font-bold text-text-primary font-heading">Criar Relatório</h2>
                 <button
                   onClick={() => setShowCreate(false)}
-                  className="p-1.5 rounded-lg hover:bg-[#F0F0F0] transition-colors"
+                  className="p-1.5 rounded-lg hover:bg-border-subtle transition-colors"
                 >
                   <X size={18} className="text-text-muted" />
                 </button>
@@ -187,7 +187,7 @@ export default function Page() {
                   <input
                     type="text"
                     placeholder="ex: Performance Semanal"
-                    className="w-full mt-1.5 px-4 py-2.5 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors"
+                    className="w-full mt-1.5 px-4 py-2.5 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors"
                     style={{ borderRadius: "10px" }}
                   />
                 </div>
@@ -196,7 +196,7 @@ export default function Page() {
                   <label className="text-[12px] font-semibold text-text-secondary uppercase tracking-wide">Métricas</label>
                   <select
                     multiple
-                    className="w-full mt-1.5 px-4 py-2.5 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors h-24"
+                    className="w-full mt-1.5 px-4 py-2.5 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors h-24"
                     style={{ borderRadius: "10px" }}
                   >
                     {["Placed Order", "Revenue", "Opened Email", "Clicked Email", "Active on Site", "Viewed Product"].map((m) => (
@@ -210,7 +210,7 @@ export default function Page() {
                   <div>
                     <label className="text-[12px] font-semibold text-text-secondary uppercase tracking-wide">Período</label>
                     <select
-                      className="w-full mt-1.5 px-4 py-2.5 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors"
+                      className="w-full mt-1.5 px-4 py-2.5 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors"
                       style={{ borderRadius: "10px" }}
                     >
                       <option>Últimos 7 dias</option>
@@ -222,7 +222,7 @@ export default function Page() {
                   <div>
                     <label className="text-[12px] font-semibold text-text-secondary uppercase tracking-wide">Canal</label>
                     <select
-                      className="w-full mt-1.5 px-4 py-2.5 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors"
+                      className="w-full mt-1.5 px-4 py-2.5 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors"
                       style={{ borderRadius: "10px" }}
                     >
                       <option>Todos</option>
@@ -246,7 +246,7 @@ export default function Page() {
                 </div>
 
                 {/* Schedule toggle */}
-                <div className="flex items-center justify-between p-3 bg-[#FAFAFA] border border-[#F0F0F0]" style={{ borderRadius: "10px" }}>
+                <div className="flex items-center justify-between p-3 bg-bg-subtle border border-border-subtle" style={{ borderRadius: "10px" }}>
                   <div className="flex items-center gap-2">
                     <EnvelopeSimple size={16} weight="fill" className="text-text-muted" />
                     <div>
@@ -257,7 +257,7 @@ export default function Page() {
                   <button
                     onClick={() => setScheduleEmail(!scheduleEmail)}
                     className="relative w-10 h-5 rounded-full transition-colors"
-                    style={{ background: scheduleEmail ? "linear-gradient(90deg, #F26B2A, #F5A623)" : "#DDD" }}
+                    style={{ background: scheduleEmail ? "linear-gradient(90deg, #F26B2A, #F5A623)" : "var(--border)" }}
                   >
                     <div
                       className="absolute top-0.5 w-4 h-4 bg-white rounded-full shadow transition-transform"
@@ -275,7 +275,7 @@ export default function Page() {
                     <div>
                       <label className="text-[12px] font-semibold text-text-secondary uppercase tracking-wide">Frequência</label>
                       <select
-                        className="w-full mt-1.5 px-4 py-2.5 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors"
+                        className="w-full mt-1.5 px-4 py-2.5 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors"
                         style={{ borderRadius: "10px" }}
                       >
                         <option>Diário</option>
@@ -288,7 +288,7 @@ export default function Page() {
                       <input
                         type="email"
                         placeholder="seu@email.com"
-                        className="w-full mt-1.5 px-4 py-2.5 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors"
+                        className="w-full mt-1.5 px-4 py-2.5 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors"
                         style={{ borderRadius: "10px" }}
                       />
                     </div>
@@ -297,10 +297,10 @@ export default function Page() {
               </div>
 
               {/* Footer */}
-              <div className="flex items-center justify-end gap-3 px-6 py-4 border-t border-[#E0E0E0]">
+              <div className="flex items-center justify-end gap-3 px-6 py-4 border-t border-border">
                 <button
                   onClick={() => setShowCreate(false)}
-                  className="px-4 py-2 text-[13px] font-medium text-text-secondary border border-[#E0E0E0] hover:bg-[#F0F0F0] transition-colors"
+                  className="px-4 py-2 text-[13px] font-medium text-text-secondary border border-border hover:bg-border-subtle transition-colors"
                   style={{ borderRadius: "8px" }}
                 >
                   Cancelar

@@ -56,7 +56,7 @@ export function TabOrders({ contact }: TabOrdersProps) {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.2, delay: index * 0.05 }}
-                  className="group relative cursor-pointer transition-colors duration-200 hover:bg-[#FAFAFA] dark:hover:bg-[#1A1A1A] before:absolute before:left-0 before:top-0 before:h-full before:w-0 before:border-l-[3px] before:border-transparent before:transition-all before:duration-200 hover:before:border-worder-primary"
+                  className="group relative cursor-pointer transition-colors duration-200 hover:bg-bg-subtle dark:hover:bg-[#1A1A1A] before:absolute before:left-0 before:top-0 before:h-full before:w-0 before:border-l-[3px] before:border-transparent before:transition-all before:duration-200 hover:before:border-worder-primary"
                 >
                   <TableCell className="font-mono font-medium text-worder-primary">
                     {order.orderNumber}

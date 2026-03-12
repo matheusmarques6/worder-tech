@@ -17,7 +17,7 @@ function CustomTooltip({ active, payload, label }: { active?: boolean; payload?:
 
   return (
     <div
-      className="bg-white dark:bg-[#1A1A1A] border border-border rounded-xl shadow-lg p-3 min-w-[180px]"
+      className="bg-background-card dark:bg-[#1A1A1A] border border-border rounded-xl shadow-lg p-3 min-w-[180px]"
     >
       <p className="text-xs text-text-muted font-medium mb-2">{label}</p>
       {payload.map((entry) => (

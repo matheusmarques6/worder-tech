@@ -50,12 +50,12 @@ export function TabMetrics({ contact }: TabMetricsProps) {
               <CurrencyCircleDollar size={18} weight="duotone" className="text-worder-primary" />
               Métricas
             </CardTitle>
-            <div className="flex items-center gap-1 bg-[#F0F0F0] dark:bg-[#2A2A2A] rounded-lg p-0.5">
+            <div className="flex items-center gap-1 bg-border-subtle dark:bg-[#2A2A2A] rounded-lg p-0.5">
               <button
                 onClick={() => setPeriod("30d")}
                 className={`px-3 py-1 text-xs font-medium rounded-md transition-all cursor-pointer ${
                   period === "30d"
-                    ? "bg-white dark:bg-[#1A1A1A] text-text-primary shadow-sm"
+                    ? "bg-background-card dark:bg-[#1A1A1A] text-text-primary shadow-sm"
                     : "text-text-muted hover:text-text-secondary"
                 }`}
               >
@@ -65,7 +65,7 @@ export function TabMetrics({ contact }: TabMetricsProps) {
                 onClick={() => setPeriod("all")}
                 className={`px-3 py-1 text-xs font-medium rounded-md transition-all cursor-pointer ${
                   period === "all"
-                    ? "bg-white dark:bg-[#1A1A1A] text-text-primary shadow-sm"
+                    ? "bg-background-card dark:bg-[#1A1A1A] text-text-primary shadow-sm"
                     : "text-text-muted hover:text-text-secondary"
                 }`}
               >
@@ -152,7 +152,7 @@ export function TabMetrics({ contact }: TabMetricsProps) {
                   {formatCurrency(m.clvHistorico)}
                 </span>
               </div>
-              <div className="h-3 bg-[#F0F0F0] dark:bg-[#2A2A2A] rounded-full overflow-hidden">
+              <div className="h-3 bg-border-subtle dark:bg-[#2A2A2A] rounded-full overflow-hidden">
                 <motion.div
                   className="h-full rounded-full bg-info"
                   initial={{ width: 0 }}
@@ -168,7 +168,7 @@ export function TabMetrics({ contact }: TabMetricsProps) {
                   {formatCurrency(m.clvPrevisto)}
                 </span>
               </div>
-              <div className="h-3 bg-[#F0F0F0] dark:bg-[#2A2A2A] rounded-full overflow-hidden">
+              <div className="h-3 bg-border-subtle dark:bg-[#2A2A2A] rounded-full overflow-hidden">
                 <motion.div
                   className="h-full rounded-full bg-success"
                   initial={{ width: 0 }}
@@ -187,7 +187,7 @@ export function TabMetrics({ contact }: TabMetricsProps) {
 
           {/* Predictions */}
           <div className="space-y-3">
-            <div className="flex items-center justify-between py-2.5 px-3 bg-[#F5F5F5] dark:bg-[#1A1A1A] rounded-lg">
+            <div className="flex items-center justify-between py-2.5 px-3 bg-bg-hover dark:bg-[#1A1A1A] rounded-lg">
               <div className="flex items-center gap-2 text-sm text-text-muted">
                 <CalendarBlank size={16} weight="duotone" />
                 Próximo pedido previsto
@@ -200,7 +200,7 @@ export function TabMetrics({ contact }: TabMetricsProps) {
                 })}
               </span>
             </div>
-            <div className="flex items-center justify-between py-2.5 px-3 bg-[#F5F5F5] dark:bg-[#1A1A1A] rounded-lg">
+            <div className="flex items-center justify-between py-2.5 px-3 bg-bg-hover dark:bg-[#1A1A1A] rounded-lg">
               <div className="flex items-center gap-2 text-sm text-text-muted">
                 <Warning size={16} weight="duotone" />
                 Risco de desistência
@@ -252,7 +252,7 @@ function MetricKPI({
   bg: string;
 }) {
   return (
-    <div className="text-center p-4 rounded-xl bg-[#FAFAFA] dark:bg-[#111]">
+    <div className="text-center p-4 rounded-xl bg-bg-subtle dark:bg-[#111]">
       <div
         className={`h-10 w-10 rounded-full ${bg} flex items-center justify-center mx-auto mb-2`}
       >

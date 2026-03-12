@@ -26,17 +26,17 @@ export function FormEditorNavbar() {
   const visibleSteps = stepOrder.filter((s) => existingStepIds.has(s.id));
 
   return (
-    <div className="h-14 bg-white border-b border-[#E0E0E0] flex items-center justify-between px-4 flex-shrink-0">
+    <div className="h-14 bg-background-card border-b border-border flex items-center justify-between px-4 flex-shrink-0">
       {/* Left */}
       <div className="flex items-center gap-3 flex-shrink-0">
         <Link
           href="/site/forms"
-          className="flex items-center gap-1.5 px-2 py-1.5 text-sm text-text-muted hover:text-text-primary transition-colors rounded-lg hover:bg-[#F0F0F0]"
+          className="flex items-center gap-1.5 px-2 py-1.5 text-sm text-text-muted hover:text-text-primary transition-colors rounded-lg hover:bg-border-subtle"
         >
           <ArrowLeft size={16} weight="bold" />
           <span className="hidden sm:inline">Voltar</span>
         </Link>
-        <div className="w-px h-6 bg-[#E0E0E0]" />
+        <div className="w-px h-6 bg-border" />
         <input
           type="text"
           value={name}
@@ -50,7 +50,7 @@ export function FormEditorNavbar() {
       <div className="flex items-center gap-1 overflow-x-auto mx-4">
         {visibleSteps.map((step, i) => (
           <div key={step.id} className="flex items-center gap-1">
-            {i > 0 && <div className="w-6 h-px bg-[#E0E0E0] flex-shrink-0" />}
+            {i > 0 && <div className="w-6 h-px bg-border flex-shrink-0" />}
             <button
               onClick={() => setActiveStep(step.id)}
               className="relative px-3 py-1.5 text-[12px] font-medium whitespace-nowrap transition-all flex-shrink-0"
@@ -67,7 +67,7 @@ export function FormEditorNavbar() {
             </button>
           </div>
         ))}
-        <div className="w-6 h-px bg-[#E0E0E0] flex-shrink-0" />
+        <div className="w-6 h-px bg-border flex-shrink-0" />
         <button
           className="flex items-center justify-center w-7 h-7 rounded-lg border border-dashed border-[#DDD] text-text-muted hover:border-worder-primary hover:text-worder-primary transition-colors flex-shrink-0"
         >
@@ -78,7 +78,7 @@ export function FormEditorNavbar() {
       {/* Right */}
       <div className="flex items-center gap-2 flex-shrink-0">
         <button
-          className="flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-medium text-text-secondary border border-[#E0E0E0] hover:bg-[#F0F0F0] transition-colors"
+          className="flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-medium text-text-secondary border border-border hover:bg-border-subtle transition-colors"
           style={{ borderRadius: "8px" }}
         >
           <FloppyDisk size={15} weight="fill" />

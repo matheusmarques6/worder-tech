@@ -56,7 +56,7 @@ export default function AutomationsPage() {
               placeholder="Pesquisar fluxos..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-9 pr-4 py-2 text-sm bg-white border border-[#E0E0E0] w-[240px] focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
+              className="pl-9 pr-4 py-2 text-sm bg-bg-input border border-border w-[240px] focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
               style={{ borderRadius: "10px" }}
             />
           </div>
@@ -64,7 +64,7 @@ export default function AutomationsPage() {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="appearance-none pl-3 pr-8 py-2 text-sm bg-white border border-[#E0E0E0] text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
+              className="appearance-none pl-3 pr-8 py-2 text-sm bg-bg-input border border-border text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
               style={{ borderRadius: "10px" }}
             >
               <option>Todos</option>
@@ -79,7 +79,7 @@ export default function AutomationsPage() {
           </div>
           <div className="relative">
             <select
-              className="appearance-none pl-3 pr-8 py-2 text-sm bg-white border border-[#E0E0E0] text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
+              className="appearance-none pl-3 pr-8 py-2 text-sm bg-bg-input border border-border text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
               style={{ borderRadius: "10px" }}
             >
               <option>Tags</option>
@@ -99,7 +99,7 @@ export default function AutomationsPage() {
           <div className="relative">
             <button
               onClick={() => setShowOptionsMenu(!showOptionsMenu)}
-              className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-text-secondary border border-[#E0E0E0] hover:bg-[#F0F0F0] transition-colors"
+              className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-text-secondary border border-border hover:bg-border-subtle transition-colors"
               style={{ borderRadius: "10px" }}
             >
               <DotsThree size={16} weight="bold" />
@@ -107,10 +107,10 @@ export default function AutomationsPage() {
             </button>
             {showOptionsMenu && (
               <div
-                className="absolute right-0 top-full mt-2 z-20 w-44 bg-white border border-[#E0E0E0] py-1 shadow-lg"
+                className="absolute right-0 top-full mt-2 z-20 w-44 bg-background-card border border-border py-1 shadow-lg"
                 style={{ borderRadius: "10px" }}
               >
-                <button className="flex items-center gap-2 w-full px-3 py-2 text-[13px] text-text-secondary hover:bg-[#FAFAFA] transition-colors">
+                <button className="flex items-center gap-2 w-full px-3 py-2 text-[13px] text-text-secondary hover:bg-bg-hover transition-colors">
                   <Export size={14} /> Exportar dados
                 </button>
                 <button className="flex items-center gap-2 w-full px-3 py-2 text-[13px] text-error hover:bg-error/5 transition-colors">

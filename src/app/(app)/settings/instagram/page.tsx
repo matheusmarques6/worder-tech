@@ -30,7 +30,7 @@ export default function Page() {
 
       {/* Conexão */}
       <SettingsCard title="Conexão" description="Status da conexão com sua conta Instagram Business." showSave={false}>
-        <div className="flex items-center justify-between p-4 bg-[#FAFAFA] border border-[#F0F0F0]" style={{ borderRadius: "10px" }}>
+        <div className="flex items-center justify-between p-4 bg-bg-subtle border border-border-subtle" style={{ borderRadius: "10px" }}>
           <div className="flex items-center gap-3">
             <div
               className="w-10 h-10 flex items-center justify-center text-white"
@@ -49,7 +49,7 @@ export default function Page() {
             </div>
           </div>
           <button
-            className="flex items-center gap-1.5 px-4 py-2 text-[13px] font-semibold text-text-primary border border-[#E0E0E0] bg-white hover:bg-[#FAFAFA] transition-colors"
+            className="flex items-center gap-1.5 px-4 py-2 text-[13px] font-semibold text-text-primary border border-border bg-background-card hover:bg-bg-hover transition-colors"
             style={{ borderRadius: "10px" }}
           >
             <ArrowClockwise size={15} weight="fill" />
@@ -75,7 +75,7 @@ export default function Page() {
             {permissoes[item.key] ? (
               <CheckSquare size={22} weight="fill" className="text-worder-primary flex-shrink-0" />
             ) : (
-              <Square size={22} weight="fill" className="text-[#CCC] group-hover:text-[#AAA] flex-shrink-0 transition-colors" />
+              <Square size={22} weight="fill" className="text-text-muted group-hover:text-text-secondary flex-shrink-0 transition-colors" />
             )}
             <span className="text-[13px] font-medium text-text-primary">{item.label}</span>
           </button>
@@ -104,7 +104,7 @@ export default function Page() {
               <textarea
                 placeholder="Olá! Bem-vindo à nossa loja..."
                 rows={3}
-                className="w-full mt-1.5 px-4 py-2.5 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors resize-none"
+                className="w-full mt-1.5 px-4 py-2.5 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors resize-none"
                 style={{ borderRadius: "10px" }}
               />
             </div>

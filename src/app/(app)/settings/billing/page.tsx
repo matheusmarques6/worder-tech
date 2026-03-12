@@ -122,7 +122,7 @@ export default function Page() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <div
-              className="flex items-center justify-center w-10 h-10 rounded-[10px] bg-[#F0F0F0]"
+              className="flex items-center justify-center w-10 h-10 rounded-[10px] bg-border-subtle"
             >
               <CreditCard size={22} weight="fill" className="text-text-secondary" />
             </div>
@@ -185,7 +185,7 @@ export default function Page() {
                     </span>
                   </div>
                 </div>
-                <div className="w-full h-2.5 bg-[#F0F0F0] rounded-full overflow-hidden">
+                <div className="w-full h-2.5 bg-border-subtle rounded-full overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: `${percent}%` }}
@@ -209,7 +209,7 @@ export default function Page() {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, delay: 0.1 }}
-        className="bg-white border border-[#E0E0E0] overflow-hidden"
+        className="bg-background-card border border-border overflow-hidden"
         style={{ borderRadius: "var(--radius-card)", boxShadow: "var(--shadow-card)" }}
       >
         <div className="p-6 pb-4">
@@ -224,7 +224,7 @@ export default function Page() {
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="bg-[#1A1A1A] text-white">
+              <tr className="bg-bg-table-header text-white">
                 <th className="text-left text-[12px] font-semibold uppercase tracking-wide px-6 py-3">
                   Data
                 </th>
@@ -246,7 +246,7 @@ export default function Page() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.2, delay: 0.3 + i * 0.05 }}
-                  className="border-b border-[#F0F0F0] hover:bg-[#FAFAFA] transition-colors group"
+                  className="border-b border-border-subtle hover:bg-bg-hover transition-colors group"
                 >
                   <td className="px-6 py-3.5 text-[13px] text-text-primary">
                     {row.date}

@@ -29,14 +29,14 @@ export function PageHeader({ title, breadcrumb, description, actions, className 
                 <CaretRight
                   size={11}
                   weight="bold"
-                  className="text-[#CCC]"
+                  className="text-text-muted"
                 />
               )}
               <span
                 className={cn(
                   i === breadcrumb.length - 1
                     ? "text-text-primary font-medium"
-                    : "text-[#999]"
+                    : "text-text-muted"
                 )}
               >
                 {item}

@@ -22,7 +22,7 @@ const TableHeader = forwardRef<
 >(({ className, ...props }, ref) => (
   <thead
     ref={ref}
-    className={cn("bg-[#1A1A1A] text-white", className)}
+    className={cn("bg-bg-table-header text-white", className)}
     {...props}
   />
 ));
@@ -34,7 +34,7 @@ const TableBody = forwardRef<
 >(({ className, ...props }, ref) => (
   <tbody
     ref={ref}
-    className={cn("divide-y divide-[#F0F0F0] dark:divide-border", className)}
+    className={cn("divide-y divide-border-subtle", className)}
     {...props}
   />
 ));

@@ -51,7 +51,7 @@ export default function Page() {
             placeholder="Buscar arquivos..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-9 pr-4 py-2 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors"
+            className="w-full pl-9 pr-4 py-2 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors"
             style={{ borderRadius: "10px" }}
           />
         </div>
@@ -60,7 +60,7 @@ export default function Page() {
           <select
             value={typeFilter}
             onChange={(e) => setTypeFilter(e.target.value)}
-            className="pl-8 pr-8 py-2 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors appearance-none cursor-pointer"
+            className="pl-8 pr-8 py-2 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors appearance-none cursor-pointer"
             style={{ borderRadius: "10px" }}
           >
             <option value="all">Todos</option>

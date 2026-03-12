@@ -52,7 +52,7 @@ function BlockCard({ block }: { block: BlockItem }) {
   return (
     <motion.div
       whileHover={{ scale: 1.03 }}
-      className="flex flex-col items-center justify-center h-[72px] bg-[#F5F5F5] border border-transparent hover:bg-white hover:border-worder-primary/30 hover:shadow-sm transition-all cursor-grab active:cursor-grabbing relative"
+      className="flex flex-col items-center justify-center h-[72px] bg-bg-hover border border-transparent hover:bg-background-card hover:border-worder-primary/30 hover:shadow-sm transition-all cursor-grab active:cursor-grabbing relative"
       style={{ borderRadius: "10px" }}
     >
       <div className="text-text-muted group-hover:text-worder-primary">
@@ -85,9 +85,9 @@ export function BlockSidebar() {
   const [activeTab, setActiveTab] = useState<"content" | "styles">("content");
 
   return (
-    <div className="w-[260px] bg-white border-r border-[#E0E0E0] flex flex-col flex-shrink-0 h-full">
+    <div className="w-[260px] bg-background-card border-r border-border flex flex-col flex-shrink-0 h-full">
       {/* Tabs */}
-      <div className="flex border-b border-[#E0E0E0]">
+      <div className="flex border-b border-border">
         {(["content", "styles"] as const).map((tab) => (
           <button
             key={tab}
@@ -134,7 +134,7 @@ export function BlockSidebar() {
                     <span className="text-[12px] text-text-secondary">{item.label}</span>
                     <div className="flex items-center gap-2">
                       <div
-                        className="w-6 h-6 rounded-md border border-[#E0E0E0] cursor-pointer hover:ring-2 hover:ring-worder-primary/20"
+                        className="w-6 h-6 rounded-md border border-border cursor-pointer hover:ring-2 hover:ring-worder-primary/20"
                         style={{ background: item.color }}
                       />
                       <span className="text-[11px] font-mono text-text-muted">{item.color}</span>
@@ -150,7 +150,7 @@ export function BlockSidebar() {
                 <div className="flex items-center justify-between">
                   <span className="text-[12px] text-text-secondary">Fonte</span>
                   <select
-                    className="text-[12px] bg-[#F5F5F5] border-none rounded-md px-2 py-1 outline-none"
+                    className="text-[12px] bg-bg-hover border-none rounded-md px-2 py-1 outline-none"
                   >
                     <option>Inter</option>
                     <option>Arial</option>
@@ -160,7 +160,7 @@ export function BlockSidebar() {
                 <div className="flex items-center justify-between">
                   <span className="text-[12px] text-text-secondary">Tamanho base</span>
                   <select
-                    className="text-[12px] bg-[#F5F5F5] border-none rounded-md px-2 py-1 outline-none"
+                    className="text-[12px] bg-bg-hover border-none rounded-md px-2 py-1 outline-none"
                   >
                     <option>14px</option>
                     <option>16px</option>
@@ -176,7 +176,7 @@ export function BlockSidebar() {
                 <div className="flex items-center justify-between">
                   <span className="text-[12px] text-text-secondary">Largura max</span>
                   <select
-                    className="text-[12px] bg-[#F5F5F5] border-none rounded-md px-2 py-1 outline-none"
+                    className="text-[12px] bg-bg-hover border-none rounded-md px-2 py-1 outline-none"
                   >
                     <option>600px</option>
                     <option>640px</option>
@@ -186,7 +186,7 @@ export function BlockSidebar() {
                 <div className="flex items-center justify-between">
                   <span className="text-[12px] text-text-secondary">Padding</span>
                   <select
-                    className="text-[12px] bg-[#F5F5F5] border-none rounded-md px-2 py-1 outline-none"
+                    className="text-[12px] bg-bg-hover border-none rounded-md px-2 py-1 outline-none"
                   >
                     <option>20px</option>
                     <option>30px</option>

@@ -128,8 +128,8 @@ export function ActionSidebar() {
   }
 
   return (
-    <div className="w-[240px] bg-white border-r border-[#E0E0E0] flex flex-col flex-shrink-0 h-full overflow-y-auto">
-      <div className="px-4 py-3 border-b border-[#F0F0F0]">
+    <div className="w-[240px] bg-background-card border-r border-border flex flex-col flex-shrink-0 h-full overflow-y-auto">
+      <div className="px-4 py-3 border-b border-border-subtle">
         <h3 className="text-[12px] font-semibold text-text-muted uppercase tracking-wider">
           Ações
         </h3>
@@ -145,7 +145,7 @@ export function ActionSidebar() {
               <button
                 key={item.type}
                 onClick={() => handleAddAction(item.type)}
-                className="flex items-center gap-3 w-full px-4 py-2.5 text-left hover:bg-[#F5F5F5] transition-colors group"
+                className="flex items-center gap-3 w-full px-4 py-2.5 text-left hover:bg-bg-hover transition-colors group"
               >
                 <div
                   className="flex items-center justify-center w-8 h-8 rounded-lg flex-shrink-0 transition-transform group-hover:scale-105"

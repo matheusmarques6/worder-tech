@@ -73,7 +73,7 @@ export function SegmentLibrary({ onUseTemplate }: SegmentLibraryProps) {
 
             <button
               onClick={() => onUseTemplate(template)}
-              className="flex items-center justify-center gap-2 w-full px-4 py-2.5 text-sm font-medium border border-[#E0E0E0] bg-white text-text-secondary hover:border-worder-primary hover:text-worder-primary transition-all group/btn"
+              className="flex items-center justify-center gap-2 w-full px-4 py-2.5 text-sm font-medium border border-border bg-background-card text-text-secondary hover:border-worder-primary hover:text-worder-primary transition-all group/btn"
               style={{ borderRadius: "10px" }}
             >
               Usar template

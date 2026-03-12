@@ -105,7 +105,7 @@ export function CampaignWizard({ onBack }: CampaignWizardProps) {
       >
         <div className="flex items-center justify-between mb-5">
           <div className="flex items-center gap-3">
-            <button onClick={onBack} className="p-2 rounded-lg hover:bg-[#F0F0F0] transition-colors">
+            <button onClick={onBack} className="p-2 rounded-lg hover:bg-bg-hover transition-colors">
               <ArrowLeft size={18} className="text-text-muted" />
             </button>
             <input
@@ -255,7 +255,7 @@ export function CampaignWizard({ onBack }: CampaignWizardProps) {
                       value={subject}
                       onChange={(e) => setSubject(e.target.value)}
                       placeholder="Ex: Sua oferta exclusiva chegou! 🔥"
-                      className="w-full px-4 py-3 text-sm bg-white border border-[#E0E0E0] text-text-primary focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
+                      className="w-full px-4 py-3 text-sm bg-bg-input border border-border text-text-primary focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
                       style={{ borderRadius: "10px" }}
                     />
                   </div>
@@ -266,7 +266,7 @@ export function CampaignWizard({ onBack }: CampaignWizardProps) {
                     <input
                       type="text"
                       placeholder="Texto que aparece após o assunto na inbox..."
-                      className="w-full px-4 py-3 text-sm bg-white border border-[#E0E0E0] text-text-primary focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
+                      className="w-full px-4 py-3 text-sm bg-bg-input border border-border text-text-primary focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
                       style={{ borderRadius: "10px" }}
                     />
                   </div>
@@ -277,7 +277,7 @@ export function CampaignWizard({ onBack }: CampaignWizardProps) {
                       Template
                     </label>
                     <div
-                      className="border-2 border-dashed border-[#E0E0E0] p-8 text-center hover:border-worder-primary/40 transition-colors cursor-pointer"
+                      className="border-2 border-dashed border-border p-8 text-center hover:border-worder-primary/40 transition-colors cursor-pointer"
                       style={{ borderRadius: "var(--radius-card)" }}
                     >
                       <div className="flex flex-col items-center gap-3">
@@ -290,7 +290,7 @@ export function CampaignWizard({ onBack }: CampaignWizardProps) {
                         </div>
                         <div className="flex items-center gap-3 mt-2">
                           <button
-                            className="flex items-center gap-2 px-4 py-2 text-sm font-medium border border-[#E0E0E0] bg-white text-text-secondary hover:bg-[#F0F0F0] transition-colors"
+                            className="flex items-center gap-2 px-4 py-2 text-sm font-medium border border-border bg-background-card text-text-secondary hover:bg-bg-hover transition-colors"
                             style={{ borderRadius: "10px" }}
                           >
                             <ImageIcon size={16} weight="fill" />
@@ -322,7 +322,7 @@ export function CampaignWizard({ onBack }: CampaignWizardProps) {
                     {["Recuperação de carrinho", "Lançamento de produto", "Cupom de desconto"].map((tpl) => (
                       <button
                         key={tpl}
-                        className="flex items-center gap-3 w-full px-4 py-3 border border-[#E0E0E0] hover:border-[#22C55E] transition-all text-left"
+                        className="flex items-center gap-3 w-full px-4 py-3 border border-border hover:border-[#22C55E] transition-all text-left"
                         style={{ borderRadius: "12px" }}
                       >
                         <WhatsappLogo size={18} weight="fill" className="text-[#22C55E]" />
@@ -343,7 +343,7 @@ export function CampaignWizard({ onBack }: CampaignWizardProps) {
                     placeholder="Ex: [LOJA] Seu cupom PROMO10 vale 10% off! Acesse: link.co/abc"
                     maxLength={160}
                     rows={3}
-                    className="w-full px-4 py-3 text-sm bg-white border border-[#E0E0E0] text-text-primary focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all resize-none"
+                    className="w-full px-4 py-3 text-sm bg-bg-input border border-border text-text-primary focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all resize-none"
                     style={{ borderRadius: "10px" }}
                   />
                 </div>
@@ -361,21 +361,21 @@ export function CampaignWizard({ onBack }: CampaignWizardProps) {
                 <h3 className="text-[12px] font-semibold text-text-muted uppercase tracking-wider">Resumo da Campanha</h3>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="px-4 py-3 bg-[#FAFAFA] rounded-xl">
+                  <div className="px-4 py-3 bg-bg-subtle rounded-xl">
                     <p className="text-[11px] text-text-muted mb-1">Nome</p>
                     <p className="text-sm font-medium text-text-primary">{campaignName || "Sem nome"}</p>
                   </div>
-                  <div className="px-4 py-3 bg-[#FAFAFA] rounded-xl">
+                  <div className="px-4 py-3 bg-bg-subtle rounded-xl">
                     <p className="text-[11px] text-text-muted mb-1">Canal</p>
                     <p className="text-sm font-medium text-text-primary capitalize">{selectedChannel || "—"}</p>
                   </div>
-                  <div className="px-4 py-3 bg-[#FAFAFA] rounded-xl">
+                  <div className="px-4 py-3 bg-bg-subtle rounded-xl">
                     <p className="text-[11px] text-text-muted mb-1">Público</p>
                     <p className="text-sm font-medium text-text-primary">
                       {audiences.find((a) => a.id === selectedAudience)?.name || "—"}
                     </p>
                   </div>
-                  <div className="px-4 py-3 bg-[#FAFAFA] rounded-xl">
+                  <div className="px-4 py-3 bg-bg-subtle rounded-xl">
                     <p className="text-[11px] text-text-muted mb-1">Destinatários</p>
                     <p className="text-sm font-bold text-text-primary" style={{ fontVariantNumeric: "tabular-nums" }}>
                       {audiences.find((a) => a.id === selectedAudience)?.count.toLocaleString("pt-BR") || "—"}
@@ -384,7 +384,7 @@ export function CampaignWizard({ onBack }: CampaignWizardProps) {
                 </div>
 
                 {selectedChannel === "email" && subject && (
-                  <div className="px-4 py-3 bg-[#FAFAFA] rounded-xl">
+                  <div className="px-4 py-3 bg-bg-subtle rounded-xl">
                     <p className="text-[11px] text-text-muted mb-1">Assunto</p>
                     <p className="text-sm font-medium text-text-primary">{subject}</p>
                   </div>
@@ -441,7 +441,7 @@ export function CampaignWizard({ onBack }: CampaignWizardProps) {
                       <CalendarBlank size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted" />
                       <input
                         type="date"
-                        className="w-full pl-9 pr-4 py-2.5 text-sm bg-white border border-[#E0E0E0] focus:border-worder-primary outline-none"
+                        className="w-full pl-9 pr-4 py-2.5 text-sm bg-bg-input border border-border focus:border-worder-primary outline-none"
                         style={{ borderRadius: "10px" }}
                       />
                     </div>
@@ -449,7 +449,7 @@ export function CampaignWizard({ onBack }: CampaignWizardProps) {
                       <Clock size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted" />
                       <input
                         type="time"
-                        className="w-full pl-9 pr-4 py-2.5 text-sm bg-white border border-[#E0E0E0] focus:border-worder-primary outline-none"
+                        className="w-full pl-9 pr-4 py-2.5 text-sm bg-bg-input border border-border focus:border-worder-primary outline-none"
                         style={{ borderRadius: "10px" }}
                       />
                     </div>
@@ -479,7 +479,7 @@ export function CampaignWizard({ onBack }: CampaignWizardProps) {
       <div className="flex items-center justify-between">
         <button
           onClick={() => step > 1 ? setStep((step - 1) as WizardStep) : onBack()}
-          className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-text-secondary hover:bg-[#F0F0F0] transition-colors"
+          className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-text-secondary hover:bg-bg-hover transition-colors"
           style={{ borderRadius: "10px" }}
         >
           <ArrowLeft size={16} weight="bold" />

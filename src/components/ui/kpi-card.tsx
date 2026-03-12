@@ -129,7 +129,7 @@ export function KPICard({
       </div>
 
       <div className="flex-1 min-w-0">
-        <p className="text-[13px] text-[#888] font-medium truncate" style={{ letterSpacing: "0.02em" }}>
+        <p className="text-[13px] text-text-muted font-medium truncate" style={{ letterSpacing: "0.02em" }}>
           {label}
         </p>
         <div className="flex items-center gap-3 mt-1">

@@ -121,22 +121,22 @@ export default function RecoveryPage() {
         style={{ borderRadius: "var(--radius-card)", boxShadow: "var(--shadow-card)" }}
       >
         {/* Tabs */}
-        <div className="border-b border-[#F0F0F0] px-5">
+        <div className="border-b border-border-subtle px-5">
           <div className="flex items-center gap-1 -mb-px overflow-x-auto">
             {tabs.map((tab) => (
               <button
                 key={tab.key}
                 onClick={() => handleTabChange(tab.key)}
                 className="relative flex items-center gap-2 px-4 py-3.5 text-sm font-medium transition-colors whitespace-nowrap"
-                style={{ color: activeTab === tab.key ? "#F26B2A" : "#888" }}
+                style={{ color: activeTab === tab.key ? "#F26B2A" : "var(--text-muted)" }}
               >
                 {tab.icon}
                 <span>{tab.label}</span>
                 <span
                   className="ml-1 px-1.5 py-0.5 text-[10px] font-bold rounded-full"
                   style={{
-                    background: activeTab === tab.key ? "rgba(242,107,42,0.1)" : "#F0F0F0",
-                    color: activeTab === tab.key ? "#F26B2A" : "#888",
+                    background: activeTab === tab.key ? "rgba(242,107,42,0.1)" : "var(--border-subtle)",
+                    color: activeTab === tab.key ? "#F26B2A" : "var(--text-muted)",
                   }}
                 >
                   {tabCounts[tab.key]}
@@ -155,7 +155,7 @@ export default function RecoveryPage() {
         </div>
 
         {/* Action Bar */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 px-5 py-4 border-b border-[#F0F0F0] bg-[#FAFAFA]">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 px-5 py-4 border-b border-border-subtle bg-bg-subtle">
           <div className="flex items-center gap-3 flex-wrap">
             {/* Search */}
             <div className="relative">
@@ -165,7 +165,7 @@ export default function RecoveryPage() {
                 placeholder="Buscar pedido, cliente..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-9 pr-4 py-2 text-sm bg-white border border-[#E0E0E0] w-[240px] focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
+                className="pl-9 pr-4 py-2 text-sm bg-bg-input border border-border w-[240px] focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
                 style={{ borderRadius: "10px" }}
               />
             </div>
@@ -174,7 +174,7 @@ export default function RecoveryPage() {
               <select
                 value={selectedPeriod}
                 onChange={(e) => setSelectedPeriod(e.target.value)}
-                className="appearance-none pl-3 pr-8 py-2 text-sm bg-white border border-[#E0E0E0] text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
+                className="appearance-none pl-3 pr-8 py-2 text-sm bg-bg-input border border-border text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
                 style={{ borderRadius: "10px" }}
               >
                 {periodOptions.map((opt) => (
@@ -188,7 +188,7 @@ export default function RecoveryPage() {
               <select
                 value={selectedStatus}
                 onChange={(e) => setSelectedStatus(e.target.value)}
-                className="appearance-none pl-3 pr-8 py-2 text-sm bg-white border border-[#E0E0E0] text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
+                className="appearance-none pl-3 pr-8 py-2 text-sm bg-bg-input border border-border text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
                 style={{ borderRadius: "10px" }}
               >
                 {statusOptions.map((opt) => (
@@ -200,7 +200,7 @@ export default function RecoveryPage() {
           </div>
           <div className="flex items-center gap-2">
             <button
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-text-secondary bg-white border border-[#E0E0E0] hover:bg-[#F0F0F0] transition-colors"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-text-secondary bg-background-card border border-border hover:bg-border-subtle transition-colors"
               style={{ borderRadius: "10px" }}
             >
               <Export size={16} weight="bold" />

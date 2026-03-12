@@ -46,6 +46,13 @@
   --shadow-button-primary: 0 2px 8px rgba(242, 107, 42, 0.3);
   --shadow-button-primary-hover: 0 4px 16px rgba(242, 107, 42, 0.4);
 
+  /* Input / Hover / Table (light) */
+  --bg-input: #FFFFFF;
+  --bg-hover: #F5F5F5;
+  --bg-table-header: #1A1A1A;
+  --bg-subtle: #F5F5F5;
+  --border-subtle: #F0F0F0;
+
   /* Radius */
   --radius-button: 10px;
   --radius-card: 12px;
@@ -63,18 +70,28 @@
 .dark {
   --background: #0A0A0A;
   --background-card: #1A1A1A;
-  --foreground: #EDEDED;
+  --foreground: #F5F5F5;
 
-  --text-primary: #EDEDED;
-  --text-secondary: #A0A0A0;
+  --text-primary: #F5F5F5;
+  --text-secondary: #999999;
   --text-muted: #666666;
 
-  --border: #2A2A2A;
+  --border: #333333;
 
   --sidebar-bg: #0A0A0A;
+  --sidebar-text: #777777;
 
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-button-primary: 0 2px 8px rgba(242, 107, 42, 0.2);
+  --shadow-button-primary-hover: 0 4px 16px rgba(242, 107, 42, 0.3);
+
+  /* Dark-specific tokens */
+  --bg-input: #2D2D2D;
+  --bg-hover: #2D2D2D;
+  --bg-table-header: #2D2D2D;
+  --bg-subtle: #151515;
+  --border-subtle: #222222;
 }
 
 /* ============================================
@@ -122,12 +139,30 @@
   --font-body: var(--font-body);
   --font-mono: var(--font-mono);
 
+  /* Input / Hover / Table */
+  --color-bg-input: var(--bg-input);
+  --color-bg-hover: var(--bg-hover);
+  --color-bg-table-header: var(--bg-table-header);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-border-subtle: var(--border-subtle);
+
   /* Radius */
   --radius-button: 10px;
   --radius-card: 12px;
   --radius-modal: 16px;
   --radius-input: 8px;
   --radius-pill: 20px;
+}
+
+/* ============================================
+   THEME TRANSITION
+   ============================================ */
+
+html.transitioning,
+html.transitioning *,
+html.transitioning *::before,
+html.transitioning *::after {
+  transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease, box-shadow 200ms ease !important;
 }
 
 /* ============================================

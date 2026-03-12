@@ -67,7 +67,7 @@ export function ActiveConversations() {
             >
               {/* Avatar */}
               <div className="relative flex-shrink-0">
-                <div className="w-10 h-10 rounded-full bg-[#F0F0F0] dark:bg-[#2A2A2A] flex items-center justify-center text-sm font-bold text-text-primary">
+                <div className="w-10 h-10 rounded-full bg-border-subtle dark:bg-[#2A2A2A] flex items-center justify-center text-sm font-bold text-text-primary">
                   {conv.customerName
                     .split(" ")
                     .map((n) => n[0])

@@ -44,7 +44,7 @@ export default function Page() {
         breadcrumb={["Conteúdo", "Produtos"]}
         actions={
           <button
-            className="flex items-center gap-1.5 px-4 py-2 text-[13px] font-medium text-text-secondary border border-[#E0E0E0] hover:bg-[#F0F0F0] transition-colors"
+            className="flex items-center gap-1.5 px-4 py-2 text-[13px] font-medium text-text-secondary border border-border hover:bg-border-subtle transition-colors"
             style={{ borderRadius: "10px" }}
           >
             <ArrowsClockwise size={16} weight="bold" />
@@ -55,7 +55,7 @@ export default function Page() {
 
       {/* KPI strip */}
       <div
-        className="flex items-center gap-6 px-5 py-3.5 bg-white border border-[#E0E0E0]"
+        className="flex items-center gap-6 px-5 py-3.5 bg-background-card border border-border"
         style={{ borderRadius: "var(--radius-card)" }}
       >
         <div className="flex items-center gap-2">
@@ -69,14 +69,14 @@ export default function Page() {
             <p className="text-[11px] text-text-muted">Produtos</p>
           </div>
         </div>
-        <div className="w-px h-10 bg-[#E0E0E0]" />
+        <div className="w-px h-10 bg-border" />
         <div>
           <p className="text-[20px] font-bold text-success" style={{ fontVariantNumeric: "tabular-nums" }}>
             {publishedCount}
           </p>
           <p className="text-[11px] text-text-muted">Publicados</p>
         </div>
-        <div className="w-px h-10 bg-[#E0E0E0]" />
+        <div className="w-px h-10 bg-border" />
         <div>
           <p className="text-[20px] font-bold text-text-primary" style={{ fontVariantNumeric: "tabular-nums" }}>
             {totalStock.toLocaleString("pt-BR")}
@@ -91,14 +91,14 @@ export default function Page() {
       </div>
 
       {/* Tabs */}
-      <div className="flex items-center gap-1 border-b border-[#E0E0E0]">
+      <div className="flex items-center gap-1 border-b border-border">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
             className="relative flex items-center gap-1.5 px-4 py-2.5 text-[13px] font-medium transition-colors"
             style={{
-              color: activeTab === tab.id ? "#F26B2A" : "#888",
+              color: activeTab === tab.id ? "#F26B2A" : "var(--text-muted)",
             }}
           >
             {tab.icon}
@@ -133,7 +133,7 @@ export default function Page() {
                   placeholder="Buscar por nome ou SKU..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors"
+                  className="w-full pl-9 pr-4 py-2 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors"
                   style={{ borderRadius: "10px" }}
                 />
               </div>
@@ -142,7 +142,7 @@ export default function Page() {
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
-                  className="pl-8 pr-8 py-2 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors appearance-none cursor-pointer"
+                  className="pl-8 pr-8 py-2 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors appearance-none cursor-pointer"
                   style={{ borderRadius: "10px" }}
                 >
                   <option value="all">Todos</option>
@@ -153,7 +153,7 @@ export default function Page() {
             </div>
 
             <div
-              className="bg-white border border-[#E0E0E0] overflow-hidden"
+              className="bg-background-card border border-border overflow-hidden"
               style={{ borderRadius: "var(--radius-card)" }}
             >
               <ProductsTable products={productsData} search={search} statusFilter={statusFilter} />
@@ -170,17 +170,17 @@ export default function Page() {
             transition={{ duration: 0.2 }}
           >
             <div
-              className="bg-white border border-[#E0E0E0] overflow-hidden"
+              className="bg-background-card border border-border overflow-hidden"
               style={{ borderRadius: "var(--radius-card)" }}
             >
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-[#1A1A1A] text-white">
+                  <tr className="bg-bg-table-header text-white">
                     <th className="py-3.5 px-4 text-left text-[11px] uppercase tracking-widest font-semibold">Categoria</th>
                     <th className="py-3.5 px-4 text-right text-[11px] uppercase tracking-widest font-semibold">Produtos</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#F0F0F0]">
+                <tbody className="divide-y divide-border-subtle">
                   {productCategories.map((cat, i) => (
                     <motion.tr
                       key={cat.id}
@@ -219,7 +219,7 @@ export default function Page() {
             transition={{ duration: 0.2 }}
           >
             <div
-              className="bg-white border border-[#E0E0E0] p-8 text-center"
+              className="bg-background-card border border-border p-8 text-center"
               style={{ borderRadius: "var(--radius-card)" }}
             >
               <RssSimple size={48} weight="duotone" className="text-text-muted mx-auto mb-3" />

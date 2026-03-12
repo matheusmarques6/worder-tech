@@ -113,7 +113,7 @@ export default function FormsPage() {
               placeholder="Pesquisar formulários..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-9 pr-4 py-2 text-sm bg-white border border-[#E0E0E0] w-[240px] focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
+              className="pl-9 pr-4 py-2 text-sm bg-bg-input border border-border w-[240px] focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
               style={{ borderRadius: "10px" }}
             />
           </div>
@@ -121,7 +121,7 @@ export default function FormsPage() {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="appearance-none pl-3 pr-8 py-2 text-sm bg-white border border-[#E0E0E0] text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
+              className="appearance-none pl-3 pr-8 py-2 text-sm bg-bg-input border border-border text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
               style={{ borderRadius: "10px" }}
             >
               <option>Todos</option>
@@ -138,7 +138,7 @@ export default function FormsPage() {
 
         <div className="flex items-center gap-2">
           <button
-            className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-text-secondary border border-[#E0E0E0] hover:bg-[#F0F0F0] transition-colors"
+            className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-text-secondary border border-border hover:bg-border-subtle transition-colors"
             style={{ borderRadius: "10px" }}
           >
             <Code size={16} weight="bold" />

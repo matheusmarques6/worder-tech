@@ -45,7 +45,7 @@ export function TemplateGrid({ templates, search, typeFilter }: TemplateGridProp
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: i * 0.04 }}
-          className="group bg-white border border-[#E0E0E0] overflow-hidden hover:shadow-[var(--shadow-card-hover)] transition-all duration-200"
+          className="group bg-background-card border border-border overflow-hidden hover:shadow-[var(--shadow-card-hover)] transition-all duration-200"
           style={{ borderRadius: "var(--radius-card)" }}
         >
           {/* Preview thumbnail */}
@@ -56,7 +56,7 @@ export function TemplateGrid({ templates, search, typeFilter }: TemplateGridProp
             }}
           >
             {/* Mini email layout preview */}
-            <div className="absolute inset-4 bg-white rounded-lg shadow-sm overflow-hidden">
+            <div className="absolute inset-4 bg-background-card rounded-lg shadow-sm overflow-hidden">
               {tpl.layout === "hero" && (
                 <>
                   <div className="h-16" style={{ background: tpl.colors[0] }} />
@@ -98,13 +98,13 @@ export function TemplateGrid({ templates, search, typeFilter }: TemplateGridProp
 
             {/* Hover overlay */}
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-200 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100">
-              <button className="flex items-center justify-center w-9 h-9 rounded-full bg-white shadow-md hover:scale-105 transition-transform">
+              <button className="flex items-center justify-center w-9 h-9 rounded-full bg-background-card shadow-md hover:scale-105 transition-transform">
                 <Eye size={16} className="text-text-primary" />
               </button>
-              <button className="flex items-center justify-center w-9 h-9 rounded-full bg-white shadow-md hover:scale-105 transition-transform">
+              <button className="flex items-center justify-center w-9 h-9 rounded-full bg-background-card shadow-md hover:scale-105 transition-transform">
                 <PencilSimple size={16} className="text-text-primary" />
               </button>
-              <button className="flex items-center justify-center w-9 h-9 rounded-full bg-white shadow-md hover:scale-105 transition-transform">
+              <button className="flex items-center justify-center w-9 h-9 rounded-full bg-background-card shadow-md hover:scale-105 transition-transform">
                 <Copy size={16} className="text-text-primary" />
               </button>
             </div>

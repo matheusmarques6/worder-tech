@@ -20,7 +20,7 @@ function Modal({ open, onClose, title, children, maxWidth = "max-w-lg" }: ModalP
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           {/* Overlay */}
           <motion.div
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/50 dark:bg-black/70 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -43,7 +43,7 @@ function Modal({ open, onClose, title, children, maxWidth = "max-w-lg" }: ModalP
             {/* Close button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 p-1 rounded-lg text-text-muted hover:text-text-primary hover:bg-[#F5F5F5] dark:hover:bg-[#2A2A2A] transition-colors duration-200 cursor-pointer"
+              className="absolute top-4 right-4 p-1 rounded-lg text-text-muted hover:text-text-primary hover:bg-bg-hover dark:hover:bg-[#2A2A2A] transition-colors duration-200 cursor-pointer"
             >
               <X size={20} weight="bold" />
             </button>

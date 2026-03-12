@@ -92,7 +92,7 @@ export default function CampaignsPage() {
               placeholder="Pesquisar campanhas..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-9 pr-4 py-2 text-sm bg-white border border-[#E0E0E0] w-[240px] focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
+              className="pl-9 pr-4 py-2 text-sm bg-bg-input border border-border w-[240px] focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
               style={{ borderRadius: "10px" }}
             />
           </div>
@@ -100,7 +100,7 @@ export default function CampaignsPage() {
             <select
               value={channelFilter}
               onChange={(e) => setChannelFilter(e.target.value)}
-              className="appearance-none pl-3 pr-8 py-2 text-sm bg-white border border-[#E0E0E0] text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
+              className="appearance-none pl-3 pr-8 py-2 text-sm bg-bg-input border border-border text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
               style={{ borderRadius: "10px" }}
             >
               <option>Todos</option>
@@ -114,7 +114,7 @@ export default function CampaignsPage() {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="appearance-none pl-3 pr-8 py-2 text-sm bg-white border border-[#E0E0E0] text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
+              className="appearance-none pl-3 pr-8 py-2 text-sm bg-bg-input border border-border text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
               style={{ borderRadius: "10px" }}
             >
               <option>Todos</option>
@@ -127,8 +127,8 @@ export default function CampaignsPage() {
         </div>
 
         <div className="flex items-center gap-2">
-          <div className="flex items-center bg-[#F0F0F0] p-0.5" style={{ borderRadius: "10px" }}>
-            <button className="px-2.5 py-1.5 rounded-lg bg-white shadow-sm">
+          <div className="flex items-center bg-border-subtle p-0.5" style={{ borderRadius: "10px" }}>
+            <button className="px-2.5 py-1.5 rounded-lg bg-background-card shadow-sm">
               <List size={16} className="text-text-primary" />
             </button>
             <button className="px-2.5 py-1.5 rounded-lg">

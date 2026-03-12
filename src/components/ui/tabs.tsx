@@ -30,8 +30,8 @@ function Tabs({ tabs, activeTab, onChange, className }: TabsProps) {
               className={cn(
                 "relative px-4 py-2.5 text-sm transition-colors duration-200 cursor-pointer flex items-center gap-2",
                 isActive
-                  ? "text-[#1A1A1A] font-semibold dark:text-white"
-                  : "text-[#666] hover:text-[#333] dark:hover:text-[#CCC]"
+                  ? "text-text-primary font-semibold"
+                  : "text-text-muted hover:text-text-secondary"
               )}
             >
               {tab.label}

@@ -56,7 +56,7 @@ export default function Page() {
 
       {/* KPI strip */}
       <div
-        className="flex items-center gap-6 px-5 py-3.5 bg-white border border-[#E0E0E0]"
+        className="flex items-center gap-6 px-5 py-3.5 bg-background-card border border-border"
         style={{ borderRadius: "var(--radius-card)" }}
       >
         <div className="flex items-center gap-2">
@@ -70,14 +70,14 @@ export default function Page() {
             <p className="text-[11px] text-text-muted">Total</p>
           </div>
         </div>
-        <div className="w-px h-10 bg-[#E0E0E0]" />
+        <div className="w-px h-10 bg-border" />
         <div>
           <p className="text-[20px] font-bold text-success" style={{ fontVariantNumeric: "tabular-nums" }}>
             {activeCount}
           </p>
           <p className="text-[11px] text-text-muted">Ativos</p>
         </div>
-        <div className="w-px h-10 bg-[#E0E0E0]" />
+        <div className="w-px h-10 bg-border" />
         <div>
           <p className="text-[20px] font-bold text-text-primary" style={{ fontVariantNumeric: "tabular-nums" }}>
             {totalRevenue.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
@@ -95,7 +95,7 @@ export default function Page() {
             placeholder="Buscar por código..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-9 pr-4 py-2 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors"
+            className="w-full pl-9 pr-4 py-2 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors"
             style={{ borderRadius: "10px" }}
           />
         </div>
@@ -104,7 +104,7 @@ export default function Page() {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value as CouponStatus | "all")}
-            className="pl-8 pr-8 py-2 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors appearance-none cursor-pointer"
+            className="pl-8 pr-8 py-2 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors appearance-none cursor-pointer"
             style={{ borderRadius: "10px" }}
           >
             <option value="all">Todos</option>
@@ -117,7 +117,7 @@ export default function Page() {
 
       {/* Table */}
       <div
-        className="bg-white border border-[#E0E0E0] overflow-hidden"
+        className="bg-background-card border border-border overflow-hidden"
         style={{ borderRadius: "var(--radius-card)" }}
       >
         <CouponsTable coupons={filtered} />
@@ -138,15 +138,15 @@ export default function Page() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white w-full max-w-[480px] overflow-hidden shadow-xl"
+              className="bg-background-card w-full max-w-[480px] overflow-hidden shadow-xl"
               style={{ borderRadius: "16px" }}
             >
               {/* Header */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-[#E0E0E0]">
+              <div className="flex items-center justify-between px-6 py-4 border-b border-border">
                 <h2 className="text-lg font-bold text-text-primary font-heading">Criar Cupom</h2>
                 <button
                   onClick={() => setShowCreate(false)}
-                  className="p-1.5 rounded-lg hover:bg-[#F0F0F0] transition-colors"
+                  className="p-1.5 rounded-lg hover:bg-border-subtle transition-colors"
                 >
                   <X size={18} className="text-text-muted" />
                 </button>
@@ -159,7 +159,7 @@ export default function Page() {
                   <input
                     type="text"
                     placeholder="ex: WORDER20"
-                    className="w-full mt-1.5 px-4 py-2.5 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors font-mono uppercase"
+                    className="w-full mt-1.5 px-4 py-2.5 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors font-mono uppercase"
                     style={{ borderRadius: "10px" }}
                   />
                 </div>
@@ -167,7 +167,7 @@ export default function Page() {
                   <div>
                     <label className="text-[12px] font-semibold text-text-secondary uppercase tracking-wide">Tipo</label>
                     <select
-                      className="w-full mt-1.5 px-4 py-2.5 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors"
+                      className="w-full mt-1.5 px-4 py-2.5 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors"
                       style={{ borderRadius: "10px" }}
                     >
                       <option value="percentage">Percentual</option>
@@ -180,7 +180,7 @@ export default function Page() {
                     <input
                       type="text"
                       placeholder="ex: 20%"
-                      className="w-full mt-1.5 px-4 py-2.5 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors"
+                      className="w-full mt-1.5 px-4 py-2.5 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors"
                       style={{ borderRadius: "10px" }}
                     />
                   </div>
@@ -191,7 +191,7 @@ export default function Page() {
                     <input
                       type="number"
                       placeholder="Ilimitado"
-                      className="w-full mt-1.5 px-4 py-2.5 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors"
+                      className="w-full mt-1.5 px-4 py-2.5 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors"
                       style={{ borderRadius: "10px" }}
                     />
                   </div>
@@ -199,7 +199,7 @@ export default function Page() {
                     <label className="text-[12px] font-semibold text-text-secondary uppercase tracking-wide">Validade</label>
                     <input
                       type="date"
-                      className="w-full mt-1.5 px-4 py-2.5 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors"
+                      className="w-full mt-1.5 px-4 py-2.5 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors"
                       style={{ borderRadius: "10px" }}
                     />
                   </div>
@@ -209,17 +209,17 @@ export default function Page() {
                   <input
                     type="number"
                     placeholder="R$ 0,00"
-                    className="w-full mt-1.5 px-4 py-2.5 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors"
+                    className="w-full mt-1.5 px-4 py-2.5 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors"
                     style={{ borderRadius: "10px" }}
                   />
                 </div>
               </div>
 
               {/* Footer */}
-              <div className="flex items-center justify-end gap-3 px-6 py-4 border-t border-[#E0E0E0]">
+              <div className="flex items-center justify-end gap-3 px-6 py-4 border-t border-border">
                 <button
                   onClick={() => setShowCreate(false)}
-                  className="px-4 py-2 text-[13px] font-medium text-text-secondary border border-[#E0E0E0] hover:bg-[#F0F0F0] transition-colors"
+                  className="px-4 py-2 text-[13px] font-medium text-text-secondary border border-border hover:bg-border-subtle transition-colors"
                   style={{ borderRadius: "8px" }}
                 >
                   Cancelar

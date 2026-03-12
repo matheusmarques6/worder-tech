@@ -166,7 +166,7 @@ function FlowNodeCard({ node }: { node: FlowNode }) {
         {/* Condition branches indicator */}
         {isCondition && (
           <div className="flex border-t" style={{ borderColor: isSelected ? "rgba(242,107,42,0.2)" : "#F0F0F0" }}>
-            <div className="flex-1 text-center py-1.5 text-[10px] font-bold text-[#22C55E] border-r border-[#F0F0F0]">
+            <div className="flex-1 text-center py-1.5 text-[10px] font-bold text-[#22C55E] border-r border-border-subtle">
               Sim ✓
             </div>
             <div className="flex-1 text-center py-1.5 text-[10px] font-bold text-[#EF4444]">
@@ -277,7 +277,7 @@ function AddNodeButton({
   return (
     <button
       onClick={onClick}
-      className="absolute flex items-center justify-center w-7 h-7 bg-white border border-[#E0E0E0] rounded-full hover:bg-worder-primary hover:border-worder-primary transition-all group z-20 shadow-sm"
+      className="absolute flex items-center justify-center w-7 h-7 bg-background-card border border-border rounded-full hover:bg-worder-primary hover:border-worder-primary transition-all group z-20 shadow-sm"
       style={{ left: x - 14, top: y - 14 }}
     >
       <Plus
@@ -305,7 +305,7 @@ function Minimap() {
 
   return (
     <div
-      className="absolute bottom-16 right-4 bg-white border border-[#E0E0E0] overflow-hidden shadow-sm z-30"
+      className="absolute bottom-16 right-4 bg-background-card border border-border overflow-hidden shadow-sm z-30"
       style={{
         borderRadius: "8px",
         width: Math.max(120, Math.min(180, width)),
@@ -492,19 +492,19 @@ export function FlowCanvas() {
       <div className="absolute bottom-4 right-4 flex flex-col gap-1 z-30">
         <button
           onClick={zoomIn}
-          className="flex items-center justify-center w-8 h-8 bg-white border border-[#E0E0E0] rounded-lg hover:bg-[#F0F0F0] shadow-sm transition-colors"
+          className="flex items-center justify-center w-8 h-8 bg-background-card border border-border rounded-lg hover:bg-border-subtle shadow-sm transition-colors"
         >
           <Plus size={14} weight="bold" className="text-text-muted" />
         </button>
         <button
           onClick={resetView}
-          className="flex items-center justify-center w-8 h-8 bg-white border border-[#E0E0E0] rounded-lg hover:bg-[#F0F0F0] shadow-sm transition-colors"
+          className="flex items-center justify-center w-8 h-8 bg-background-card border border-border rounded-lg hover:bg-border-subtle shadow-sm transition-colors"
         >
           <Crosshair size={14} weight="bold" className="text-text-muted" />
         </button>
         <button
           onClick={zoomOut}
-          className="flex items-center justify-center w-8 h-8 bg-white border border-[#E0E0E0] rounded-lg hover:bg-[#F0F0F0] shadow-sm transition-colors"
+          className="flex items-center justify-center w-8 h-8 bg-background-card border border-border rounded-lg hover:bg-border-subtle shadow-sm transition-colors"
         >
           <Minus size={14} weight="bold" className="text-text-muted" />
         </button>

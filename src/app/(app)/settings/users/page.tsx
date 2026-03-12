@@ -62,17 +62,17 @@ export default function Page() {
         )}
       </AnimatePresence>
 
-      <div className="bg-white border border-[#E0E0E0] overflow-hidden" style={{ borderRadius: "var(--radius-card)" }}>
+      <div className="bg-background-card border border-border overflow-hidden" style={{ borderRadius: "var(--radius-card)" }}>
         <table className="w-full text-sm">
           <thead>
-            <tr className="bg-[#1A1A1A] text-white">
+            <tr className="bg-bg-table-header text-white">
               <th className="py-3.5 px-5 text-left text-[11px] uppercase tracking-widest font-semibold">Usuário</th>
               <th className="py-3.5 px-5 text-left text-[11px] uppercase tracking-widest font-semibold">Função</th>
               <th className="py-3.5 px-5 text-left text-[11px] uppercase tracking-widest font-semibold">Último acesso</th>
               <th className="py-3.5 px-5 text-center w-12"></th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#F0F0F0]">
+          <tbody className="divide-y divide-border-subtle">
             {users.map((user, i) => {
               const rc = roleConfig[user.role];
               return (
@@ -91,13 +91,13 @@ export default function Page() {
                   <td className="py-3.5 px-5"><Badge variant={rc.variant} size="sm">{rc.label}</Badge></td>
                   <td className="py-3.5 px-5"><span className="text-[13px] text-text-muted">{user.lastActive}</span></td>
                   <td className="py-3.5 px-5 text-center relative">
-                    <button onClick={() => setOpenMenu(openMenu === user.id ? null : user.id)} className="p-1.5 rounded-lg hover:bg-[#F0F0F0] transition-colors">
+                    <button onClick={() => setOpenMenu(openMenu === user.id ? null : user.id)} className="p-1.5 rounded-lg hover:bg-border-subtle transition-colors">
                       <DotsThree size={18} weight="bold" className="text-text-muted" />
                     </button>
                     {openMenu === user.id && (
-                      <div className="absolute right-4 top-full mt-1 z-20 w-36 bg-white border border-[#E0E0E0] py-1 shadow-lg" style={{ borderRadius: "10px" }}>
-                        <button className="flex items-center gap-2 w-full px-3 py-2 text-[12px] text-text-secondary hover:bg-[#FAFAFA] transition-colors"><PencilSimple size={13} /> Editar</button>
-                        {user.role !== "owner" && (<><div className="my-1 border-t border-[#F0F0F0]" /><button className="flex items-center gap-2 w-full px-3 py-2 text-[12px] text-error hover:bg-error/5 transition-colors"><Trash size={13} /> Remover</button></>)}
+                      <div className="absolute right-4 top-full mt-1 z-20 w-36 bg-background-card border border-border py-1 shadow-lg" style={{ borderRadius: "10px" }}>
+                        <button className="flex items-center gap-2 w-full px-3 py-2 text-[12px] text-text-secondary hover:bg-bg-hover transition-colors"><PencilSimple size={13} /> Editar</button>
+                        {user.role !== "owner" && (<><div className="my-1 border-t border-border-subtle" /><button className="flex items-center gap-2 w-full px-3 py-2 text-[12px] text-error hover:bg-error/5 transition-colors"><Trash size={13} /> Remover</button></>)}
                       </div>
                     )}
                   </td>
@@ -111,25 +111,25 @@ export default function Page() {
       <AnimatePresence>
         {showInvite && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex items-center justify-center bg-black/40" onClick={() => setShowInvite(false)}>
-            <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }} onClick={(e) => e.stopPropagation()} className="bg-white w-full max-w-[420px] overflow-hidden shadow-xl" style={{ borderRadius: "16px" }}>
-              <div className="flex items-center justify-between px-6 py-4 border-b border-[#E0E0E0]">
+            <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }} onClick={(e) => e.stopPropagation()} className="bg-background-card w-full max-w-[420px] overflow-hidden shadow-xl" style={{ borderRadius: "16px" }}>
+              <div className="flex items-center justify-between px-6 py-4 border-b border-border">
                 <h2 className="text-lg font-bold text-text-primary font-heading">Convidar usuário</h2>
-                <button onClick={() => setShowInvite(false)} className="p-1.5 rounded-lg hover:bg-[#F0F0F0] transition-colors"><X size={18} className="text-text-muted" /></button>
+                <button onClick={() => setShowInvite(false)} className="p-1.5 rounded-lg hover:bg-border-subtle transition-colors"><X size={18} className="text-text-muted" /></button>
               </div>
               <div className="px-6 py-5 space-y-4">
                 <div>
                   <label className="text-[12px] font-semibold text-text-secondary uppercase tracking-wide">E-mail</label>
-                  <input type="email" placeholder="novo@usuario.com" className="w-full mt-1.5 px-4 py-2.5 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors" style={{ borderRadius: "10px" }} />
+                  <input type="email" placeholder="novo@usuario.com" className="w-full mt-1.5 px-4 py-2.5 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors" style={{ borderRadius: "10px" }} />
                 </div>
                 <div>
                   <label className="text-[12px] font-semibold text-text-secondary uppercase tracking-wide">Função</label>
-                  <select className="w-full mt-1.5 px-4 py-2.5 text-sm border border-[#E0E0E0] bg-white outline-none focus:border-worder-primary transition-colors appearance-none" style={{ borderRadius: "10px" }}>
+                  <select className="w-full mt-1.5 px-4 py-2.5 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors appearance-none" style={{ borderRadius: "10px" }}>
                     <option>Administrador</option><option>Atendente</option><option>Visualizador</option>
                   </select>
                 </div>
               </div>
-              <div className="flex items-center justify-end gap-3 px-6 py-4 border-t border-[#E0E0E0]">
-                <button onClick={() => setShowInvite(false)} className="px-4 py-2 text-[13px] font-medium text-text-secondary border border-[#E0E0E0] hover:bg-[#F0F0F0] transition-colors" style={{ borderRadius: "8px" }}>Cancelar</button>
+              <div className="flex items-center justify-end gap-3 px-6 py-4 border-t border-border">
+                <button onClick={() => setShowInvite(false)} className="px-4 py-2 text-[13px] font-medium text-text-secondary border border-border hover:bg-border-subtle transition-colors" style={{ borderRadius: "8px" }}>Cancelar</button>
                 <button className="flex items-center gap-1.5 px-5 py-2 text-[13px] font-semibold text-white transition-all hover:brightness-110" style={{ borderRadius: "8px", background: "linear-gradient(135deg, #F26B2A 0%, #F5A623 100%)" }}>
                   <PaperPlaneTilt size={14} weight="fill" /> Enviar convite
                 </button>

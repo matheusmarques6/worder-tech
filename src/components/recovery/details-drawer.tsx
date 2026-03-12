@@ -67,22 +67,22 @@ export function DetailsDrawer({ item, onClose }: DetailsDrawerProps) {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="fixed right-0 top-0 bottom-0 z-50 w-[400px] bg-white shadow-2xl overflow-y-auto"
+            className="fixed right-0 top-0 bottom-0 z-50 w-[400px] bg-background-card shadow-2xl overflow-y-auto"
           >
             {/* Header */}
-            <div className="sticky top-0 z-10 flex items-center justify-between p-5 border-b border-[#F0F0F0] bg-white">
+            <div className="sticky top-0 z-10 flex items-center justify-between p-5 border-b border-border-subtle bg-background-card">
               <div>
                 <h3 className="font-semibold text-text-primary text-lg">Detalhes do Pedido</h3>
                 <p className="font-mono text-sm text-worder-primary font-semibold">{item.orderId}</p>
               </div>
-              <button onClick={onClose} className="p-1.5 rounded-lg hover:bg-[#F0F0F0] transition-colors">
+              <button onClick={onClose} className="p-1.5 rounded-lg hover:bg-bg-hover transition-colors">
                 <X size={18} className="text-text-muted" />
               </button>
             </div>
 
             <div className="p-5 space-y-6">
               {/* Value */}
-              <div className="px-4 py-4 bg-[#FAFAFA] rounded-xl">
+              <div className="px-4 py-4 bg-bg-subtle rounded-xl">
                 <p className="text-[12px] text-text-muted uppercase tracking-wider font-medium mb-1">Valor total</p>
                 <p className="text-[28px] font-bold text-text-primary font-heading" style={{ fontVariantNumeric: "tabular-nums" }}>
                   R$ {item.value.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
@@ -115,9 +115,9 @@ export function DetailsDrawer({ item, onClose }: DetailsDrawerProps) {
                   {item.products.map((product, i) => (
                     <div
                       key={i}
-                      className="flex items-center gap-3 px-3 py-3 bg-[#FAFAFA] rounded-xl"
+                      className="flex items-center gap-3 px-3 py-3 bg-bg-subtle rounded-xl"
                     >
-                      <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#F0F0F0]">
+                      <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-border-subtle">
                         <Package size={20} weight="fill" className="text-text-muted" />
                       </div>
                       <div className="flex-1 min-w-0">
@@ -134,7 +134,7 @@ export function DetailsDrawer({ item, onClose }: DetailsDrawerProps) {
 
               {/* Extra info */}
               {item.dueDate && (
-                <div className="flex items-center justify-between px-4 py-3 bg-[#FAFAFA] rounded-xl">
+                <div className="flex items-center justify-between px-4 py-3 bg-bg-subtle rounded-xl">
                   <span className="text-[12px] text-text-muted font-medium">Vencimento</span>
                   <span className="text-sm font-semibold text-text-primary">{formatDate(item.dueDate)}</span>
                 </div>
@@ -144,7 +144,7 @@ export function DetailsDrawer({ item, onClose }: DetailsDrawerProps) {
                   href={item.boletoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full px-4 py-2.5 border border-[#E0E0E0] text-sm font-medium text-text-secondary hover:bg-[#F0F0F0] transition-colors"
+                  className="flex items-center justify-center gap-2 w-full px-4 py-2.5 border border-border text-sm font-medium text-text-secondary hover:bg-bg-hover transition-colors"
                   style={{ borderRadius: "10px" }}
                 >
                   <ArrowSquareOut size={16} weight="bold" />
@@ -164,7 +164,7 @@ export function DetailsDrawer({ item, onClose }: DetailsDrawerProps) {
                   Timeline de Recuperação ({item.attempts.length} tentativa{item.attempts.length !== 1 ? "s" : ""})
                 </p>
                 {item.attempts.length === 0 ? (
-                  <div className="px-4 py-6 text-center text-sm text-text-muted bg-[#FAFAFA] rounded-xl">
+                  <div className="px-4 py-6 text-center text-sm text-text-muted bg-bg-subtle rounded-xl">
                     Nenhuma tentativa de recuperação realizada.
                   </div>
                 ) : (
@@ -175,14 +175,14 @@ export function DetailsDrawer({ item, onClose }: DetailsDrawerProps) {
                         <div key={i} className="relative pl-8 pb-4 last:pb-0">
                           {/* Vertical line */}
                           {i < item.attempts.length - 1 && (
-                            <div className="absolute left-[11px] top-6 bottom-0 w-px bg-[#E0E0E0]" />
+                            <div className="absolute left-[11px] top-6 bottom-0 w-px bg-border" />
                           )}
                           {/* Dot */}
-                          <div className="absolute left-0 top-1 flex items-center justify-center w-6 h-6 rounded-full bg-white border-2 border-[#E0E0E0]">
+                          <div className="absolute left-0 top-1 flex items-center justify-center w-6 h-6 rounded-full bg-background-card border-2 border-border">
                             {getChannelIcon(attempt.channel)}
                           </div>
                           {/* Content */}
-                          <div className="bg-[#FAFAFA] rounded-xl p-3">
+                          <div className="bg-bg-subtle rounded-xl p-3">
                             <div className="flex items-center justify-between mb-1.5">
                               <div className="flex items-center gap-2">
                                 <span className="text-[11px] font-semibold text-text-secondary capitalize">{attempt.channel}</span>

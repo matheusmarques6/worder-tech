@@ -19,7 +19,7 @@ export default function Page() {
       />
 
       <div
-        className="bg-white border border-[#E0E0E0] overflow-hidden"
+        className="bg-background-card border border-border overflow-hidden"
         style={{ borderRadius: "var(--radius-card)" }}
       >
         <WATemplatesTable templates={waTemplates} />

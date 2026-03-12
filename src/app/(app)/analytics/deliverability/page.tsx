@@ -45,13 +45,13 @@ export default function Page() {
       />
 
       {/* Channel tabs */}
-      <div className="flex items-center gap-1 border-b border-[#E0E0E0]">
+      <div className="flex items-center gap-1 border-b border-border">
         {channelTabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setChannel(tab.id)}
             className="relative flex items-center gap-1.5 px-4 py-2.5 text-[13px] font-medium transition-colors"
-            style={{ color: channel === tab.id ? "#F26B2A" : "#888" }}
+            style={{ color: channel === tab.id ? "#F26B2A" : "var(--text-muted)" }}
           >
             {tab.icon}
             {tab.label}
@@ -78,7 +78,7 @@ export default function Page() {
                 style={{
                   borderRadius: "8px",
                   background: subNav === item.id ? "rgba(242,107,42,0.08)" : "transparent",
-                  color: subNav === item.id ? "#F26B2A" : "#888",
+                  color: subNav === item.id ? "#F26B2A" : "var(--text-muted)",
                   borderLeft: subNav === item.id ? "3px solid #F26B2A" : "3px solid transparent",
                 }}
               >
@@ -134,7 +134,7 @@ export default function Page() {
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-white border border-[#E0E0E0] p-8 text-center"
+                className="bg-background-card border border-border p-8 text-center"
                 style={{ borderRadius: "var(--radius-card)" }}
               >
                 <EnvelopeSimple size={48} weight="duotone" className="text-text-muted mx-auto mb-3" />
@@ -149,18 +149,18 @@ export default function Page() {
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-white border border-[#E0E0E0] overflow-hidden"
+                className="bg-background-card border border-border overflow-hidden"
                 style={{ borderRadius: "var(--radius-card)" }}
               >
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="bg-[#1A1A1A] text-white">
+                    <tr className="bg-bg-table-header text-white">
                       <th className="py-3.5 px-5 text-left text-[11px] uppercase tracking-widest font-semibold">Tipo</th>
                       <th className="py-3.5 px-5 text-right text-[11px] uppercase tracking-widest font-semibold">Contagem</th>
                       <th className="py-3.5 px-5 text-right text-[11px] uppercase tracking-widest font-semibold">Taxa</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-[#F0F0F0]">
+                  <tbody className="divide-y divide-border-subtle">
                     {[
                       { type: "Hard bounce", count: 342, rate: "0,14%" },
                       { type: "Soft bounce", count: 1653, rate: "0,67%" },
@@ -193,7 +193,7 @@ export default function Page() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white border border-[#E0E0E0] p-8 text-center"
+          className="bg-background-card border border-border p-8 text-center"
           style={{ borderRadius: "var(--radius-card)" }}
         >
           {channel === "whatsapp" ? (

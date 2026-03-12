@@ -49,7 +49,7 @@ function Toggle({
       }}
     >
       <div
-        className="absolute top-0.5 w-[18px] h-[18px] rounded-full bg-white shadow-sm transition-transform duration-200"
+        className="absolute top-0.5 w-[18px] h-[18px] rounded-full bg-background-card shadow-sm transition-transform duration-200"
         style={{ transform: checked ? "translateX(20px)" : "translateX(2px)" }}
       />
     </button>
@@ -73,14 +73,14 @@ function StylesTab() {
         <FieldLabel>Cor de fundo</FieldLabel>
         <div className="flex items-center gap-2">
           <div
-            className="w-8 h-8 rounded-lg border border-[#E0E0E0] cursor-pointer hover:ring-2 hover:ring-worder-primary/20"
+            className="w-8 h-8 rounded-lg border border-border cursor-pointer hover:ring-2 hover:ring-worder-primary/20"
             style={{ background: styles.bgColor }}
           />
           <input
             type="text"
             value={styles.bgColor}
             onChange={(e) => setStyles({ bgColor: e.target.value })}
-            className="flex-1 px-2.5 py-1.5 text-[12px] font-mono bg-[#F5F5F5] border-none rounded-md outline-none"
+            className="flex-1 px-2.5 py-1.5 text-[12px] font-mono bg-bg-hover border-none rounded-md outline-none"
           />
         </div>
       </div>
@@ -89,14 +89,14 @@ function StylesTab() {
         <FieldLabel>Cor do overlay</FieldLabel>
         <div className="flex items-center gap-2">
           <div
-            className="w-8 h-8 rounded-lg border border-[#E0E0E0] cursor-pointer hover:ring-2 hover:ring-worder-primary/20"
+            className="w-8 h-8 rounded-lg border border-border cursor-pointer hover:ring-2 hover:ring-worder-primary/20"
             style={{ background: styles.overlayColor }}
           />
           <input
             type="text"
             value={styles.overlayColor}
             onChange={(e) => setStyles({ overlayColor: e.target.value })}
-            className="flex-1 px-2.5 py-1.5 text-[12px] font-mono bg-[#F5F5F5] border-none rounded-md outline-none"
+            className="flex-1 px-2.5 py-1.5 text-[12px] font-mono bg-bg-hover border-none rounded-md outline-none"
           />
         </div>
       </div>
@@ -197,7 +197,7 @@ function TargetingTab() {
   return (
     <div className="space-y-4">
       {/* Sub-tabs */}
-      <div className="flex bg-[#F5F5F5] p-0.5" style={{ borderRadius: "8px" }}>
+      <div className="flex bg-bg-hover p-0.5" style={{ borderRadius: "8px" }}>
         {(["display", "targeting"] as const).map((t) => (
           <button
             key={t}
@@ -236,7 +236,7 @@ function TargetingTab() {
                   type="number"
                   value={displayRules.delaySeconds}
                   onChange={(e) => setDisplayRules({ delaySeconds: parseInt(e.target.value) || 0 })}
-                  className="w-14 px-2 py-1 text-[12px] text-center bg-[#F5F5F5] border-none rounded-md outline-none"
+                  className="w-14 px-2 py-1 text-[12px] text-center bg-bg-hover border-none rounded-md outline-none"
                   min={1}
                 />
               )}
@@ -256,7 +256,7 @@ function TargetingTab() {
                     type="number"
                     value={displayRules.scrollPercent}
                     onChange={(e) => setDisplayRules({ scrollPercent: parseInt(e.target.value) || 0 })}
-                    className="w-14 px-2 py-1 text-[12px] text-center bg-[#F5F5F5] border-none rounded-md outline-none"
+                    className="w-14 px-2 py-1 text-[12px] text-center bg-bg-hover border-none rounded-md outline-none"
                     min={1}
                     max={100}
                   />
@@ -277,7 +277,7 @@ function TargetingTab() {
                   type="number"
                   value={displayRules.pageViewsCount}
                   onChange={(e) => setDisplayRules({ pageViewsCount: parseInt(e.target.value) || 0 })}
-                  className="w-14 px-2 py-1 text-[12px] text-center bg-[#F5F5F5] border-none rounded-md outline-none"
+                  className="w-14 px-2 py-1 text-[12px] text-center bg-bg-hover border-none rounded-md outline-none"
                   min={1}
                 />
               )}
@@ -285,13 +285,13 @@ function TargetingTab() {
             </div>
           </div>
 
-          <div className="flex items-center justify-between pt-2 border-t border-[#F0F0F0]">
+          <div className="flex items-center justify-between pt-2 border-t border-border-subtle">
             <p className="text-[12px] font-medium text-text-primary">Mostrar somente se todas as condições</p>
             <Toggle checked={displayRules.allConditions} onChange={(v) => setDisplayRules({ allConditions: v })} />
           </div>
 
           {/* Frequency */}
-          <div className="pt-3 border-t border-[#F0F0F0] space-y-3">
+          <div className="pt-3 border-t border-border-subtle space-y-3">
             <p className="text-[10px] font-bold uppercase tracking-widest text-text-muted/60">Frequência</p>
             <div className="flex items-center justify-between">
               <p className="text-[12px] font-medium text-text-primary">Não mostrar se já enviou</p>
@@ -304,7 +304,7 @@ function TargetingTab() {
                   type="number"
                   value={frequencyRules.showAgainDays}
                   onChange={(e) => setFrequencyRules({ showAgainDays: parseInt(e.target.value) || 0 })}
-                  className="w-12 px-2 py-1 text-[12px] text-center bg-[#F5F5F5] border-none rounded-md outline-none"
+                  className="w-12 px-2 py-1 text-[12px] text-center bg-bg-hover border-none rounded-md outline-none"
                   min={1}
                 />
                 <span className="text-[10px] text-text-muted">dias</span>
@@ -321,7 +321,7 @@ function TargetingTab() {
             <select
               value={targetingRules.visitors}
               onChange={(e) => setTargetingRules({ visitors: e.target.value as "all" | "new" | "returning" })}
-              className="w-full px-3 py-2 text-[12px] bg-[#F5F5F5] border-none rounded-lg outline-none"
+              className="w-full px-3 py-2 text-[12px] bg-bg-hover border-none rounded-lg outline-none"
             >
               <option value="all">Todos</option>
               <option value="new">Novos visitantes</option>
@@ -333,7 +333,7 @@ function TargetingTab() {
             <select
               value={targetingRules.device}
               onChange={(e) => setTargetingRules({ device: e.target.value as "all" | "mobile" | "desktop" })}
-              className="w-full px-3 py-2 text-[12px] bg-[#F5F5F5] border-none rounded-lg outline-none"
+              className="w-full px-3 py-2 text-[12px] bg-bg-hover border-none rounded-lg outline-none"
             >
               <option value="all">Todos</option>
               <option value="mobile">Mobile</option>
@@ -347,7 +347,7 @@ function TargetingTab() {
               value={targetingRules.urlContains}
               onChange={(e) => setTargetingRules({ urlContains: e.target.value })}
               placeholder="/colecao/verao"
-              className="w-full px-3 py-2 text-[12px] bg-[#F5F5F5] border-none rounded-lg outline-none placeholder:text-text-muted/40"
+              className="w-full px-3 py-2 text-[12px] bg-bg-hover border-none rounded-lg outline-none placeholder:text-text-muted/40"
             />
           </div>
           <div>
@@ -355,7 +355,7 @@ function TargetingTab() {
             <select
               value={targetingRules.trafficSource}
               onChange={(e) => setTargetingRules({ trafficSource: e.target.value as "all" | "google" | "facebook" | "instagram" | "direct" })}
-              className="w-full px-3 py-2 text-[12px] bg-[#F5F5F5] border-none rounded-lg outline-none"
+              className="w-full px-3 py-2 text-[12px] bg-bg-hover border-none rounded-lg outline-none"
             >
               <option value="all">Todos</option>
               <option value="google">Google</option>
@@ -417,7 +417,7 @@ function BlocksTab() {
               key={block.type}
               whileHover={{ scale: 1.04 }}
               onClick={() => handleAddBlock(block)}
-              className="flex flex-col items-center justify-center h-[68px] bg-[#F5F5F5] border border-transparent hover:bg-white hover:border-worder-primary/30 hover:shadow-sm transition-all cursor-pointer"
+              className="flex flex-col items-center justify-center h-[68px] bg-bg-hover border border-transparent hover:bg-background-card hover:border-worder-primary/30 hover:shadow-sm transition-all cursor-pointer"
               style={{ borderRadius: "10px" }}
             >
               <div className="text-text-muted">{block.icon}</div>
@@ -434,7 +434,7 @@ function BlocksTab() {
               key={block.type}
               whileHover={{ scale: 1.04 }}
               onClick={() => handleAddBlock(block)}
-              className="flex flex-col items-center justify-center h-[68px] bg-[#F5F5F5] border border-transparent hover:bg-white hover:border-worder-primary/30 hover:shadow-sm transition-all cursor-pointer"
+              className="flex flex-col items-center justify-center h-[68px] bg-bg-hover border border-transparent hover:bg-background-card hover:border-worder-primary/30 hover:shadow-sm transition-all cursor-pointer"
               style={{ borderRadius: "10px" }}
             >
               <div className="text-text-muted">{block.icon}</div>
@@ -454,9 +454,9 @@ export function EditorSidebar() {
   const [activeTab, setActiveTab] = useState<SidebarTab>("styles");
 
   return (
-    <div className="w-[280px] bg-white border-r border-[#E0E0E0] flex flex-col flex-shrink-0 h-full">
+    <div className="w-[280px] bg-background-card border-r border-border flex flex-col flex-shrink-0 h-full">
       {/* Tab buttons */}
-      <div className="flex border-b border-[#E0E0E0]">
+      <div className="flex border-b border-border">
         {tabConfig.map((tab) => (
           <button
             key={tab.key}

@@ -39,7 +39,7 @@ export default function SettingsLayout({ children }: { children: React.ReactNode
   return (
     <div className="flex flex-col">
       {/* Horizontal tabs */}
-      <div className="border-b border-[#E0E0E0] bg-white px-6 overflow-x-auto">
+      <div className="border-b border-border bg-background-card px-6 overflow-x-auto">
         <div className="flex items-center gap-0.5 min-w-max">
           {settingsTabs.map((tab) => {
             const isActive = pathname === tab.href;
@@ -48,7 +48,7 @@ export default function SettingsLayout({ children }: { children: React.ReactNode
                 key={tab.href}
                 href={tab.href}
                 className="relative flex items-center gap-1.5 px-3.5 py-3 text-[13px] font-medium transition-colors whitespace-nowrap"
-                style={{ color: isActive ? "#F26B2A" : "#888" }}
+                style={{ color: isActive ? "#F26B2A" : "var(--text-muted)" }}
               >
                 {tab.icon}
                 {tab.label}

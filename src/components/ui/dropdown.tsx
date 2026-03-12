@@ -67,7 +67,7 @@ function Dropdown({ trigger, items, align = "left" }: DropdownProps) {
                     "w-full px-3 py-2 text-sm text-left flex items-center gap-2 transition-colors duration-150 cursor-pointer",
                     item.danger
                       ? "text-error hover:bg-error/5"
-                      : "text-text-primary hover:bg-[#F5F5F5] dark:hover:bg-[#2A2A2A]"
+                      : "text-text-primary hover:bg-bg-hover"
                   )}
                   onClick={() => {
                     item.onClick?.();

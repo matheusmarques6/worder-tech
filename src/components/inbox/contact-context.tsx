@@ -51,7 +51,7 @@ export function ContactContext({ contact, onClose }: ContactContextProps) {
           <span className="text-xs font-semibold uppercase tracking-wider text-text-muted">Contexto</span>
           <button
             onClick={onClose}
-            className="h-7 w-7 flex items-center justify-center rounded-lg hover:bg-[#F5F5F5] dark:hover:bg-[#2A2A2A] text-text-muted cursor-pointer"
+            className="h-7 w-7 flex items-center justify-center rounded-lg hover:bg-bg-hover dark:hover:bg-[#2A2A2A] text-text-muted cursor-pointer"
           >
             <X size={14} weight="bold" />
           </button>
@@ -218,7 +218,7 @@ function TimelineTab() {
             transition={{ delay: i * 0.06 }}
             className="flex items-start gap-3 relative pl-7"
           >
-            <div className={cn("absolute left-0 top-0.5 h-[23px] w-[23px] rounded-full bg-[#F5F5F5] dark:bg-[#1A1A1A] flex items-center justify-center z-10")}>
+            <div className={cn("absolute left-0 top-0.5 h-[23px] w-[23px] rounded-full bg-bg-hover dark:bg-[#1A1A1A] flex items-center justify-center z-10")}>
               <evt.icon size={12} weight="duotone" className={evt.color} />
             </div>
             <div className="flex-1">

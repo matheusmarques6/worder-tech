@@ -59,7 +59,7 @@ export function FormsTable({ forms }: FormsTableProps) {
     <div className="overflow-x-auto">
       <table className="w-full text-sm">
         <thead>
-          <tr className="bg-[#1A1A1A] text-white">
+          <tr className="bg-bg-table-header text-white">
             <th className="py-3.5 px-4 text-left w-10">
               <input
                 type="checkbox"
@@ -77,7 +77,7 @@ export function FormsTable({ forms }: FormsTableProps) {
             <th className="py-3.5 px-4 text-center w-12"></th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-[#F0F0F0]">
+        <tbody className="divide-y divide-border-subtle">
           {forms.map((form, index) => {
             const tc = typeConfig[form.type];
             return (
@@ -134,37 +134,37 @@ export function FormsTable({ forms }: FormsTableProps) {
                 <td className="py-3 px-4 text-center relative">
                   <button
                     onClick={() => setOpenMenu(openMenu === form.id ? null : form.id)}
-                    className="p-1.5 rounded-lg hover:bg-[#F0F0F0] transition-colors"
+                    className="p-1.5 rounded-lg hover:bg-border-subtle transition-colors"
                   >
                     <DotsThree size={18} weight="bold" className="text-text-muted" />
                   </button>
                   {openMenu === form.id && (
                     <div
-                      className="absolute right-4 top-full mt-1 z-20 w-44 bg-white border border-[#E0E0E0] py-1 shadow-lg"
+                      className="absolute right-4 top-full mt-1 z-20 w-44 bg-background-card border border-border py-1 shadow-lg"
                       style={{ borderRadius: "10px" }}
                     >
                       <Link
                         href={`/site/forms/${form.id}/editor`}
-                        className="flex items-center gap-2 w-full px-3 py-2 text-[13px] text-text-secondary hover:bg-[#FAFAFA] transition-colors"
+                        className="flex items-center gap-2 w-full px-3 py-2 text-[13px] text-text-secondary hover:bg-bg-subtle transition-colors"
                       >
                         <PencilSimple size={14} /> Editar
                       </Link>
-                      <button className="flex items-center gap-2 w-full px-3 py-2 text-[13px] text-text-secondary hover:bg-[#FAFAFA] transition-colors">
+                      <button className="flex items-center gap-2 w-full px-3 py-2 text-[13px] text-text-secondary hover:bg-bg-subtle transition-colors">
                         <Copy size={14} /> Duplicar
                       </button>
-                      <button className="flex items-center gap-2 w-full px-3 py-2 text-[13px] text-text-secondary hover:bg-[#FAFAFA] transition-colors">
+                      <button className="flex items-center gap-2 w-full px-3 py-2 text-[13px] text-text-secondary hover:bg-bg-subtle transition-colors">
                         <Code size={14} /> Código embed
                       </button>
                       {form.status === "active" ? (
-                        <button className="flex items-center gap-2 w-full px-3 py-2 text-[13px] text-text-secondary hover:bg-[#FAFAFA] transition-colors">
+                        <button className="flex items-center gap-2 w-full px-3 py-2 text-[13px] text-text-secondary hover:bg-bg-subtle transition-colors">
                           <Pause size={14} /> Pausar
                         </button>
                       ) : (
-                        <button className="flex items-center gap-2 w-full px-3 py-2 text-[13px] text-text-secondary hover:bg-[#FAFAFA] transition-colors">
+                        <button className="flex items-center gap-2 w-full px-3 py-2 text-[13px] text-text-secondary hover:bg-bg-subtle transition-colors">
                           <Play size={14} /> Ativar
                         </button>
                       )}
-                      <div className="my-1 border-t border-[#F0F0F0]" />
+                      <div className="my-1 border-t border-border-subtle" />
                       <button className="flex items-center gap-2 w-full px-3 py-2 text-[13px] text-error hover:bg-error/5 transition-colors">
                         <Trash size={14} /> Excluir
                       </button>

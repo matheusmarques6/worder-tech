@@ -129,7 +129,7 @@ export default function UTMPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-[13px]">
             <thead>
-              <tr className="bg-[#FAFAFA]">
+              <tr className="bg-bg-subtle">
                 <th className="px-4 py-3 font-semibold text-text-secondary text-[12px] uppercase tracking-wide">
                   Parâmetro
                 </th>
@@ -148,11 +148,11 @@ export default function UTMPage() {
               {rows.map((row, index) => (
                 <tr
                   key={row.param}
-                  className="border-t border-[#F0F0F0] hover:bg-[#FAFAFA] transition-colors"
+                  className="border-t border-border-subtle hover:bg-bg-hover transition-colors"
                 >
                   <td className="px-4 py-3">
                     <code
-                      className="text-[12px] font-mono px-2 py-1 bg-[#F5F5F5] text-text-primary"
+                      className="text-[12px] font-mono px-2 py-1 bg-bg-hover text-text-primary"
                       style={{ borderRadius: "6px" }}
                     >
                       {row.param}
@@ -171,7 +171,7 @@ export default function UTMPage() {
                       value={row.campaignValue}
                       onChange={(e) => updateRowValue(index, "campaignValue", e.target.value)}
                       disabled={!row.active}
-                      className="px-3 py-1.5 text-[12px] border border-[#E0E0E0] bg-white outline-none focus:border-[#F26B2A] transition-colors appearance-none cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+                      className="px-3 py-1.5 text-[12px] border border-border bg-bg-input outline-none focus:border-[#F26B2A] transition-colors appearance-none cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
                       style={{ borderRadius: "8px", minWidth: "140px" }}
                     >
                       {row.campaignOptions.map((opt) => (
@@ -186,7 +186,7 @@ export default function UTMPage() {
                       value={row.flowValue}
                       onChange={(e) => updateRowValue(index, "flowValue", e.target.value)}
                       disabled={!row.active}
-                      className="px-3 py-1.5 text-[12px] border border-[#E0E0E0] bg-white outline-none focus:border-[#F26B2A] transition-colors appearance-none cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+                      className="px-3 py-1.5 text-[12px] border border-border bg-bg-input outline-none focus:border-[#F26B2A] transition-colors appearance-none cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
                       style={{ borderRadius: "8px", minWidth: "140px" }}
                     >
                       {row.flowOptions.map((opt) => (
@@ -202,7 +202,7 @@ export default function UTMPage() {
           </table>
         </div>
 
-        <div className="border-t border-[#F0F0F0] pt-4 mt-4 space-y-4">
+        <div className="border-t border-border-subtle pt-4 mt-4 space-y-4">
           <SettingsToggle
             label="Adicionar UTM automaticamente"
             description="Adiciona parâmetros UTM a todos os links em campanhas e fluxos automaticamente."
@@ -211,7 +211,7 @@ export default function UTMPage() {
           />
 
           <button
-            className="flex items-center gap-2 px-4 py-2 text-[12px] font-semibold border border-[#E0E0E0] text-text-primary hover:bg-[#FAFAFA] transition-colors"
+            className="flex items-center gap-2 px-4 py-2 text-[12px] font-semibold border border-border text-text-primary hover:bg-bg-hover transition-colors"
             style={{ borderRadius: "8px" }}
           >
             <Plus size={14} weight="bold" />

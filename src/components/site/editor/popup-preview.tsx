@@ -52,7 +52,7 @@ function BlockRenderer({
       {/* Delete button on selection */}
       {isSelected && (
         <div className="absolute -top-3 -right-3 flex gap-0.5 z-10">
-          <button className="flex items-center justify-center w-5 h-5 rounded bg-white border border-[#E0E0E0] shadow-sm hover:bg-error/10 transition-colors">
+          <button className="flex items-center justify-center w-5 h-5 rounded bg-background-card border border-border shadow-sm hover:bg-error/10 transition-colors">
             <Trash size={10} className="text-error" />
           </button>
         </div>
@@ -103,7 +103,7 @@ function renderBlockContent(block: PopupBlock) {
           <input
             type="email"
             placeholder={props.placeholder || "seu@email.com"}
-            className="w-full px-4 py-3 text-sm bg-[#F5F5F5] border border-[#E0E0E0] outline-none pointer-events-none"
+            className="w-full px-4 py-3 text-sm bg-bg-hover border border-border outline-none pointer-events-none"
             style={{ borderRadius: "10px" }}
             readOnly
           />
@@ -116,7 +116,7 @@ function renderBlockContent(block: PopupBlock) {
           <input
             type="tel"
             placeholder="(11) 99999-9999"
-            className="w-full px-4 py-3 text-sm bg-[#F5F5F5] border border-[#E0E0E0] outline-none pointer-events-none"
+            className="w-full px-4 py-3 text-sm bg-bg-hover border border-border outline-none pointer-events-none"
             style={{ borderRadius: "10px" }}
             readOnly
           />
@@ -129,7 +129,7 @@ function renderBlockContent(block: PopupBlock) {
           <input
             type="text"
             placeholder={block.content || "Digite aqui..."}
-            className="w-full px-4 py-3 text-sm bg-[#F5F5F5] border border-[#E0E0E0] outline-none pointer-events-none"
+            className="w-full px-4 py-3 text-sm bg-bg-hover border border-border outline-none pointer-events-none"
             style={{ borderRadius: "10px" }}
             readOnly
           />
@@ -215,7 +215,7 @@ function renderBlockContent(block: PopupBlock) {
     case "image":
       return (
         <div className="py-2">
-          <div className="w-full h-24 bg-[#F0F0F0] rounded-lg flex items-center justify-center">
+          <div className="w-full h-24 bg-border-subtle rounded-lg flex items-center justify-center">
             <span className="text-[11px] text-text-muted">Imagem</span>
           </div>
         </div>
@@ -231,7 +231,7 @@ function renderBlockContent(block: PopupBlock) {
 
     default:
       return (
-        <div className="py-2 px-3 bg-[#F5F5F5] rounded-lg text-[11px] text-text-muted text-center">
+        <div className="py-2 px-3 bg-bg-hover rounded-lg text-[11px] text-text-muted text-center">
           {block.type}: {block.content}
         </div>
       );
@@ -256,7 +256,7 @@ export function PopupPreview() {
   return (
     <div className="flex-1 bg-[#E8E8E8] flex flex-col overflow-hidden">
       {/* Device toggle */}
-      <div className="flex items-center justify-center gap-1 py-2 bg-white/80 border-b border-[#E0E0E0]">
+      <div className="flex items-center justify-center gap-1 py-2 bg-background-card/80 border-b border-border">
         {([
           { key: "desktop" as const, icon: <Desktop size={16} /> },
           { key: "tablet" as const, icon: <DeviceTablet size={16} /> },
@@ -284,7 +284,7 @@ export function PopupPreview() {
         <motion.div
           animate={{ width: device.width, height: device.height }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="relative bg-white overflow-hidden flex-shrink-0"
+          className="relative bg-background-card overflow-hidden flex-shrink-0"
           style={{
             borderRadius: previewDevice === "phone" ? "32px" : previewDevice === "tablet" ? "20px" : "12px",
             border: previewDevice === "phone" ? "8px solid #1A1A1A" : previewDevice === "tablet" ? "6px solid #1A1A1A" : "2px solid #DDD",
@@ -299,7 +299,7 @@ export function PopupPreview() {
           {/* Simulated site background */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#F0F0F0] to-[#E0E0E0]">
             {/* Fake nav */}
-            <div className="h-8 bg-white/80 border-b border-[#E0E0E0] flex items-center px-3 gap-2">
+            <div className="h-8 bg-background-card/80 border-b border-border flex items-center px-3 gap-2">
               <div className="w-12 h-2 bg-[#DDD] rounded" />
               <div className="flex-1" />
               <div className="w-6 h-2 bg-[#DDD] rounded" />

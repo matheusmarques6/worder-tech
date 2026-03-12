@@ -67,10 +67,10 @@ export function ConversationList({ conversations, activeId, onSelect }: Conversa
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-lg font-bold text-text-primary font-heading">Atendimento</h2>
           <div className="flex items-center gap-1">
-            <button className="h-8 w-8 flex items-center justify-center rounded-lg hover:bg-[#F5F5F5] dark:hover:bg-[#2A2A2A] text-text-muted hover:text-text-primary transition-colors cursor-pointer">
+            <button className="h-8 w-8 flex items-center justify-center rounded-lg hover:bg-bg-hover dark:hover:bg-[#2A2A2A] text-text-muted hover:text-text-primary transition-colors cursor-pointer">
               <Plus size={18} weight="bold" />
             </button>
-            <button className="h-8 w-8 flex items-center justify-center rounded-lg hover:bg-[#F5F5F5] dark:hover:bg-[#2A2A2A] text-text-muted hover:text-text-primary transition-colors cursor-pointer">
+            <button className="h-8 w-8 flex items-center justify-center rounded-lg hover:bg-bg-hover dark:hover:bg-[#2A2A2A] text-text-muted hover:text-text-primary transition-colors cursor-pointer">
               <GearSix size={18} weight="duotone" />
             </button>
           </div>
@@ -87,7 +87,7 @@ export function ConversationList({ conversations, activeId, onSelect }: Conversa
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Pesquisar nome ou telefone..."
-            className="w-full h-9 pl-9 pr-3 text-sm bg-[#F5F5F5] dark:bg-[#2A2A2A] rounded-lg text-text-primary placeholder:text-text-muted outline-none focus:ring-1 focus:ring-worder-primary/30"
+            className="w-full h-9 pl-9 pr-3 text-sm bg-bg-hover dark:bg-[#2A2A2A] rounded-lg text-text-primary placeholder:text-text-muted outline-none focus:ring-1 focus:ring-worder-primary/30"
           />
         </div>
       </div>
@@ -112,7 +112,7 @@ export function ConversationList({ conversations, activeId, onSelect }: Conversa
                   "text-[10px] px-1.5 py-0.5 rounded-full font-semibold leading-none",
                   activeTab === tab.value
                     ? "bg-worder-primary/10 text-worder-primary"
-                    : "bg-[#F0F0F0] dark:bg-[#2A2A2A] text-text-muted"
+                    : "bg-border-subtle dark:bg-[#2A2A2A] text-text-muted"
                 )}
               >
                 {tab.count}

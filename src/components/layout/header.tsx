@@ -43,14 +43,14 @@ function Breadcrumb() {
             <CaretRight
               size={11}
               weight="bold"
-              className="text-[#CCC]"
+              className="text-text-muted"
             />
           )}
           <span
             className={cn(
               i === crumbs.length - 1
                 ? "text-text-primary font-medium"
-                : "text-[#999]"
+                : "text-text-muted"
             )}
           >
             {item}
@@ -145,7 +145,7 @@ function CommandPalette({
                 </p>
                 {results.map(([href, info]) => (
                   <Link key={href} href={href} onClick={onClose}>
-                    <div className="px-4 py-2.5 hover:bg-[#F5F5F5] dark:hover:bg-[#2A2A2A] transition-colors flex items-center gap-3 cursor-pointer">
+                    <div className="px-4 py-2.5 hover:bg-bg-hover transition-colors flex items-center gap-3 cursor-pointer">
                       <div className="flex-1">
                         <p className="text-sm font-medium text-text-primary">
                           {info.title}
@@ -230,13 +230,13 @@ function UserDropdown() {
               <p className="text-[11px] text-text-muted">admin@minhaloja.com</p>
             </div>
             <Link href="/settings/account" onClick={() => setOpen(false)}>
-              <div className="px-3 py-2 text-sm text-text-primary hover:bg-[#F5F5F5] dark:hover:bg-[#2A2A2A] transition-colors flex items-center gap-2">
+              <div className="px-3 py-2 text-sm text-text-primary hover:bg-bg-hover transition-colors flex items-center gap-2">
                 <User size={16} weight="duotone" />
                 Meu Perfil
               </div>
             </Link>
             <Link href="/settings/account" onClick={() => setOpen(false)}>
-              <div className="px-3 py-2 text-sm text-text-primary hover:bg-[#F5F5F5] dark:hover:bg-[#2A2A2A] transition-colors flex items-center gap-2">
+              <div className="px-3 py-2 text-sm text-text-primary hover:bg-bg-hover transition-colors flex items-center gap-2">
                 <GearSix size={16} weight="duotone" />
                 Configurações
               </div>
@@ -286,13 +286,13 @@ export function Header() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className="sticky top-0 z-30 flex items-center justify-between h-16 px-6 bg-white dark:bg-background-card border-b border-[#E0E0E0] dark:border-border"
+        className="sticky top-0 z-30 flex items-center justify-between h-16 px-6 bg-background-card border-b border-border"
       >
         {/* Left: Mobile menu + Breadcrumb */}
         <div className="flex items-center gap-4">
           <button
             onClick={toggleMobileSidebar}
-            className="md:hidden p-2 rounded-lg hover:bg-[#F0F0F0] dark:hover:bg-[#2A2A2A] transition-colors cursor-pointer"
+            className="md:hidden p-2 rounded-lg hover:bg-bg-hover transition-colors cursor-pointer"
           >
             <List size={24} weight="bold" className="text-text-primary" />
           </button>
@@ -302,26 +302,26 @@ export function Header() {
         {/* Center: Global search trigger */}
         <button
           onClick={() => setSearchOpen(true)}
-          className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl bg-[#F5F5F5] dark:bg-[#2A2A2A] text-text-muted hover:bg-white hover:border-worder-primary hover:shadow-[0_0_0_1px_rgba(242,107,42,0.2)] dark:hover:bg-[#333] transition-all duration-200 text-sm max-w-[480px] w-full mx-6 cursor-pointer border border-transparent"
+          className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl bg-bg-hover text-text-muted hover:bg-background-card hover:border-worder-primary hover:shadow-[0_0_0_1px_rgba(242,107,42,0.2)] transition-all duration-200 text-sm max-w-[480px] w-full mx-6 cursor-pointer border border-transparent"
         >
-          <MagnifyingGlass size={18} weight="bold" className="text-[#999]" />
+          <MagnifyingGlass size={18} weight="bold" className="text-text-muted" />
           <span className="flex-1 text-left">
             Buscar contatos, campanhas...
           </span>
-          <kbd className="hidden md:inline-flex items-center px-1.5 py-0.5 rounded-md bg-[#E8E8E8] dark:bg-[#1A1A1A] text-[11px] font-mono font-bold text-text-muted">
+          <kbd className="hidden md:inline-flex items-center px-1.5 py-0.5 rounded-md bg-bg-subtle text-[11px] font-mono font-bold text-text-muted">
             ⌘K
           </kbd>
         </button>
 
         {/* Right: Notifications + Avatar */}
         <div className="flex items-center gap-3">
-          <button className="relative p-2 rounded-lg hover:bg-[#F0F0F0] dark:hover:bg-[#2A2A2A] transition-colors cursor-pointer">
+          <button className="relative p-2 rounded-lg hover:bg-bg-hover transition-colors cursor-pointer">
             <Bell
               size={22}
               weight="fill"
               className="text-text-secondary"
             />
-            <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full ring-2 ring-white dark:ring-background-card" />
+            <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full ring-2 ring-background-card" />
           </button>
 
           <UserDropdown />
