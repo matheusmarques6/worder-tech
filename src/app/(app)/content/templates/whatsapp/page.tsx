@@ -1,8 +1,9 @@
 "use client";
 
-import { PageHeader } from "@/components/shared/page-header";
-import { PagePlaceholder } from "@/components/shared/page-placeholder";
 import { motion } from "framer-motion";
+import { PageHeader } from "@/components/shared/page-header";
+import { WATemplatesTable } from "@/components/content/wa-templates-table";
+import { waTemplates } from "@/lib/mock-data/content";
 
 export default function Page() {
   return (
@@ -16,7 +17,13 @@ export default function Page() {
         title="Templates WhatsApp"
         breadcrumb={["Conteúdo", "Templates", "WhatsApp"]}
       />
-      <PagePlaceholder pageName="Templates WhatsApp" />
+
+      <div
+        className="bg-white border border-[#E0E0E0] overflow-hidden"
+        style={{ borderRadius: "var(--radius-card)" }}
+      >
+        <WATemplatesTable templates={waTemplates} />
+      </div>
     </motion.div>
   );
 }
