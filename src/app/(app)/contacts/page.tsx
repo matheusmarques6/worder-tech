@@ -63,12 +63,28 @@ function formatDate(isoDate: string): string {
 }
 
 const segmentVariants: Record<string, "primary" | "success" | "error" | "warning" | "info" | "default"> = {
-  VIP: "primary",
-  "Repeat Buyer": "success",
+  VIP: "warning",
+  "Repeat Buyer": "info",
   "Churn Risk": "error",
-  "Novo Lead": "info",
-  "Win-back": "warning",
+  "Novo Lead": "success",
+  "Win-back": "primary",
 };
+
+// Generate consistent avatar color from name hash
+const avatarColors = [
+  "linear-gradient(135deg, #F26B2A, #F5A623)", // orange
+  "linear-gradient(135deg, #3B82F6, #2563EB)", // blue
+  "linear-gradient(135deg, #22C55E, #16A34A)", // green
+  "linear-gradient(135deg, #8B5CF6, #7C3AED)", // purple
+  "linear-gradient(135deg, #EC4899, #DB2777)", // pink
+  "linear-gradient(135deg, #14B8A6, #0D9488)", // teal
+];
+
+function nameToColor(name: string): string {
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  return avatarColors[Math.abs(hash) % avatarColors.length];
+}
 
 type SortKey = "name" | "email" | "ltv" | "lastPurchase" | "createdAt";
 type SortDir = "asc" | "desc";
@@ -190,7 +206,7 @@ export default function ContactsPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
-      className="p-6 space-y-5"
+      className="px-7 py-6 space-y-6"
     >
       <PageHeader title="Contatos" breadcrumb={["Contatos", "Todos"]} />
 
@@ -248,8 +264,10 @@ export default function ContactsPage() {
             <DownloadSimple size={16} weight="bold" />
             Exportar
           </Button>
-          <Button size="sm">
-            <Plus size={16} weight="bold" />
+          <Button size="sm" className="group">
+            <motion.span className="inline-block" whileHover={{ rotate: 90 }} transition={{ duration: 0.2 }}>
+              <Plus size={16} weight="bold" />
+            </motion.span>
             Criar contato
           </Button>
         </div>
@@ -370,7 +388,12 @@ export default function ContactsPage() {
                   </TableCell>
                   <TableCell>
                     <div className="flex items-center gap-3">
-                      <Avatar size="sm" name={contact.name} />
+                      <div
+                        className="h-8 w-8 rounded-full flex items-center justify-center text-white text-xs font-semibold shrink-0"
+                        style={{ background: nameToColor(contact.name) }}
+                      >
+                        {contact.name.split(/\s+/).slice(0, 2).map(w => w[0]).join("")}
+                      </div>
                       <span className="font-medium">{contact.name}</span>
                     </div>
                   </TableCell>
@@ -385,7 +408,10 @@ export default function ContactsPage() {
                     </span>
                   </TableCell>
                   <TableCell className="text-right">
-                    <span className="font-semibold">
+                    <span
+                      className={cn("font-semibold", contact.ltv > 5000 && "text-success")}
+                      style={{ fontVariantNumeric: "tabular-nums" }}
+                    >
                       R$ {contact.ltv.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
                     </span>
                   </TableCell>
@@ -401,6 +427,7 @@ export default function ContactsPage() {
                           key={seg}
                           variant={segmentVariants[seg] || "default"}
                           size="sm"
+                          className="transition-transform duration-150 hover:scale-105"
                         >
                           {seg}
                         </Badge>

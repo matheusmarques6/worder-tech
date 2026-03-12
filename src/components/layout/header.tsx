@@ -36,21 +36,21 @@ function Breadcrumb() {
   ];
 
   return (
-    <div className="flex items-center gap-1.5 text-sm">
+    <div className="flex items-center gap-1.5 text-[13px]">
       {crumbs.map((item, i) => (
         <span key={i} className="flex items-center gap-1.5">
           {i > 0 && (
             <CaretRight
-              size={12}
+              size={11}
               weight="bold"
-              className="text-text-muted"
+              className="text-[#CCC]"
             />
           )}
           <span
             className={cn(
               i === crumbs.length - 1
                 ? "text-text-primary font-medium"
-                : "text-text-muted"
+                : "text-[#999]"
             )}
           >
             {item}
@@ -211,7 +211,7 @@ function UserDropdown() {
         className="flex items-center gap-2 pl-3 border-l border-border cursor-pointer"
       >
         <Avatar size="sm" name="Admin" />
-        <span className="hidden md:block text-sm font-medium text-text-primary">
+        <span className="hidden xl:block text-sm font-medium text-text-primary">
           Admin
         </span>
       </button>
@@ -302,13 +302,13 @@ export function Header() {
         {/* Center: Global search trigger */}
         <button
           onClick={() => setSearchOpen(true)}
-          className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl bg-[#F5F5F5] dark:bg-[#2A2A2A] text-text-muted hover:bg-[#EFEFEF] dark:hover:bg-[#333] transition-colors text-sm max-w-[480px] w-full mx-6 cursor-pointer"
+          className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl bg-[#F5F5F5] dark:bg-[#2A2A2A] text-text-muted hover:bg-white hover:border-worder-primary hover:shadow-[0_0_0_1px_rgba(242,107,42,0.2)] dark:hover:bg-[#333] transition-all duration-200 text-sm max-w-[480px] w-full mx-6 cursor-pointer border border-transparent"
         >
-          <MagnifyingGlass size={18} weight="bold" />
+          <MagnifyingGlass size={18} weight="bold" className="text-[#999]" />
           <span className="flex-1 text-left">
             Buscar contatos, campanhas...
           </span>
-          <kbd className="hidden md:inline-flex items-center px-1.5 py-0.5 rounded bg-white dark:bg-[#1A1A1A] text-[10px] font-mono font-bold text-text-muted border border-border">
+          <kbd className="hidden md:inline-flex items-center px-1.5 py-0.5 rounded-md bg-[#E8E8E8] dark:bg-[#1A1A1A] text-[11px] font-mono font-bold text-text-muted">
             ⌘K
           </kbd>
         </button>
@@ -318,10 +318,10 @@ export function Header() {
           <button className="relative p-2 rounded-lg hover:bg-[#F0F0F0] dark:hover:bg-[#2A2A2A] transition-colors cursor-pointer">
             <Bell
               size={22}
-              weight="duotone"
+              weight="fill"
               className="text-text-secondary"
             />
-            <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full" />
+            <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full ring-2 ring-white dark:ring-background-card" />
           </button>
 
           <UserDropdown />

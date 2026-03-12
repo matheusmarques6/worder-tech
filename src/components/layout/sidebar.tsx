@@ -183,7 +183,7 @@ function NavItemComponent({
   const content = (
     <motion.div
       className={cn(
-        "relative flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors duration-200 group cursor-pointer",
+        "relative flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-300 ease-in-out group cursor-pointer",
         isActive && !hasChildren
           ? "bg-[rgba(242,107,42,0.1)] text-white"
           : isActive && hasChildren
@@ -206,7 +206,7 @@ function NavItemComponent({
       <Icon
         size={22}
         weight={isActive ? "fill" : "duotone"}
-        className="flex-shrink-0"
+        className={cn("flex-shrink-0 transition-opacity duration-200", !isActive && "opacity-50 group-hover:opacity-100")}
       />
 
       <AnimatePresence>
@@ -224,14 +224,14 @@ function NavItemComponent({
 
       {/* Badge */}
       {item.badge && !collapsed && (
-        <span className="ml-auto flex-shrink-0 bg-worder-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[20px] text-center">
+        <span className="ml-auto flex-shrink-0 bg-[#EF4444] text-white text-[11px] font-bold rounded-full flex items-center justify-center" style={{ minWidth: 18, height: 18, padding: "0 5px" }}>
           {item.badge}
         </span>
       )}
 
       {/* Badge dot when collapsed */}
       {item.badge && collapsed && (
-        <div className="absolute top-1.5 right-1.5 w-2 h-2 bg-worder-primary rounded-full" />
+        <div className="absolute top-1.5 right-1.5 w-2 h-2 bg-[#EF4444] rounded-full" />
       )}
 
       {/* Caret for children */}
@@ -494,7 +494,7 @@ export function Sidebar() {
       </nav>
 
       {/* Separator */}
-      <div className="mx-4 border-t border-[rgba(255,255,255,0.1)]" />
+      <div className="mx-4 my-2 border-t border-[rgba(255,255,255,0.06)]" />
 
       {/* Bottom Navigation */}
       <div className="py-3 px-3 space-y-0.5">
@@ -532,7 +532,7 @@ export function Sidebar() {
       </div>
 
       {/* User footer */}
-      <div className="px-3 pb-3 pt-2 border-t border-[rgba(255,255,255,0.08)]">
+      <div className="px-3 pb-3 pt-3 border-t border-[rgba(255,255,255,0.06)]">
         <UserFooter collapsed={sidebarCollapsed} />
       </div>
     </>

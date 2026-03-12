@@ -34,7 +34,7 @@ const TableBody = forwardRef<
 >(({ className, ...props }, ref) => (
   <tbody
     ref={ref}
-    className={cn("divide-y divide-border", className)}
+    className={cn("divide-y divide-[#F0F0F0] dark:divide-border", className)}
     {...props}
   />
 ));
@@ -47,8 +47,8 @@ const TableRow = forwardRef<
   <tr
     ref={ref}
     className={cn(
-      "group relative cursor-pointer transition-colors duration-200 hover:bg-[#FAFAFA] dark:hover:bg-[#1A1A1A]",
-      "before:absolute before:left-0 before:top-0 before:h-full before:w-0 before:border-l-[3px] before:border-transparent before:transition-all before:duration-200",
+      "group relative cursor-pointer transition-all duration-150 hover:bg-[rgba(242,107,42,0.03)] dark:hover:bg-[#1A1A1A]",
+      "before:absolute before:left-0 before:top-0 before:h-full before:w-0 before:border-l-[3px] before:border-transparent before:transition-all before:duration-150",
       "hover:before:border-worder-primary",
       className
     )}
@@ -64,7 +64,7 @@ const TableHead = forwardRef<
   <th
     ref={ref}
     className={cn(
-      "px-5 py-3 text-left text-xs font-semibold uppercase tracking-wider text-white",
+      "px-5 py-3.5 text-left text-[11px] font-semibold uppercase tracking-widest text-white",
       className
     )}
     {...props}

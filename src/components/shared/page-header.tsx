@@ -22,21 +22,21 @@ export function PageHeader({ title, breadcrumb, description, actions, className 
     >
       <div>
         {/* Breadcrumb */}
-        <div className="flex items-center gap-1.5 text-sm mb-1">
+        <div className="flex items-center gap-1.5 text-[13px] mb-1">
           {breadcrumb.map((item, i) => (
             <span key={i} className="flex items-center gap-1.5">
               {i > 0 && (
                 <CaretRight
-                  size={12}
+                  size={11}
                   weight="bold"
-                  className="text-text-muted"
+                  className="text-[#CCC]"
                 />
               )}
               <span
                 className={cn(
                   i === breadcrumb.length - 1
                     ? "text-text-primary font-medium"
-                    : "text-text-muted"
+                    : "text-[#999]"
                 )}
               >
                 {item}
@@ -46,7 +46,7 @@ export function PageHeader({ title, breadcrumb, description, actions, className 
         </div>
 
         {/* Title */}
-        <h1 className="text-2xl font-bold text-text-primary font-heading">
+        <h1 className="text-[28px] font-bold text-text-primary font-heading leading-tight">
           {title}
         </h1>
 

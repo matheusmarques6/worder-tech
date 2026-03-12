@@ -28,7 +28,7 @@ export default function DashboardPage() {
   const loading = useDashboardStore((s) => s.loading);
 
   return (
-    <div className="p-6 space-y-5">
+    <div className="px-7 py-6 space-y-6">
       {/* Header + Period Selector */}
       <motion.div
         custom={0}
@@ -48,10 +48,10 @@ export default function DashboardPage() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="space-y-5"
+            className="space-y-6"
           >
             <Skeleton variant="card" className="h-[160px]" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {Array.from({ length: 4 }).map((_, i) => (
                 <Skeleton key={i} variant="card" className="h-[120px]" />
               ))}
@@ -68,7 +68,7 @@ export default function DashboardPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
-            className="space-y-5"
+            className="space-y-6"
           >
             {/* Hero Card */}
             <motion.div
@@ -84,7 +84,7 @@ export default function DashboardPage() {
               custom={2}
               initial={stagger.initial}
               animate={stagger.animate(2)}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
             >
               {kpisPrimary.map((kpi, i) => (
                 <KPICard key={kpi.label} {...kpi} index={i} />
@@ -108,7 +108,7 @@ export default function DashboardPage() {
               custom={4}
               initial={stagger.initial}
               animate={stagger.animate(4)}
-              className="grid grid-cols-1 lg:grid-cols-10 gap-5"
+              className="grid grid-cols-1 lg:grid-cols-10 gap-4"
             >
               <div className="lg:col-span-7">
                 <RevenueChart />
@@ -123,7 +123,7 @@ export default function DashboardPage() {
               custom={5}
               initial={stagger.initial}
               animate={stagger.animate(5)}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-5"
+              className="grid grid-cols-1 lg:grid-cols-2 gap-4"
             >
               <TopAutomations />
               <RecentCampaigns />
