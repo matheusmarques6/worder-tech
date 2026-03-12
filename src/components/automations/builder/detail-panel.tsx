@@ -178,14 +178,14 @@ function EmailNodeConfig({ node }: { node: { id: string; config: Record<string, 
         <div>
           <FieldLabel>Métricas</FieldLabel>
           <div className="grid grid-cols-2 gap-2">
-            <div className="px-3 py-2.5 bg-muted rounded-lg">
+            <div className="px-3 py-2.5 bg-background rounded-lg">
               <div className="flex items-center gap-1.5">
                 <Eye size={12} className="text-info" />
                 <span className="text-[10px] text-text-muted">Aberturas</span>
               </div>
               <p className="text-sm font-bold text-text-primary mt-0.5">23,4%</p>
             </div>
-            <div className="px-3 py-2.5 bg-muted rounded-lg">
+            <div className="px-3 py-2.5 bg-background rounded-lg">
               <div className="flex items-center gap-1.5">
                 <CursorClick size={12} className="text-worder-primary" />
                 <span className="text-[10px] text-text-muted">Cliques</span>

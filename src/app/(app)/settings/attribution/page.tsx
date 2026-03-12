@@ -56,7 +56,7 @@ export default function AttributionPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-[13px]">
             <thead>
-              <tr className="bg-bg-subtle">
+              <tr className="bg-muted">
                 <th className="px-4 py-3 font-semibold text-text-secondary text-[12px] uppercase tracking-wide">
                   Canal
                 </th>
@@ -72,7 +72,7 @@ export default function AttributionPage() {
               {attributionData.map((channel, index) => (
                 <tr
                   key={channel.name}
-                  className="border-t border-border-subtle hover:bg-bg-hover transition-colors"
+                  className="border-t border-separator hover:bg-muted transition-colors"
                 >
                   <td className="px-4 py-3 font-medium text-text-primary">
                     <span className="mr-2">{channel.icon}</span>
@@ -82,7 +82,7 @@ export default function AttributionPage() {
                     <select
                       value={channel.openValue}
                       onChange={(e) => updateAttribution(index, "openValue", e.target.value)}
-                      className="px-3 py-1.5 text-[12px] border border-border bg-bg-input outline-none focus:border-[#F26B2A] transition-colors appearance-none cursor-pointer"
+                      className="px-3 py-1.5 text-[12px] border border-border bg-card outline-none focus:border-[#F26B2A] transition-colors appearance-none cursor-pointer"
                       style={{ borderRadius: "8px", minWidth: "110px" }}
                     >
                       {periodOptions.map((opt) => (
@@ -96,7 +96,7 @@ export default function AttributionPage() {
                     <select
                       value={channel.clickValue}
                       onChange={(e) => updateAttribution(index, "clickValue", e.target.value)}
-                      className="px-3 py-1.5 text-[12px] border border-border bg-bg-input outline-none focus:border-[#F26B2A] transition-colors appearance-none cursor-pointer"
+                      className="px-3 py-1.5 text-[12px] border border-border bg-card outline-none focus:border-[#F26B2A] transition-colors appearance-none cursor-pointer"
                       style={{ borderRadius: "8px", minWidth: "110px" }}
                     >
                       {periodOptions.map((opt) => (
@@ -114,7 +114,7 @@ export default function AttributionPage() {
 
         <div className="mt-4">
           <button
-            className="px-4 py-2 text-[12px] font-semibold border border-border text-text-primary hover:bg-bg-hover transition-colors"
+            className="px-4 py-2 text-[12px] font-semibold border border-border text-text-primary hover:bg-muted transition-colors"
             style={{ borderRadius: "8px" }}
           >
             <span className="flex items-center gap-2">

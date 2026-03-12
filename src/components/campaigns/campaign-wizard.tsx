@@ -361,21 +361,21 @@ export function CampaignWizard({ onBack }: CampaignWizardProps) {
                 <h3 className="text-[12px] font-semibold text-text-muted uppercase tracking-wider">Resumo da Campanha</h3>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="px-4 py-3 bg-muted rounded-xl">
+                  <div className="px-4 py-3 bg-background rounded-xl">
                     <p className="text-[11px] text-text-muted mb-1">Nome</p>
                     <p className="text-sm font-medium text-text-primary">{campaignName || "Sem nome"}</p>
                   </div>
-                  <div className="px-4 py-3 bg-muted rounded-xl">
+                  <div className="px-4 py-3 bg-background rounded-xl">
                     <p className="text-[11px] text-text-muted mb-1">Canal</p>
                     <p className="text-sm font-medium text-text-primary capitalize">{selectedChannel || "—"}</p>
                   </div>
-                  <div className="px-4 py-3 bg-muted rounded-xl">
+                  <div className="px-4 py-3 bg-background rounded-xl">
                     <p className="text-[11px] text-text-muted mb-1">Público</p>
                     <p className="text-sm font-medium text-text-primary">
                       {audiences.find((a) => a.id === selectedAudience)?.name || "—"}
                     </p>
                   </div>
-                  <div className="px-4 py-3 bg-muted rounded-xl">
+                  <div className="px-4 py-3 bg-background rounded-xl">
                     <p className="text-[11px] text-text-muted mb-1">Destinatários</p>
                     <p className="text-sm font-bold text-text-primary" style={{ fontVariantNumeric: "tabular-nums" }}>
                       {audiences.find((a) => a.id === selectedAudience)?.count.toLocaleString("pt-BR") || "—"}
@@ -384,7 +384,7 @@ export function CampaignWizard({ onBack }: CampaignWizardProps) {
                 </div>
 
                 {selectedChannel === "email" && subject && (
-                  <div className="px-4 py-3 bg-muted rounded-xl">
+                  <div className="px-4 py-3 bg-background rounded-xl">
                     <p className="text-[11px] text-text-muted mb-1">Assunto</p>
                     <p className="text-sm font-medium text-text-primary">{subject}</p>
                   </div>

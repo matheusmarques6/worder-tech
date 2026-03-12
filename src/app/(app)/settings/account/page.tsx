@@ -33,11 +33,11 @@ export default function Page() {
           ]}
         />
         <div className="grid grid-cols-2 gap-4">
-          <div className="p-3 bg-bg-subtle border border-border-subtle" style={{ borderRadius: "10px" }}>
+          <div className="p-3 bg-muted border border-separator" style={{ borderRadius: "10px" }}>
             <p className="text-[11px] text-text-muted uppercase tracking-wide mb-1">Formato de data</p>
             <p className="text-[13px] font-medium text-text-primary">12/03/2026</p>
           </div>
-          <div className="p-3 bg-bg-subtle border border-border-subtle" style={{ borderRadius: "10px" }}>
+          <div className="p-3 bg-muted border border-separator" style={{ borderRadius: "10px" }}>
             <p className="text-[11px] text-text-muted uppercase tracking-wide mb-1">Formato de moeda</p>
             <p className="text-[13px] font-medium text-text-primary">R$ 1.234,56</p>
           </div>

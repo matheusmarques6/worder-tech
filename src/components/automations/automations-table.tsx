@@ -123,7 +123,7 @@ export function AutomationsTable({ automations }: AutomationsTableProps) {
               <td className="py-3 px-4 text-center relative">
                 <button
                   onClick={() => setOpenMenu(openMenu === auto.id ? null : auto.id)}
-                  className="p-1.5 rounded-lg hover:bg-border-subtle transition-colors"
+                  className="p-1.5 rounded-lg hover:bg-hover transition-colors"
                 >
                   <DotsThree size={18} weight="bold" className="text-text-muted" />
                 </button>

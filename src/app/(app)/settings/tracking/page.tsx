@@ -69,14 +69,14 @@ export default function TrackingPage() {
             <Badge variant="success" size="sm">Conectado</Badge>
           </div>
           <button
-            className="px-4 py-2 text-[12px] font-semibold border border-border text-text-primary hover:bg-bg-hover transition-colors"
+            className="px-4 py-2 text-[12px] font-semibold border border-border text-text-primary hover:bg-muted transition-colors"
             style={{ borderRadius: "8px" }}
           >
             Gerenciar
           </button>
         </div>
 
-        <div className="border-t border-border-subtle pt-4 mt-4 space-y-3">
+        <div className="border-t border-separator pt-4 mt-4 space-y-3">
           <label className="flex items-center gap-3 cursor-pointer">
             <input
               type="checkbox"

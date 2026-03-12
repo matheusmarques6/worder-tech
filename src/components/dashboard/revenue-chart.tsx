@@ -17,7 +17,7 @@ function CustomTooltip({ active, payload, label }: { active?: boolean; payload?:
 
   return (
     <div
-      className="bg-background-card dark:bg-[#1A1A1A] border border-border rounded-xl shadow-lg p-3 min-w-[180px]"
+      className="bg-card border border-border rounded-xl shadow-lg p-3 min-w-[180px]"
     >
       <p className="text-xs text-text-muted font-medium mb-2">{label}</p>
       {payload.map((entry) => (
@@ -48,7 +48,7 @@ export function RevenueChart() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.3 }}
-      className="bg-background-card border border-border p-5"
+      className="bg-card border border-border p-5"
       style={{
         borderRadius: "var(--radius-card)",
         boxShadow: "var(--shadow-card)",

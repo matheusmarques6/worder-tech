@@ -23,7 +23,7 @@ export default function Page() {
 
       {/* Conexão */}
       <SettingsCard title="Conexão" description="Status da conexão com o WhatsApp Business API." showSave={false}>
-        <div className="flex items-center justify-between p-4 bg-bg-subtle border border-border-subtle" style={{ borderRadius: "10px" }}>
+        <div className="flex items-center justify-between p-4 bg-muted border border-separator" style={{ borderRadius: "10px" }}>
           <div className="flex items-center gap-3">
             <div
               className="w-10 h-10 flex items-center justify-center text-white"
@@ -43,7 +43,7 @@ export default function Page() {
             </div>
           </div>
           <button
-            className="flex items-center gap-1.5 px-4 py-2 text-[13px] font-semibold text-text-primary border border-border bg-background-card hover:bg-bg-hover transition-colors"
+            className="flex items-center gap-1.5 px-4 py-2 text-[13px] font-semibold text-text-primary border border-border bg-card hover:bg-muted transition-colors"
             style={{ borderRadius: "10px" }}
           >
             <ArrowClockwise size={15} weight="fill" />
@@ -60,7 +60,7 @@ export default function Page() {
           <textarea
             placeholder="Descreva sua empresa em poucas palavras..."
             rows={3}
-            className="w-full mt-1.5 px-4 py-2.5 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors resize-none"
+            className="w-full mt-1.5 px-4 py-2.5 text-sm border border-border bg-card outline-none focus:border-worder-primary transition-colors resize-none"
             style={{ borderRadius: "10px" }}
           />
         </div>
@@ -98,7 +98,7 @@ export default function Page() {
               <textarea
                 placeholder="Defina o tom de voz, regras de atendimento, limites e comportamento do agente..."
                 rows={4}
-                className="w-full mt-1.5 px-4 py-2.5 text-sm border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors resize-none"
+                className="w-full mt-1.5 px-4 py-2.5 text-sm border border-border bg-card outline-none focus:border-worder-primary transition-colors resize-none"
                 style={{ borderRadius: "10px" }}
               />
             </div>

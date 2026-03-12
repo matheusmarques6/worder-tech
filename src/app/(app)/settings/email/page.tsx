@@ -133,7 +133,7 @@ export default function Page() {
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-background-card border border-border overflow-hidden"
+                  className="bg-card border border-border overflow-hidden"
                   style={{ borderRadius: "var(--radius-card)", boxShadow: "var(--shadow-card)" }}
                 >
                   <div className="p-6 pb-4 flex items-center justify-between">
@@ -161,7 +161,7 @@ export default function Page() {
                   <div className="overflow-x-auto">
                     <table className="w-full">
                       <thead>
-                        <tr className="bg-bg-table-header text-white">
+                        <tr className="bg-table-header text-table-header-text">
                           <th className="text-left text-[12px] font-semibold uppercase tracking-wide px-6 py-3">
                             Domínio
                           </th>
@@ -177,7 +177,7 @@ export default function Page() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.2, delay: 0.1 + i * 0.05 }}
-                            className="border-b border-border-subtle hover:bg-bg-hover transition-colors"
+                            className="border-b border-separator hover:bg-muted transition-colors"
                           >
                             <td className="px-6 py-3.5 text-[13px] font-medium text-text-primary">
                               {row.domain}
@@ -220,7 +220,7 @@ export default function Page() {
                     ].map((item) => (
                       <div
                         key={item.name}
-                        className="flex items-start gap-3 p-3 bg-bg-subtle rounded-[10px]"
+                        className="flex items-start gap-3 p-3 bg-muted rounded-[10px]"
                       >
                         <ShieldCheck
                           size={20}

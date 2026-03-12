@@ -154,7 +154,7 @@ function TemplateCard({
       >
         {/* Mini flow preview placeholder */}
         <div
-          className="h-[60px] bg-muted mb-3 flex items-center justify-center gap-2 overflow-hidden"
+          className="h-[60px] bg-background mb-3 flex items-center justify-center gap-2 overflow-hidden"
           style={{ borderRadius: "8px" }}
         >
           <div className="w-8 h-4 rounded bg-gradient-to-r from-[#F26B2A] to-[#F5A623]" />

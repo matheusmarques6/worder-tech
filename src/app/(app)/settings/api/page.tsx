@@ -105,20 +105,20 @@ export default function APIPage() {
         <div className="overflow-x-auto -mx-6">
           <table className="w-full text-left text-[13px]">
             <thead>
-              <tr style={{ backgroundColor: "var(--bg-table-header)" }}>
-                <th className="px-6 py-3 font-semibold text-white text-[12px] uppercase tracking-wide first:rounded-tl-[10px]">
+              <tr className="bg-table-header">
+                <th className="px-6 py-3 font-semibold text-table-header-text text-[12px] uppercase tracking-wide first:rounded-tl-[10px]">
                   Nome
                 </th>
-                <th className="px-4 py-3 font-semibold text-white text-[12px] uppercase tracking-wide">
+                <th className="px-4 py-3 font-semibold text-table-header-text text-[12px] uppercase tracking-wide">
                   Chave
                 </th>
-                <th className="px-4 py-3 font-semibold text-white text-[12px] uppercase tracking-wide">
+                <th className="px-4 py-3 font-semibold text-table-header-text text-[12px] uppercase tracking-wide">
                   Permissões
                 </th>
-                <th className="px-4 py-3 font-semibold text-white text-[12px] uppercase tracking-wide">
+                <th className="px-4 py-3 font-semibold text-table-header-text text-[12px] uppercase tracking-wide">
                   Criada em
                 </th>
-                <th className="px-4 py-3 font-semibold text-white text-[12px] uppercase tracking-wide last:rounded-tr-[10px]">
+                <th className="px-4 py-3 font-semibold text-table-header-text text-[12px] uppercase tracking-wide last:rounded-tr-[10px]">
                   Último uso
                 </th>
               </tr>
@@ -127,7 +127,7 @@ export default function APIPage() {
               {keys.map((apiKey) => (
                 <tr
                   key={apiKey.id}
-                  className="border-t border-border-subtle hover:bg-bg-hover transition-colors group"
+                  className="border-t border-separator hover:bg-muted transition-colors group"
                 >
                   <td className="px-6 py-3 font-medium text-text-primary">
                     <div className="flex items-center gap-2">
@@ -138,14 +138,14 @@ export default function APIPage() {
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-2">
                       <code
-                        className="text-[12px] font-mono px-2 py-1 bg-bg-hover"
+                        className="text-[12px] font-mono px-2 py-1 bg-muted"
                         style={{ borderRadius: "6px" }}
                       >
                         {revealedKeys[apiKey.id] ? apiKey.keyFull : apiKey.key}
                       </code>
                       <button
                         onClick={() => toggleReveal(apiKey.id)}
-                        className="p-1 hover:bg-border-subtle rounded-md transition-colors"
+                        className="p-1 hover:bg-hover rounded-md transition-colors"
                         title={revealedKeys[apiKey.id] ? "Ocultar" : "Revelar"}
                       >
                         {revealedKeys[apiKey.id] ? (
@@ -161,7 +161,7 @@ export default function APIPage() {
                             apiKey.id
                           )
                         }
-                        className="p-1 hover:bg-border-subtle rounded-md transition-colors"
+                        className="p-1 hover:bg-hover rounded-md transition-colors"
                         title="Copiar"
                       >
                         {copiedId === apiKey.id ? (
@@ -209,7 +209,7 @@ export default function APIPage() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 10 }}
               transition={{ duration: 0.25 }}
-              className="bg-background-card w-full max-w-md p-6 shadow-xl"
+              className="bg-card w-full max-w-md p-6 shadow-xl"
               style={{ borderRadius: "12px" }}
               onClick={(e) => e.stopPropagation()}
             >
@@ -219,7 +219,7 @@ export default function APIPage() {
                 </h3>
                 <button
                   onClick={() => setShowModal(false)}
-                  className="p-1 hover:bg-border-subtle rounded-md transition-colors"
+                  className="p-1 hover:bg-hover rounded-md transition-colors"
                 >
                   <X size={18} weight="bold" className="text-text-muted" />
                 </button>
@@ -264,10 +264,10 @@ export default function APIPage() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 mt-6 pt-4 border-t border-border-subtle">
+              <div className="flex items-center gap-3 mt-6 pt-4 border-t border-separator">
                 <button
                   onClick={() => setShowModal(false)}
-                  className="px-5 py-2 text-[13px] font-semibold border border-border text-text-primary hover:bg-bg-hover transition-colors"
+                  className="px-5 py-2 text-[13px] font-semibold border border-border text-text-primary hover:bg-muted transition-colors"
                   style={{ borderRadius: "8px" }}
                 >
                   Cancelar
