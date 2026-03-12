@@ -117,11 +117,11 @@ export default function RecoveryPage() {
 
       {/* Tabs + Table Section */}
       <div
-        className="bg-background-card border border-border overflow-hidden"
+        className="bg-card border border-border overflow-hidden"
         style={{ borderRadius: "var(--radius-card)", boxShadow: "var(--shadow-card)" }}
       >
         {/* Tabs */}
-        <div className="border-b border-border-subtle px-5">
+        <div className="border-b border-separator px-5">
           <div className="flex items-center gap-1 -mb-px overflow-x-auto">
             {tabs.map((tab) => (
               <button
@@ -155,7 +155,7 @@ export default function RecoveryPage() {
         </div>
 
         {/* Action Bar */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 px-5 py-4 border-b border-border-subtle bg-bg-subtle">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 px-5 py-4 border-b border-separator bg-background">
           <div className="flex items-center gap-3 flex-wrap">
             {/* Search */}
             <div className="relative">
@@ -165,7 +165,7 @@ export default function RecoveryPage() {
                 placeholder="Buscar pedido, cliente..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-9 pr-4 py-2 text-sm bg-bg-input border border-border w-[240px] focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
+                className="pl-9 pr-4 py-2 text-sm bg-card border border-border w-[240px] focus:border-worder-primary focus:ring-1 focus:ring-worder-primary/20 outline-none transition-all"
                 style={{ borderRadius: "10px" }}
               />
             </div>
@@ -174,7 +174,7 @@ export default function RecoveryPage() {
               <select
                 value={selectedPeriod}
                 onChange={(e) => setSelectedPeriod(e.target.value)}
-                className="appearance-none pl-3 pr-8 py-2 text-sm bg-bg-input border border-border text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
+                className="appearance-none pl-3 pr-8 py-2 text-sm bg-card border border-border text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
                 style={{ borderRadius: "10px" }}
               >
                 {periodOptions.map((opt) => (
@@ -188,7 +188,7 @@ export default function RecoveryPage() {
               <select
                 value={selectedStatus}
                 onChange={(e) => setSelectedStatus(e.target.value)}
-                className="appearance-none pl-3 pr-8 py-2 text-sm bg-bg-input border border-border text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
+                className="appearance-none pl-3 pr-8 py-2 text-sm bg-card border border-border text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
                 style={{ borderRadius: "10px" }}
               >
                 {statusOptions.map((opt) => (
@@ -200,7 +200,7 @@ export default function RecoveryPage() {
           </div>
           <div className="flex items-center gap-2">
             <button
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-text-secondary bg-background-card border border-border hover:bg-border-subtle transition-colors"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-text-secondary bg-card border border-border hover:bg-border-subtle transition-colors"
               style={{ borderRadius: "10px" }}
             >
               <Export size={16} weight="bold" />

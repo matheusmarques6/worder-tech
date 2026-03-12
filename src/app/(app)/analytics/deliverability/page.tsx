@@ -134,7 +134,7 @@ export default function Page() {
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-background-card border border-border p-8 text-center"
+                className="bg-card border border-border p-8 text-center"
                 style={{ borderRadius: "var(--radius-card)" }}
               >
                 <EnvelopeSimple size={48} weight="duotone" className="text-text-muted mx-auto mb-3" />
@@ -149,18 +149,18 @@ export default function Page() {
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-background-card border border-border overflow-hidden"
+                className="bg-card border border-border overflow-hidden"
                 style={{ borderRadius: "var(--radius-card)" }}
               >
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="bg-bg-table-header text-white">
+                    <tr className="bg-table-header text-table-header-text">
                       <th className="py-3.5 px-5 text-left text-[11px] uppercase tracking-widest font-semibold">Tipo</th>
                       <th className="py-3.5 px-5 text-right text-[11px] uppercase tracking-widest font-semibold">Contagem</th>
                       <th className="py-3.5 px-5 text-right text-[11px] uppercase tracking-widest font-semibold">Taxa</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-border-subtle">
+                  <tbody className="divide-y divide-separator">
                     {[
                       { type: "Hard bounce", count: 342, rate: "0,14%" },
                       { type: "Soft bounce", count: 1653, rate: "0,67%" },
@@ -193,7 +193,7 @@ export default function Page() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-background-card border border-border p-8 text-center"
+          className="bg-card border border-border p-8 text-center"
           style={{ borderRadius: "var(--radius-card)" }}
         >
           {channel === "whatsapp" ? (
