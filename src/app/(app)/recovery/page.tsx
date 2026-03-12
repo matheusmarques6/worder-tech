@@ -200,7 +200,7 @@ export default function RecoveryPage() {
           </div>
           <div className="flex items-center gap-2">
             <button
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-text-secondary bg-card border border-border hover:bg-border-subtle transition-colors"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-text-secondary bg-card border border-border hover:bg-hover transition-colors"
               style={{ borderRadius: "10px" }}
             >
               <Export size={16} weight="bold" />

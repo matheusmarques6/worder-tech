@@ -67,15 +67,15 @@ export function DetailsDrawer({ item, onClose }: DetailsDrawerProps) {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="fixed right-0 top-0 bottom-0 z-50 w-[400px] bg-background-card shadow-2xl overflow-y-auto"
+            className="fixed right-0 top-0 bottom-0 z-50 w-[400px] bg-card shadow-2xl overflow-y-auto"
           >
             {/* Header */}
-            <div className="sticky top-0 z-10 flex items-center justify-between p-5 border-b border-border-subtle bg-background-card">
+            <div className="sticky top-0 z-10 flex items-center justify-between p-5 border-b border-separator bg-card">
               <div>
                 <h3 className="font-semibold text-text-primary text-lg">Detalhes do Pedido</h3>
                 <p className="font-mono text-sm text-worder-primary font-semibold">{item.orderId}</p>
               </div>
-              <button onClick={onClose} className="p-1.5 rounded-lg hover:bg-bg-hover transition-colors">
+              <button onClick={onClose} className="p-1.5 rounded-lg hover:bg-hover transition-colors">
                 <X size={18} className="text-text-muted" />
               </button>
             </div>
@@ -144,7 +144,7 @@ export function DetailsDrawer({ item, onClose }: DetailsDrawerProps) {
                   href={item.boletoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full px-4 py-2.5 border border-border text-sm font-medium text-text-secondary hover:bg-bg-hover transition-colors"
+                  className="flex items-center justify-center gap-2 w-full px-4 py-2.5 border border-border text-sm font-medium text-text-secondary hover:bg-hover transition-colors"
                   style={{ borderRadius: "10px" }}
                 >
                   <ArrowSquareOut size={16} weight="bold" />
@@ -178,7 +178,7 @@ export function DetailsDrawer({ item, onClose }: DetailsDrawerProps) {
                             <div className="absolute left-[11px] top-6 bottom-0 w-px bg-border" />
                           )}
                           {/* Dot */}
-                          <div className="absolute left-0 top-1 flex items-center justify-center w-6 h-6 rounded-full bg-background-card border-2 border-border">
+                          <div className="absolute left-0 top-1 flex items-center justify-center w-6 h-6 rounded-full bg-card border-2 border-border">
                             {getChannelIcon(attempt.channel)}
                           </div>
                           {/* Content */}
