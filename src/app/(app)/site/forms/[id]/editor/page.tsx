@@ -1,25 +1,23 @@
 "use client";
 
-import { PageHeader } from "@/components/shared/page-header";
-import { PagePlaceholder } from "@/components/shared/page-placeholder";
 import { motion } from "framer-motion";
-import { use } from "react";
+import { FormEditorNavbar } from "@/components/site/editor/editor-navbar";
+import { EditorSidebar } from "@/components/site/editor/editor-sidebar";
+import { PopupPreview } from "@/components/site/editor/popup-preview";
 
-export default function FormEditorPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = use(params);
-
+export default function FormEditorPage() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.4 }}
-      className="p-6 space-y-6"
+      transition={{ duration: 0.3 }}
+      className="flex flex-col h-[calc(100vh-64px)]"
     >
-      <PageHeader
-        title={`Editor de Formulário #${id}`}
-        breadcrumb={["Site", "Formulários", "Editor"]}
-      />
-      <PagePlaceholder pageName={`Editor de Formulário #${id}`} />
+      <FormEditorNavbar />
+      <div className="flex flex-1 overflow-hidden">
+        <EditorSidebar />
+        <PopupPreview />
+      </div>
     </motion.div>
   );
 }

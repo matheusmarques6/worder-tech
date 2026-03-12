@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Plus, Lightning } from "@phosphor-icons/react";
+import { X, Plus } from "@phosphor-icons/react";
 import { ChannelBadge } from "@/components/shared/channel-badge";
 import {
   flowTemplateCategories,
