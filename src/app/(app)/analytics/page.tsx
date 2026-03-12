@@ -57,7 +57,7 @@ export default function Page() {
             <select
               value={period}
               onChange={(e) => setPeriod(e.target.value as Period)}
-              className="px-3 py-2 text-[13px] border border-border bg-bg-input outline-none focus:border-worder-primary transition-colors appearance-none cursor-pointer"
+              className="px-3 py-2 text-[13px] border border-border bg-card outline-none focus:border-worder-primary transition-colors appearance-none cursor-pointer"
               style={{ borderRadius: "10px" }}
             >
               <option value="30d">Últimos 30 dias</option>
@@ -162,7 +162,7 @@ export default function Page() {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: i * 0.08 }}
-                  className="bg-background-card border border-border p-5"
+                  className="bg-card border border-border p-5"
                   style={{ borderRadius: "var(--radius-card)", boxShadow: "var(--shadow-card)" }}
                 >
                   <div className="flex items-center gap-2 mb-4">
@@ -209,7 +209,7 @@ export default function Page() {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: i * 0.08 }}
-                  className="bg-background-card border border-border p-5"
+                  className="bg-card border border-border p-5"
                   style={{ borderRadius: "var(--radius-card)", boxShadow: "var(--shadow-card)" }}
                 >
                   <h4 className="text-[14px] font-semibold text-text-primary mb-4">{item.type}</h4>
