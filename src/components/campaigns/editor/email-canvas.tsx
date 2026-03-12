@@ -65,7 +65,7 @@ interface EmailCanvasProps {
   previewMode: "desktop" | "mobile";
 }
 
-function BlockRenderer({ block, isSelected }: { block: EmailBlock; isSelected: boolean }) {
+function BlockRenderer({ block }: { block: EmailBlock }) {
   switch (block.type) {
     case "header":
       return (
@@ -234,7 +234,7 @@ export function EmailCanvas({ previewMode }: EmailCanvasProps) {
                   <Trash size={12} className="text-error" />
                 </button>
 
-                <BlockRenderer block={block} isSelected={isSelected} />
+                <BlockRenderer block={block} />
               </motion.div>
             );
           })}

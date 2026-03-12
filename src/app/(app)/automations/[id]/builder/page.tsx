@@ -1,25 +1,25 @@
 "use client";
 
-import { PageHeader } from "@/components/shared/page-header";
-import { PagePlaceholder } from "@/components/shared/page-placeholder";
 import { motion } from "framer-motion";
-import { use } from "react";
+import { BuilderNavbar } from "@/components/automations/builder/builder-navbar";
+import { ActionSidebar } from "@/components/automations/builder/action-sidebar";
+import { FlowCanvas } from "@/components/automations/builder/flow-canvas";
+import { DetailPanel } from "@/components/automations/builder/detail-panel";
 
-export default function AutomationBuilderPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = use(params);
-
+export default function FlowBuilderPage() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.4 }}
-      className="p-6 space-y-6"
+      transition={{ duration: 0.3 }}
+      className="flex flex-col h-[calc(100vh-64px)]"
     >
-      <PageHeader
-        title={`Flow Builder #${id}`}
-        breadcrumb={["Automações", "Flow Builder"]}
-      />
-      <PagePlaceholder pageName={`Flow Builder #${id}`} />
+      <BuilderNavbar />
+      <div className="flex flex-1 overflow-hidden">
+        <ActionSidebar />
+        <FlowCanvas />
+        <DetailPanel />
+      </div>
     </motion.div>
   );
 }
