@@ -132,6 +132,20 @@ export default function ListsPage() {
                 </select>
                 <Funnel size={14} className="absolute right-2.5 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none" />
               </div>
+              <div className="relative">
+                <select
+                  className="appearance-none pl-3 pr-8 py-2 text-sm bg-white border border-[#E0E0E0] text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
+                  style={{ borderRadius: "10px" }}
+                >
+                  <option>Tags</option>
+                  <option>shopify</option>
+                  <option>fidelização</option>
+                  <option>retenção</option>
+                  <option>engajamento</option>
+                  <option>campanha</option>
+                </select>
+                <Funnel size={14} className="absolute right-2.5 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none" />
+              </div>
             </div>
 
             <div className="relative">
@@ -154,7 +168,10 @@ export default function ListsPage() {
                   style={{ borderRadius: "10px" }}
                 >
                   <button
-                    onClick={() => setShowCreateMenu(false)}
+                    onClick={() => {
+                      setShowCreateMenu(false);
+                      // TODO: open create list modal
+                    }}
                     className="flex items-center gap-2 w-full px-3 py-2.5 text-[13px] text-text-secondary hover:bg-[#FAFAFA] transition-colors"
                   >
                     <ListBullets size={16} weight="fill" className="text-info" />

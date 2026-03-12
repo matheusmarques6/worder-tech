@@ -77,6 +77,22 @@ export default function AutomationsPage() {
               className="absolute right-2.5 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none"
             />
           </div>
+          <div className="relative">
+            <select
+              className="appearance-none pl-3 pr-8 py-2 text-sm bg-white border border-[#E0E0E0] text-text-secondary cursor-pointer focus:border-worder-primary outline-none"
+              style={{ borderRadius: "10px" }}
+            >
+              <option>Tags</option>
+              <option>recuperação</option>
+              <option>welcome</option>
+              <option>pós-venda</option>
+              <option>reengajamento</option>
+            </select>
+            <Funnel
+              size={14}
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none"
+            />
+          </div>
         </div>
 
         <div className="flex items-center gap-2">

@@ -377,7 +377,7 @@ interface BlockItem {
 }
 
 const elementBlocks: BlockItem[] = [
-  { type: "heading", label: "Texto", icon: <TextT size={20} weight="fill" /> },
+  { type: "text", label: "Texto", icon: <TextT size={20} weight="fill" /> },
   { type: "button", label: "Botão", icon: <CursorClick size={20} weight="fill" /> },
   { type: "image", label: "Imagem", icon: <ImageIcon size={20} weight="fill" /> },
   { type: "coupon", label: "Cupom", icon: <Ticket size={20} weight="fill" /> },

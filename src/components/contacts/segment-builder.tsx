@@ -167,7 +167,7 @@ export function SegmentBuilder({ initialName = "", initialRules = [], onBack }: 
             }}
           >
             <FloppyDisk size={16} weight="bold" />
-            Salvar Segmento
+            Salvar
           </button>
         </div>
       </div>
