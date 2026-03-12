@@ -82,7 +82,7 @@ export function DetailsDrawer({ item, onClose }: DetailsDrawerProps) {
 
             <div className="p-5 space-y-6">
               {/* Value */}
-              <div className="px-4 py-4 bg-bg-subtle rounded-xl">
+              <div className="px-4 py-4 bg-background rounded-xl">
                 <p className="text-[12px] text-text-muted uppercase tracking-wider font-medium mb-1">Valor total</p>
                 <p className="text-[28px] font-bold text-text-primary font-heading" style={{ fontVariantNumeric: "tabular-nums" }}>
                   R$ {item.value.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
@@ -115,9 +115,9 @@ export function DetailsDrawer({ item, onClose }: DetailsDrawerProps) {
                   {item.products.map((product, i) => (
                     <div
                       key={i}
-                      className="flex items-center gap-3 px-3 py-3 bg-bg-subtle rounded-xl"
+                      className="flex items-center gap-3 px-3 py-3 bg-background rounded-xl"
                     >
-                      <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-border-subtle">
+                      <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-muted">
                         <Package size={20} weight="fill" className="text-text-muted" />
                       </div>
                       <div className="flex-1 min-w-0">
@@ -134,7 +134,7 @@ export function DetailsDrawer({ item, onClose }: DetailsDrawerProps) {
 
               {/* Extra info */}
               {item.dueDate && (
-                <div className="flex items-center justify-between px-4 py-3 bg-bg-subtle rounded-xl">
+                <div className="flex items-center justify-between px-4 py-3 bg-background rounded-xl">
                   <span className="text-[12px] text-text-muted font-medium">Vencimento</span>
                   <span className="text-sm font-semibold text-text-primary">{formatDate(item.dueDate)}</span>
                 </div>
@@ -164,7 +164,7 @@ export function DetailsDrawer({ item, onClose }: DetailsDrawerProps) {
                   Timeline de Recuperação ({item.attempts.length} tentativa{item.attempts.length !== 1 ? "s" : ""})
                 </p>
                 {item.attempts.length === 0 ? (
-                  <div className="px-4 py-6 text-center text-sm text-text-muted bg-bg-subtle rounded-xl">
+                  <div className="px-4 py-6 text-center text-sm text-text-muted bg-background rounded-xl">
                     Nenhuma tentativa de recuperação realizada.
                   </div>
                 ) : (
@@ -182,7 +182,7 @@ export function DetailsDrawer({ item, onClose }: DetailsDrawerProps) {
                             {getChannelIcon(attempt.channel)}
                           </div>
                           {/* Content */}
-                          <div className="bg-bg-subtle rounded-xl p-3">
+                          <div className="bg-background rounded-xl p-3">
                             <div className="flex items-center justify-between mb-1.5">
                               <div className="flex items-center gap-2">
                                 <span className="text-[11px] font-semibold text-text-secondary capitalize">{attempt.channel}</span>
